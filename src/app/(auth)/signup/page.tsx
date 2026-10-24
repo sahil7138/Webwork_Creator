@@ -8,13 +8,13 @@ import { Sparkles, ArrowRight, Mail, Lock, User, AtSign, CheckCircle2 } from "lu
 function SignUpContent() {
   const searchParams = useSearchParams();
   const initialHandle = searchParams.get("handle") || "";
-  const initialPlan = searchParams.get("plan") || "starter";
+  const initialPlan = searchParams.get("plan") || "free";
 
   const [handle, setHandle] = useState(initialHandle);
   const [displayName, setDisplayName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [selectedPlan, setSelectedPlan] = useState(initialPlan);
+  const [selectedPlan, setSelectedPlan] = useState("free");
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
@@ -57,39 +57,15 @@ function SignUpContent() {
           </p>
         </div>
 
-        {/* Plan Selector Radio */}
-        <div className="grid grid-cols-2 gap-3 mb-6">
-          <button
-            type="button"
-            onClick={() => setSelectedPlan("starter")}
-            className={`p-3 rounded-2xl border text-left transition-all ${
-              selectedPlan === "starter"
-                ? "bg-violet-600/15 border-violet-500 shadow-xs"
-                : "bg-white/5 border-white/5 hover:bg-white/10"
-            }`}
-          >
-            <div className="flex items-center justify-between">
-              <span className="text-xs font-bold text-white">Starter Free</span>
-              <span className="text-xs font-semibold text-emerald-400">$0</span>
-            </div>
-            <p className="text-[10px] text-slate-400 mt-0.5">Core link-in-bio & 3 products</p>
-          </button>
-
-          <button
-            type="button"
-            onClick={() => setSelectedPlan("pro")}
-            className={`p-3 rounded-2xl border text-left transition-all ${
-              selectedPlan === "pro"
-                ? "bg-violet-600/15 border-violet-500 shadow-xs"
-                : "bg-white/5 border-white/5 hover:bg-white/10"
-            }`}
-          >
-            <div className="flex items-center justify-between">
-              <span className="text-xs font-bold text-violet-300">Creator Pro</span>
-              <span className="text-xs font-semibold text-white">$19/mo</span>
-            </div>
-            <p className="text-[10px] text-slate-400 mt-0.5">0% fee + custom domain</p>
-          </button>
+        {/* 100% Free Guarantee Banner */}
+        <div className="p-3.5 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 mb-6 flex items-center justify-between text-xs">
+          <div className="flex items-center gap-2 text-emerald-300 font-semibold">
+            <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+            <span>100% Free Forever Access</span>
+          </div>
+          <span className="text-[11px] font-bold px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-400">
+            0% Platform Fee
+          </span>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-4">

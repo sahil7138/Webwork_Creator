@@ -62,7 +62,7 @@ export function HeroSection() {
         <div className="mt-12 flex flex-wrap justify-center items-center gap-8 text-xs font-medium text-slate-400">
           <div className="flex items-center gap-2">
             <CheckCircle2 className="w-4 h-4 text-emerald-400" />
-            <span>Free Forever Plan Available</span>
+            <span>100% Free Forever • 0% Fees</span>
           </div>
           <div className="flex items-center gap-2">
             <CheckCircle2 className="w-4 h-4 text-cyan-400" />

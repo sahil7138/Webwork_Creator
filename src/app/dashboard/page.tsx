@@ -178,7 +178,7 @@ export default function DashboardPage() {
                       <CheckCircle2 className="w-4 h-4 text-emerald-400" /> Email opt-in block configured
                     </div>
                     <div className="flex items-center gap-2 text-slate-400">
-                      <Clock className="w-4 h-4 text-amber-400" /> Connect custom domain (Pro)
+                      <Clock className="w-4 h-4 text-amber-400" /> Connect custom domain (Included Free)
                     </div>
                   </div>
                 </div>

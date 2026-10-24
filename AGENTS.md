@@ -18,7 +18,7 @@ Build an enterprise-grade, multi-tenant creator SaaS platform with original bran
 4. **Attribution & Real-Time Analytics**: Clicks, conversion rates, earnings overview, UTM tracking, and visitor device/geo breakdown.
 5. **Media Kits & Brand Partnerships**: Auto-generating verified audience metrics, rate cards, and brand deal pipeline from pitch to paid.
 6. **Sponsorship Pitch & Proposal Builder**: Professional rate card calculators, deliverable packages, and verified brand proposal templates.
-7. **SaaS Billing & Super-Admin Console**: Multi-tier subscriptions (Starter, Creator Pro, Studio), platform commission split, and user administration.
+7. **100% Free Creator Model & Platform Console**: Zero subscription paywalls, 0% platform transaction take-rate (creators keep 100% of sales), and system health administration.
 
 ---
 
@@ -72,7 +72,7 @@ Webwork_Creator/
 - `workspace_members`: Multi-tenant membership with role-based permissions (`owner`, `admin`, `collaborator`).
 - `blocks`: Link trees, products, newsletters, tip jars, videos, and music embeds with drag-and-drop sort order.
 - `products`: Digital downloads, pricing, sales counts, asset download links.
-- `orders`: Stripe checkout sessions, customer emails, platform commission vs creator split.
+- `orders`: Stripe checkout sessions, customer emails, 0% platform fee, and 100% direct creator payouts.
 - `contacts`: Audience subscribers, tags, source, and lifetime customer spend.
 - `deals`: Sponsorship tracker, brand deliverables, pipeline status (`lead`, `negotiating`, `in_production`, `paid`).
 - `analytics_events`: Real-time clicks, views, referrer domains, and UTM campaign parameters.
@@ -97,5 +97,5 @@ Webwork_Creator/
 - [ ] **Phase 6 — Real-Time Attribution Analytics**: Visual graphs, referrer tracking, and link click heatmaps.
 - [ ] **Phase 7 — Dynamic Media Kit & Brand Deals Pipeline**: Automated rate cards, sponsor intake forms, and invoice tracker.
 - [ ] **Phase 8 — Brand Pitch & Proposal Builder**: Executive sponsorship outreach proposals, deliverable agreements, and invoice tracking.
-- [ ] **Phase 9 — Super-Admin Console**: System audit logs, platform revenue metrics, and user management.
+- [ ] **Phase 9 — Super-Admin Console**: System audit logs, platform volume metrics, and user management.
 - [ ] **Phase 10 — Production Release & Hardening**: E2E testing, SEO optimization, and Vercel edge deployment.

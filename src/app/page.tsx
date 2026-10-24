@@ -49,7 +49,7 @@ export default function LandingPage() {
         {/* 4. Full Module Architecture Grid */}
         <FeatureGrid />
 
-        {/* 5. Transparent Pricing Plans */}
+        {/* 5. 100% Free Forever Guarantee */}
         <PricingCards />
       </main>
 

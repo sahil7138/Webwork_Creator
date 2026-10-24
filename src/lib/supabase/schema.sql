@@ -17,7 +17,7 @@ CREATE TABLE IF NOT EXISTS public.workspaces (
     verified BOOLEAN DEFAULT FALSE,
     custom_domain VARCHAR(255) UNIQUE,
     theme JSONB DEFAULT '{"id": "midnight-neon", "name": "Midnight Neon", "background": "bg-slate-950", "cardBg": "bg-slate-900/80", "textColor": "text-white", "buttonRadius": "rounded-xl"}'::jsonb,
-    plan VARCHAR(32) DEFAULT 'starter' CHECK (plan IN ('starter', 'pro', 'studio')),
+    plan VARCHAR(32) DEFAULT 'free' CHECK (plan IN ('free', 'starter', 'pro', 'studio')), -- 100% Free Forever for all creators
     stripe_account_id VARCHAR(128),
     stripe_payouts_enabled BOOLEAN DEFAULT FALSE,
     created_at TIMESTAMPTZ DEFAULT NOW(),

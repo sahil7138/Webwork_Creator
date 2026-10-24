@@ -102,7 +102,7 @@ export function RevenueCalculator() {
           </div>
 
           <div className="text-xs text-emerald-400 font-medium flex items-center gap-1 mb-6">
-            <ShieldCheck className="w-3.5 h-3.5" /> 0% platform fee on Pro plan
+            <ShieldCheck className="w-3.5 h-3.5" /> 100% Free • 0% platform fee for all creators
           </div>
 
           <div className="space-y-3 pt-3 border-t border-white/10 text-xs">

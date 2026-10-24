@@ -20,7 +20,7 @@ CREATE TABLE public.workspaces (
     verified BOOLEAN DEFAULT FALSE,
     custom_domain VARCHAR(255) UNIQUE,            -- e.g. "alexastone.com"
     theme JSONB DEFAULT '{...}'::jsonb,
-    plan VARCHAR(32) DEFAULT 'starter',           -- starter, pro, studio
+    plan VARCHAR(32) DEFAULT 'free',              -- 100% Free Forever for all creators (0% fee)
     stripe_account_id VARCHAR(128),
     stripe_payouts_enabled BOOLEAN DEFAULT FALSE,
     created_at TIMESTAMPTZ DEFAULT NOW(),
