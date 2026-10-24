@@ -210,16 +210,16 @@ export function EasyProfileBuilder() {
   return (
     <div className="space-y-6">
       {/* Top Beginner Guide & Quick Publish Bar */}
-      <div className="p-5 rounded-2xl bg-gradient-to-r from-violet-950/40 via-slate-900 to-indigo-950/40 border border-violet-500/20 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+      <div className="p-5 rounded-2xl bg-zinc-900 border border-zinc-800 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
         <div>
-          <div className="flex items-center gap-2 text-xs font-bold text-violet-400 uppercase tracking-wider mb-1">
-            <Sparkles className="w-3.5 h-3.5 text-cyan-400" />
-            <span>Easy Beginner Profile & Portfolio Studio</span>
+          <div className="flex items-center gap-2 text-xs font-semibold text-zinc-400 uppercase tracking-wider mb-1">
+            <Sparkles className="w-3.5 h-3.5 text-zinc-300" />
+            <span>Profile & Portfolio Studio</span>
           </div>
           <h2 className="text-lg font-bold text-white">
             Build Your Personal Bio & Portfolio in 60 Seconds
           </h2>
-          <p className="text-xs text-slate-400 mt-0.5">
+          <p className="text-xs text-zinc-400 mt-0.5">
             Pick a starter role preset, customize your projects, and preview your live mobile portfolio instantly.
           </p>
         </div>
@@ -227,7 +227,7 @@ export function EasyProfileBuilder() {
         <div className="flex items-center gap-2.5 w-full md:w-auto">
           <button
             onClick={handlePublish}
-            className="flex-1 md:flex-none px-4 py-2.5 rounded-xl bg-gradient-to-r from-violet-600 to-cyan-500 hover:brightness-110 text-white text-xs font-bold flex items-center justify-center gap-1.5 shadow-md shadow-violet-500/25 transition-all"
+            className="flex-1 md:flex-none px-4 py-2.5 rounded-xl bg-white hover:bg-zinc-200 text-zinc-950 text-xs font-bold flex items-center justify-center gap-1.5 shadow-sm transition-all"
           >
             <CheckCircle2 className="w-4 h-4" />
             <span>Publish Live</span>
@@ -272,13 +272,13 @@ export function EasyProfileBuilder() {
         {/* Left Column: Easy Builder Controls */}
         <div className="lg:col-span-7 space-y-6">
           {/* Step Selection Tabs */}
-          <div className="flex items-center gap-2 p-1.5 rounded-2xl glass-panel border border-white/10 overflow-x-auto text-xs">
+          <div className="flex items-center gap-1.5 p-1.5 rounded-2xl bg-zinc-900 border border-zinc-800 overflow-x-auto text-xs">
             <button
               onClick={() => setActiveStep("templates")}
               className={`px-3.5 py-2 rounded-xl font-bold flex items-center gap-1.5 transition-all whitespace-nowrap ${
                 activeStep === "templates"
-                  ? "bg-violet-600 text-white shadow-md shadow-violet-500/20"
-                  : "text-slate-400 hover:text-white hover:bg-white/5"
+                  ? "bg-white text-zinc-950 shadow-sm"
+                  : "text-zinc-400 hover:text-white hover:bg-white/5"
               }`}
             >
               <Sparkles className="w-3.5 h-3.5" /> 1. Starter Presets
@@ -287,8 +287,8 @@ export function EasyProfileBuilder() {
               onClick={() => setActiveStep("basic")}
               className={`px-3.5 py-2 rounded-xl font-bold flex items-center gap-1.5 transition-all whitespace-nowrap ${
                 activeStep === "basic"
-                  ? "bg-violet-600 text-white shadow-md shadow-violet-500/20"
-                  : "text-slate-400 hover:text-white hover:bg-white/5"
+                  ? "bg-white text-zinc-950 shadow-sm"
+                  : "text-zinc-400 hover:text-white hover:bg-white/5"
               }`}
             >
               <span>2. Bio & Avatar</span>
@@ -300,8 +300,8 @@ export function EasyProfileBuilder() {
               }}
               className={`px-3.5 py-2 rounded-xl font-bold flex items-center gap-1.5 transition-all whitespace-nowrap ${
                 activeStep === "portfolio"
-                  ? "bg-violet-600 text-white shadow-md shadow-violet-500/20"
-                  : "text-slate-400 hover:text-white hover:bg-white/5"
+                  ? "bg-white text-zinc-950 shadow-sm"
+                  : "text-zinc-400 hover:text-white hover:bg-white/5"
               }`}
             >
               <FolderGit2 className="w-3.5 h-3.5" /> 3. Portfolio Projects (
@@ -314,8 +314,8 @@ export function EasyProfileBuilder() {
               }}
               className={`px-3.5 py-2 rounded-xl font-bold flex items-center gap-1.5 transition-all whitespace-nowrap ${
                 activeStep === "blocks"
-                  ? "bg-violet-600 text-white shadow-md shadow-violet-500/20"
-                  : "text-slate-400 hover:text-white hover:bg-white/5"
+                  ? "bg-white text-zinc-950 shadow-sm"
+                  : "text-zinc-400 hover:text-white hover:bg-white/5"
               }`}
             >
               <Layers className="w-3.5 h-3.5" /> 4. Custom Links
@@ -324,8 +324,8 @@ export function EasyProfileBuilder() {
               onClick={() => setActiveStep("theme")}
               className={`px-3.5 py-2 rounded-xl font-bold flex items-center gap-1.5 transition-all whitespace-nowrap ${
                 activeStep === "theme"
-                  ? "bg-violet-600 text-white shadow-md shadow-violet-500/20"
-                  : "text-slate-400 hover:text-white hover:bg-white/5"
+                  ? "bg-white text-zinc-950 shadow-sm"
+                  : "text-zinc-400 hover:text-white hover:bg-white/5"
               }`}
             >
               <Palette className="w-3.5 h-3.5" /> 5. Theme
@@ -338,10 +338,10 @@ export function EasyProfileBuilder() {
               <div className="flex items-center justify-between">
                 <div>
                   <h3 className="text-sm font-bold text-white flex items-center gap-2">
-                    <Sparkles className="w-4 h-4 text-cyan-400" />
+                    <Sparkles className="w-4 h-4 text-zinc-300" />
                     <span>Choose Your Starter Role Preset</span>
                   </h3>
-                  <p className="text-xs text-slate-400 mt-0.5">
+                  <p className="text-xs text-zinc-400 mt-0.5">
                     Click any role below to pre-load a complete, professional bio, portfolio projects, and links.
                   </p>
                 </div>
@@ -354,10 +354,10 @@ export function EasyProfileBuilder() {
                     <div
                       key={tpl.id}
                       onClick={() => handleApplyTemplate(tpl)}
-                      className={`p-4 rounded-2xl glass-panel border cursor-pointer transition-all hover:scale-[1.01] ${
+                      className={`p-4 rounded-2xl border cursor-pointer transition-all hover:scale-[1.01] ${
                         isSelected
-                          ? "border-violet-500 bg-violet-950/20 ring-1 ring-violet-500"
-                          : "border-white/10 hover:border-white/20"
+                          ? "border-white/50 bg-white/10 ring-1 ring-white/30"
+                          : "border-zinc-800 bg-zinc-900/60 hover:border-zinc-700 hover:bg-zinc-900"
                       }`}
                     >
                       <div className="flex items-start gap-3">
@@ -372,18 +372,18 @@ export function EasyProfileBuilder() {
                               {tpl.role}
                             </h4>
                             {isSelected && (
-                              <span className="text-[10px] font-bold px-1.5 py-0.2 rounded bg-violet-500 text-white">
+                              <span className="text-[10px] font-bold px-1.5 py-0.2 rounded bg-white text-zinc-950">
                                 Active
                               </span>
                             )}
                           </div>
-                          <div className="text-[11px] text-cyan-400 font-medium">
+                          <div className="text-[11px] text-zinc-400 font-medium">
                             {tpl.displayName} • @{tpl.username}
                           </div>
-                          <p className="text-[11px] text-slate-400 line-clamp-2 mt-1">
+                          <p className="text-[11px] text-zinc-400 line-clamp-2 mt-1">
                             {tpl.bio}
                           </p>
-                          <div className="mt-2 text-[10px] text-slate-500 flex items-center gap-2">
+                          <div className="mt-2 text-[10px] text-zinc-500 flex items-center gap-2">
                             <span>{tpl.projects.length} sample projects</span>
                             <span>•</span>
                             <span>{tpl.starterBlocks.length} links</span>
@@ -395,11 +395,11 @@ export function EasyProfileBuilder() {
                 })}
               </div>
 
-              <div className="p-3.5 rounded-xl bg-violet-500/10 border border-violet-500/20 text-xs text-slate-300 flex items-center justify-between">
+              <div className="p-3.5 rounded-xl bg-zinc-900 border border-zinc-800 text-xs text-zinc-300 flex items-center justify-between">
                 <span>Want to customize the details? Move to the next tab.</span>
                 <button
                   onClick={() => setActiveStep("basic")}
-                  className="text-xs font-bold text-violet-400 hover:text-violet-300 flex items-center gap-1"
+                  className="text-xs font-bold text-white hover:text-zinc-300 flex items-center gap-1"
                 >
                   Edit Profile Info <ArrowRight className="w-3.5 h-3.5" />
                 </button>
@@ -427,7 +427,7 @@ export function EasyProfileBuilder() {
                       }
                       className={`relative rounded-full p-0.5 transition-all ${
                         profile.avatarUrl === item.url
-                          ? "ring-2 ring-violet-500 scale-105"
+                          ? "ring-2 ring-white scale-105"
                           : "opacity-70 hover:opacity-100"
                       }`}
                     >
@@ -470,8 +470,8 @@ export function EasyProfileBuilder() {
                     Profile Vanity Slug
                   </label>
                   <div className="relative flex items-center">
-                    <span className="absolute left-3 text-xs text-slate-500 select-none">
-                      webworks.ai/
+                    <span className="absolute left-3 text-xs text-zinc-500 select-none">
+                      webworks.io/
                     </span>
                     <input
                       type="text"
@@ -484,7 +484,7 @@ export function EasyProfileBuilder() {
                             .replace(/[^a-z0-9_-]/g, ""),
                         })
                       }
-                      className="w-full text-xs pl-26 pr-3.5 py-2.5 rounded-xl glass-input text-violet-300 font-mono font-medium"
+                      className="w-full text-xs pl-26 pr-3.5 py-2.5 rounded-xl glass-input text-white font-mono font-medium"
                     />
                   </div>
                 </div>
@@ -601,17 +601,17 @@ export function EasyProfileBuilder() {
               <div className="flex items-center justify-between">
                 <div>
                   <h3 className="text-sm font-bold text-white flex items-center gap-2">
-                    <FolderGit2 className="w-4 h-4 text-cyan-400" />
+                    <FolderGit2 className="w-4 h-4 text-zinc-300" />
                     <span>Your Portfolio Works & Case Studies</span>
                   </h3>
-                  <p className="text-xs text-slate-400 mt-0.5">
+                  <p className="text-xs text-zinc-400 mt-0.5">
                     Showcase apps, designs, videos, photography, or case studies with thumbnail images and live links.
                   </p>
                 </div>
 
                 <button
                   onClick={() => setShowProjectModal(true)}
-                  className="px-3.5 py-2 rounded-xl bg-violet-600 hover:bg-violet-500 text-white text-xs font-bold flex items-center gap-1.5 transition-all shadow-md shadow-violet-500/20"
+                  className="px-3.5 py-2 rounded-xl bg-white hover:bg-zinc-200 text-zinc-950 text-xs font-bold flex items-center gap-1.5 transition-all shadow-sm"
                 >
                   <Plus className="w-3.5 h-3.5" />
                   <span>Add Project</span>
@@ -622,7 +622,7 @@ export function EasyProfileBuilder() {
               {showProjectModal && (
                 <form
                   onSubmit={handleAddProject}
-                  className="p-5 rounded-2xl bg-gradient-to-b from-slate-900 to-slate-950 border border-violet-500/40 space-y-3.5 shadow-xl"
+                  className="p-5 rounded-2xl bg-zinc-900 border border-zinc-700/80 space-y-3.5 shadow-2xl"
                 >
                   <div className="flex items-center justify-between border-b border-white/10 pb-2">
                     <span className="text-xs font-bold text-white">
@@ -705,7 +705,7 @@ export function EasyProfileBuilder() {
                             projectUrl: e.target.value,
                           })
                         }
-                        className="w-full text-xs px-3 py-2 rounded-xl glass-input text-cyan-300 font-mono"
+                        className="w-full text-xs px-3 py-2 rounded-xl glass-input text-white font-mono"
                       />
                     </div>
                     <div>
@@ -745,7 +745,7 @@ export function EasyProfileBuilder() {
                   <div className="pt-2 flex justify-end gap-2">
                     <button
                       type="submit"
-                      className="px-4 py-2 rounded-xl bg-violet-600 hover:bg-violet-500 text-white text-xs font-bold transition-all shadow-md"
+                      className="px-4 py-2 rounded-xl bg-white hover:bg-zinc-200 text-zinc-950 text-xs font-bold transition-all shadow-sm"
                     >
                       Save Portfolio Project
                     </button>
@@ -782,7 +782,7 @@ export function EasyProfileBuilder() {
                             <span className="text-xs font-bold text-white truncate">
                               {proj.title}
                             </span>
-                            <span className="text-[10px] px-1.5 py-0.2 rounded bg-violet-500/20 text-violet-300 font-semibold shrink-0">
+                            <span className="text-[10px] px-1.5 py-0.2 rounded bg-zinc-800 text-zinc-300 border border-zinc-700/60 font-semibold shrink-0">
                               {proj.category}
                             </span>
                           </div>
@@ -807,7 +807,7 @@ export function EasyProfileBuilder() {
                           href={proj.projectUrl}
                           target="_blank"
                           rel="noreferrer"
-                          className="text-xs text-slate-400 hover:text-cyan-400 p-1.5 rounded-lg hover:bg-white/5 transition-colors"
+                          className="text-xs text-slate-400 hover:text-white p-1.5 rounded-lg hover:bg-white/5 transition-colors"
                           title="Open Link"
                         >
                           <ExternalLink className="w-3.5 h-3.5" />
@@ -833,7 +833,7 @@ export function EasyProfileBuilder() {
               <div className="flex items-center justify-between">
                 <div>
                   <h3 className="text-sm font-bold text-white flex items-center gap-2">
-                    <Layers className="w-4 h-4 text-cyan-400" />
+                    <Layers className="w-4 h-4 text-zinc-300" />
                     <span>Page Links & Interactive Blocks</span>
                   </h3>
                   <p className="text-xs text-slate-400 mt-0.5">
@@ -843,7 +843,7 @@ export function EasyProfileBuilder() {
 
                 <button
                   onClick={() => setShowBlockModal(true)}
-                  className="px-3.5 py-2 rounded-xl bg-violet-600 hover:bg-violet-500 text-white text-xs font-bold flex items-center gap-1.5 transition-all shadow-md"
+                  className="px-3.5 py-2 rounded-xl bg-white hover:bg-zinc-200 text-zinc-950 text-xs font-bold flex items-center gap-1.5 transition-all shadow-sm"
                 >
                   <Plus className="w-3.5 h-3.5" />
                   <span>Add Link Block</span>
@@ -854,7 +854,7 @@ export function EasyProfileBuilder() {
               {showBlockModal && (
                 <form
                   onSubmit={handleAddBlock}
-                  className="p-5 rounded-2xl bg-gradient-to-b from-slate-900 to-slate-950 border border-violet-500/40 space-y-3.5 shadow-xl"
+                  className="p-5 rounded-2xl bg-zinc-900 border border-zinc-700/80 space-y-3.5 shadow-2xl"
                 >
                   <div className="flex items-center justify-between border-b border-white/10 pb-2">
                     <span className="text-xs font-bold text-white">
@@ -951,7 +951,7 @@ export function EasyProfileBuilder() {
                         onChange={(e) =>
                           setNewBlock({ ...newBlock, url: e.target.value })
                         }
-                        className="w-full text-xs px-3 py-2 rounded-xl glass-input text-cyan-300 font-mono"
+                        className="w-full text-xs px-3 py-2 rounded-xl glass-input text-white font-mono"
                       />
                     </div>
                   )}
@@ -959,7 +959,7 @@ export function EasyProfileBuilder() {
                   <div className="pt-2 flex justify-end gap-2">
                     <button
                       type="submit"
-                      className="px-4 py-2 rounded-xl bg-violet-600 hover:bg-violet-500 text-white text-xs font-bold transition-all shadow-md"
+                      className="px-4 py-2 rounded-xl bg-white hover:bg-zinc-200 text-zinc-950 text-xs font-bold transition-all shadow-sm"
                     >
                       Add Block
                     </button>
@@ -975,14 +975,14 @@ export function EasyProfileBuilder() {
                     className="p-4 rounded-2xl glass-panel border border-white/10 flex items-center justify-between gap-4"
                   >
                     <div className="flex items-center gap-3 min-w-0">
-                      <div className="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center text-xs font-bold text-violet-400 shrink-0">
+                      <div className="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center text-xs font-bold text-zinc-300 shrink-0">
                         {b.order}
                       </div>
                       <div className="min-w-0">
                         <div className="text-xs font-bold text-white flex items-center gap-2 truncate">
                           <span>{b.title}</span>
                           {b.badge && (
-                            <span className="text-[9px] px-1.5 py-0.2 rounded bg-violet-500/20 text-violet-300 font-semibold shrink-0">
+                            <span className="text-[9px] px-1.5 py-0.2 rounded bg-zinc-800 text-zinc-300 border border-zinc-700/60 font-semibold shrink-0">
                               {b.badge}
                             </span>
                           )}
@@ -1012,8 +1012,8 @@ export function EasyProfileBuilder() {
           {activeStep === "theme" && (
             <div className="space-y-4 animate-fadeIn p-6 rounded-2xl glass-panel border border-white/10">
               <h3 className="text-sm font-bold text-white">Visual Profile Theme</h3>
-              <p className="text-xs text-slate-400">
-                Choose a sleek dark theme tailored for creators. All themes feature vibrant accents and glassmorphic cards.
+              <p className="text-xs text-zinc-400">
+                Choose a sleek minimalist theme. Clean typography, subtle hairline borders, and zero clutter.
               </p>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 pt-2">
@@ -1025,8 +1025,8 @@ export function EasyProfileBuilder() {
                       onClick={() => setProfile({ ...profile, theme: th })}
                       className={`p-4 rounded-2xl cursor-pointer border transition-all ${
                         isSelected
-                          ? "border-violet-500 bg-white/10 ring-2 ring-violet-500/50"
-                          : "border-white/10 bg-white/5 hover:border-white/20"
+                          ? "border-white/50 bg-white/10 ring-1 ring-white/30"
+                          : "border-zinc-800 bg-zinc-900/60 hover:border-zinc-700 hover:bg-zinc-900"
                       }`}
                     >
                       <div className="flex items-center justify-between mb-2">
@@ -1042,13 +1042,14 @@ export function EasyProfileBuilder() {
                         className="h-10 rounded-xl bg-gradient-to-r p-2 flex items-center justify-between text-[10px] font-bold text-white shadow-inner"
                         style={{
                           background:
-                            th.id === "midnight-neon"
-                              ? "linear-gradient(to right, #8b5cf6, #06b6d4)"
-                              : th.id === "cyber-emerald"
-                              ? "linear-gradient(to right, #10b981, #14b8a6)"
-                              : th.id === "sunset-velvet"
-                              ? "linear-gradient(to right, #f43f5e, #f59e0b)"
-                              : "linear-gradient(to right, #ffffff, #737373)",
+                            th.id === "obsidian-minimal"
+                              ? "linear-gradient(to right, #27272a, #09090b)"
+                              : th.id === "slate-studio"
+                              ? "linear-gradient(to right, #1e293b, #0f172a)"
+                              : th.id === "warm-charcoal"
+                              ? "linear-gradient(to right, #292524, #1c1917)"
+                              : "linear-gradient(to right, #ffffff, #71717a)",
+                          color: th.id === "pure-monochrome" ? "#000" : "#fff",
                         }}
                       >
                         <span className="px-2 py-0.5 rounded bg-black/40 backdrop-blur-sm">
@@ -1070,7 +1071,7 @@ export function EasyProfileBuilder() {
         <div className="lg:col-span-5 flex flex-col items-center sticky top-24">
           <div className="w-full flex items-center justify-between mb-3 px-2">
             <div className="flex items-center gap-1.5 text-xs font-bold text-slate-300">
-              <Eye className="w-3.5 h-3.5 text-violet-400" />
+              <Eye className="w-3.5 h-3.5 text-zinc-400" />
               <span>Live Profile Preview</span>
             </div>
             <span className="text-[10px] px-2 py-0.5 rounded-full bg-emerald-500/15 text-emerald-400 font-semibold flex items-center gap-1">
@@ -1080,10 +1081,10 @@ export function EasyProfileBuilder() {
           </div>
 
           {/* Smartphone Frame */}
-          <div className="w-[320px] sm:w-[340px] rounded-[44px] p-3.5 bg-gradient-to-b from-slate-700 via-slate-900 to-black border-4 border-slate-700/80 shadow-2xl shadow-violet-950/50 relative overflow-hidden">
+          <div className="w-[320px] sm:w-[340px] rounded-[44px] p-3.5 bg-gradient-to-b from-zinc-800 via-zinc-900 to-black border-4 border-zinc-800 shadow-2xl shadow-black/80 relative overflow-hidden">
             {/* Dynamic Island / Speaker Notch */}
             <div className="absolute top-5 left-1/2 -translate-x-1/2 w-24 h-4 bg-black rounded-full z-30 flex items-center justify-center">
-              <div className="w-2.5 h-2.5 rounded-full bg-slate-900 ml-auto mr-2" />
+              <div className="w-2.5 h-2.5 rounded-full bg-zinc-900 ml-auto mr-2" />
             </div>
 
             {/* Inner Phone Screen */}
@@ -1095,10 +1096,10 @@ export function EasyProfileBuilder() {
                 <img
                   src={profile.avatarUrl}
                   alt={profile.displayName}
-                  className="w-18 h-18 rounded-full object-cover ring-2 ring-violet-500/80 shadow-lg mx-auto"
+                  className="w-18 h-18 rounded-full object-cover ring-1 ring-white/20 shadow-lg mx-auto"
                 />
                 {profile.verified && (
-                  <div className="absolute -bottom-1 -right-1 p-1 rounded-full bg-cyan-500 text-slate-950 shadow-md">
+                  <div className="absolute -bottom-1 -right-1 p-1 rounded-full bg-white text-zinc-950 shadow-md">
                     <CheckCircle2 className="w-3.5 h-3.5" />
                   </div>
                 )}
@@ -1108,7 +1109,7 @@ export function EasyProfileBuilder() {
               <h3 className="text-sm font-extrabold text-white tracking-tight">
                 {profile.displayName || "Your Name"}
               </h3>
-              <p className="text-[11px] text-violet-400 font-medium">
+              <p className="text-[11px] text-zinc-400 font-medium">
                 @{profile.username || "username"} • {profile.category}
               </p>
 
@@ -1162,13 +1163,13 @@ export function EasyProfileBuilder() {
               </div>
 
               {/* Navigation Tabs inside Phone (Links / Portfolio / Store / MediaKit) */}
-              <div className="grid grid-cols-4 gap-1 p-1 rounded-xl bg-white/5 border border-white/10 mb-4 text-[10px] font-semibold">
+              <div className="grid grid-cols-4 gap-1 p-1 rounded-xl bg-zinc-900 border border-zinc-800 mb-4 text-[10px] font-semibold">
                 <button
                   onClick={() => setActivePreviewTab("links")}
                   className={`py-1.5 rounded-lg transition-all ${
                     activePreviewTab === "links"
-                      ? "bg-violet-600 text-white font-bold shadow"
-                      : "text-slate-400 hover:text-white"
+                      ? "bg-white text-zinc-950 font-bold shadow-sm"
+                      : "text-zinc-400 hover:text-white"
                   }`}
                 >
                   Links
@@ -1177,8 +1178,8 @@ export function EasyProfileBuilder() {
                   onClick={() => setActivePreviewTab("portfolio")}
                   className={`py-1.5 rounded-lg transition-all ${
                     activePreviewTab === "portfolio"
-                      ? "bg-violet-600 text-white font-bold shadow"
-                      : "text-slate-400 hover:text-white"
+                      ? "bg-white text-zinc-950 font-bold shadow-sm"
+                      : "text-zinc-400 hover:text-white"
                   }`}
                 >
                   Portfolio
@@ -1187,8 +1188,8 @@ export function EasyProfileBuilder() {
                   onClick={() => setActivePreviewTab("store")}
                   className={`py-1.5 rounded-lg transition-all ${
                     activePreviewTab === "store"
-                      ? "bg-violet-600 text-white font-bold shadow"
-                      : "text-slate-400 hover:text-white"
+                      ? "bg-white text-zinc-950 font-bold shadow-sm"
+                      : "text-zinc-400 hover:text-white"
                   }`}
                 >
                   Store
@@ -1197,8 +1198,8 @@ export function EasyProfileBuilder() {
                   onClick={() => setActivePreviewTab("mediakit")}
                   className={`py-1.5 rounded-lg transition-all ${
                     activePreviewTab === "mediakit"
-                      ? "bg-violet-600 text-white font-bold shadow"
-                      : "text-slate-400 hover:text-white"
+                      ? "bg-white text-zinc-950 font-bold shadow-sm"
+                      : "text-zinc-400 hover:text-white"
                   }`}
                 >
                   Stats
@@ -1219,7 +1220,7 @@ export function EasyProfileBuilder() {
                             {block.title}
                           </span>
                           {block.badge && (
-                            <span className="text-[8px] font-extrabold px-1 py-0.2 rounded bg-violet-500 text-white shrink-0">
+                            <span className="text-[8px] font-extrabold px-1.5 py-0.2 rounded bg-zinc-800 text-zinc-300 border border-zinc-700/60 shrink-0">
                               {block.badge}
                             </span>
                           )}
@@ -1255,7 +1256,7 @@ export function EasyProfileBuilder() {
                             alt={proj.title}
                             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                           />
-                          <span className="absolute top-2 left-2 text-[9px] font-bold px-1.5 py-0.5 rounded bg-black/60 backdrop-blur-md text-cyan-300">
+                          <span className="absolute top-2 left-2 text-[9px] font-bold px-1.5 py-0.5 rounded bg-black/60 backdrop-blur-md text-zinc-200">
                             {proj.category}
                           </span>
                         </div>
@@ -1282,7 +1283,7 @@ export function EasyProfileBuilder() {
                             href={proj.projectUrl}
                             target="_blank"
                             rel="noreferrer"
-                            className="w-full py-1.5 rounded-lg bg-white/10 hover:bg-violet-600 text-white text-[10px] font-bold flex items-center justify-center gap-1 transition-colors"
+                            className="w-full py-1.5 rounded-lg bg-white hover:bg-zinc-200 text-zinc-950 text-[10px] font-bold flex items-center justify-center gap-1 transition-colors"
                           >
                             <span>View Project</span>
                             <ExternalLink className="w-2.5 h-2.5" />

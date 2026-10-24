@@ -61,7 +61,7 @@ alexa@creator.com`;
   return (
     <div className="p-6 rounded-3xl glass-panel border border-white/10 relative overflow-hidden">
       <div className="flex items-center justify-between mb-3">
-        <div className="flex items-center gap-2 text-violet-400 text-xs font-bold uppercase tracking-wider">
+        <div className="flex items-center gap-2 text-zinc-300 text-xs font-bold uppercase tracking-wider">
           <Briefcase className="w-4 h-4" /> Sponsorship Proposal Builder
         </div>
         <span className="text-[10px] text-slate-400 px-2 py-0.5 rounded-full bg-white/5 border border-white/10">
@@ -123,7 +123,7 @@ alexa@creator.com`;
               onClick={() => setPackageType(pkg.id as any)}
               className={`p-2.5 rounded-xl border text-left transition-all flex items-center justify-between ${
                 packageType === pkg.id
-                  ? "bg-violet-600/20 border-violet-500 text-white shadow-xs"
+                  ? "bg-white/10 border-white/50 text-white shadow-xs"
                   : "bg-white/5 border-white/5 text-slate-300 hover:bg-white/10"
               }`}
             >
@@ -143,11 +143,11 @@ alexa@creator.com`;
       <div className="flex gap-2">
         <button
           onClick={handleCopy}
-          className="flex-1 py-2 rounded-xl bg-violet-600 hover:bg-violet-500 text-white text-xs font-bold flex items-center justify-center gap-1.5 transition-all shadow-md shadow-violet-500/20"
+          className="flex-1 py-2 rounded-xl bg-white hover:bg-zinc-200 text-zinc-950 text-xs font-bold flex items-center justify-center gap-1.5 transition-all shadow-sm"
         >
           {copied ? (
             <>
-              <Check className="w-3.5 h-3.5 text-white" />
+              <Check className="w-3.5 h-3.5 text-zinc-950" />
               <span>Copied to Clipboard</span>
             </>
           ) : (

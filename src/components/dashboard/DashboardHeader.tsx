@@ -19,10 +19,8 @@ export function DashboardHeader() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
         <div className="flex items-center gap-3">
           <Link href="/" className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-tr from-violet-600 to-cyan-400 p-0.5 shadow-md shadow-violet-500/20">
-              <div className="w-full h-full bg-[#090d1a] rounded-[6px] flex items-center justify-center">
-                <Sparkles className="w-4 h-4 text-violet-400" />
-              </div>
+            <div className="w-8 h-8 rounded-lg bg-zinc-900 border border-zinc-750 flex items-center justify-center text-white font-extrabold text-xs">
+              W
             </div>
             <span className="font-extrabold text-base text-white">Webworks Studio</span>
           </Link>
@@ -32,7 +30,7 @@ export function DashboardHeader() {
           {/* Live profile pill */}
           <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-white/5 border border-white/10 text-xs">
             <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-            <span className="text-slate-300 font-mono">webworks.ai/{DEMO_CREATOR.username}</span>
+            <span className="text-slate-300 font-mono">webworks.io/{DEMO_CREATOR.username}</span>
             <button
               onClick={handleCopy}
               className="ml-1 text-slate-400 hover:text-white p-0.5 rounded transition-colors"
@@ -58,7 +56,7 @@ export function DashboardHeader() {
             <img
               src={DEMO_CREATOR.avatarUrl}
               alt={DEMO_CREATOR.displayName}
-              className="w-8 h-8 rounded-full object-cover ring-1 ring-violet-500"
+              className="w-8 h-8 rounded-full object-cover ring-1 ring-white/20"
             />
             <span className="text-xs font-medium text-white hidden sm:inline">
               {DEMO_CREATOR.displayName}

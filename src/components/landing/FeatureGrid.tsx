@@ -15,7 +15,7 @@ export function FeatureGrid() {
     <section id="features" className="relative py-20 lg:py-28 border-t border-white/5 bg-[#060810]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-xs font-semibold text-cyan-400 mb-3">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-zinc-900 border border-zinc-800 text-xs font-semibold text-zinc-300 mb-3">
             <Layers className="w-3.5 h-3.5" /> All-in-One Architecture
           </div>
           <h2 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
@@ -30,7 +30,7 @@ export function FeatureGrid() {
           {/* Card 1: Beginner Profile & Portfolio Builder */}
           <div className="p-7 rounded-3xl glass-panel border border-white/10 glass-panel-hover flex flex-col justify-between">
             <div>
-              <div className="w-12 h-12 rounded-2xl bg-violet-600/20 text-violet-400 flex items-center justify-center mb-5 border border-violet-500/30">
+              <div className="w-12 h-12 rounded-2xl bg-zinc-800 text-white flex items-center justify-center mb-5 border border-zinc-700/80">
                 <Smartphone className="w-6 h-6" />
               </div>
               <h3 className="text-lg font-bold text-white mb-2">Beginner Profile & Portfolio Builder</h3>
@@ -40,10 +40,10 @@ export function FeatureGrid() {
             </div>
             <ul className="mt-5 space-y-2 text-xs text-slate-300 border-t border-white/5 pt-4">
               <li className="flex items-center gap-2">
-                <CheckCircle2 className="w-3.5 h-3.5 text-violet-400" /> 1-Click role templates & work showcase
+                <CheckCircle2 className="w-3.5 h-3.5 text-zinc-300" /> 1-Click role templates & work showcase
               </li>
               <li className="flex items-center gap-2">
-                <CheckCircle2 className="w-3.5 h-3.5 text-violet-400" /> Real-time mobile simulator & instant publish
+                <CheckCircle2 className="w-3.5 h-3.5 text-zinc-300" /> Real-time mobile simulator & instant publish
               </li>
             </ul>
           </div>
@@ -51,7 +51,7 @@ export function FeatureGrid() {
           {/* Card 2: Digital Store */}
           <div className="p-7 rounded-3xl glass-panel border border-white/10 glass-panel-hover flex flex-col justify-between">
             <div>
-              <div className="w-12 h-12 rounded-2xl bg-cyan-600/20 text-cyan-400 flex items-center justify-center mb-5 border border-cyan-500/30">
+              <div className="w-12 h-12 rounded-2xl bg-zinc-800 text-white flex items-center justify-center mb-5 border border-zinc-700/80">
                 <ShoppingBag className="w-6 h-6" />
               </div>
               <h3 className="text-lg font-bold text-white mb-2">Creator Store & Checkout</h3>
@@ -61,10 +61,10 @@ export function FeatureGrid() {
             </div>
             <ul className="mt-5 space-y-2 text-xs text-slate-300 border-t border-white/5 pt-4">
               <li className="flex items-center gap-2">
-                <CheckCircle2 className="w-3.5 h-3.5 text-cyan-400" /> Stripe Connect direct creator payouts
+                <CheckCircle2 className="w-3.5 h-3.5 text-zinc-300" /> Stripe Connect direct creator payouts
               </li>
               <li className="flex items-center gap-2">
-                <CheckCircle2 className="w-3.5 h-3.5 text-cyan-400" /> Automated secure download links
+                <CheckCircle2 className="w-3.5 h-3.5 text-zinc-300" /> Automated secure download links
               </li>
             </ul>
           </div>
@@ -72,7 +72,7 @@ export function FeatureGrid() {
           {/* Card 3: Audience CRM */}
           <div className="p-7 rounded-3xl glass-panel border border-white/10 glass-panel-hover flex flex-col justify-between">
             <div>
-              <div className="w-12 h-12 rounded-2xl bg-emerald-600/20 text-emerald-400 flex items-center justify-center mb-5 border border-emerald-500/30">
+              <div className="w-12 h-12 rounded-2xl bg-zinc-800 text-white flex items-center justify-center mb-5 border border-zinc-700/80">
                 <Mail className="w-6 h-6" />
               </div>
               <h3 className="text-lg font-bold text-white mb-2">Audience CRM & Email Broadcasts</h3>
@@ -82,10 +82,10 @@ export function FeatureGrid() {
             </div>
             <ul className="mt-5 space-y-2 text-xs text-slate-300 border-t border-white/5 pt-4">
               <li className="flex items-center gap-2">
-                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" /> Unlimited contact capture
+                <CheckCircle2 className="w-3.5 h-3.5 text-zinc-300" /> Unlimited contact capture
               </li>
               <li className="flex items-center gap-2">
-                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" /> Auto-responder onboarding funnels
+                <CheckCircle2 className="w-3.5 h-3.5 text-zinc-300" /> Auto-responder onboarding funnels
               </li>
             </ul>
           </div>
@@ -93,7 +93,7 @@ export function FeatureGrid() {
           {/* Card 4: Media Kit */}
           <div className="p-7 rounded-3xl glass-panel border border-white/10 glass-panel-hover flex flex-col justify-between">
             <div>
-              <div className="w-12 h-12 rounded-2xl bg-rose-600/20 text-rose-400 flex items-center justify-center mb-5 border border-rose-500/30">
+              <div className="w-12 h-12 rounded-2xl bg-zinc-800 text-white flex items-center justify-center mb-5 border border-zinc-700/80">
                 <TrendingUp className="w-6 h-6" />
               </div>
               <h3 className="text-lg font-bold text-white mb-2">Live Media Kits & Sponsorships</h3>
@@ -103,10 +103,10 @@ export function FeatureGrid() {
             </div>
             <ul className="mt-5 space-y-2 text-xs text-slate-300 border-t border-white/5 pt-4">
               <li className="flex items-center gap-2">
-                <CheckCircle2 className="w-3.5 h-3.5 text-rose-400" /> Direct brand inquiry intake forms
+                <CheckCircle2 className="w-3.5 h-3.5 text-zinc-300" /> Direct brand inquiry intake forms
               </li>
               <li className="flex items-center gap-2">
-                <CheckCircle2 className="w-3.5 h-3.5 text-rose-400" /> Deal pipeline tracking from pitch to paid
+                <CheckCircle2 className="w-3.5 h-3.5 text-zinc-300" /> Deal pipeline tracking from pitch to paid
               </li>
             </ul>
           </div>
@@ -114,7 +114,7 @@ export function FeatureGrid() {
           {/* Card 5: Sponsorship Proposal Builder */}
           <div className="p-7 rounded-3xl glass-panel border border-white/10 glass-panel-hover flex flex-col justify-between">
             <div>
-              <div className="w-12 h-12 rounded-2xl bg-amber-600/20 text-amber-400 flex items-center justify-center mb-5 border border-amber-500/30">
+              <div className="w-12 h-12 rounded-2xl bg-zinc-800 text-white flex items-center justify-center mb-5 border border-zinc-700/80">
                 <Briefcase className="w-6 h-6" />
               </div>
               <h3 className="text-lg font-bold text-white mb-2">Sponsorship Proposal Builder</h3>
@@ -124,10 +124,10 @@ export function FeatureGrid() {
             </div>
             <ul className="mt-5 space-y-2 text-xs text-slate-300 border-t border-white/5 pt-4">
               <li className="flex items-center gap-2">
-                <CheckCircle2 className="w-3.5 h-3.5 text-amber-400" /> Executive pitch email templates
+                <CheckCircle2 className="w-3.5 h-3.5 text-zinc-300" /> Executive pitch email templates
               </li>
               <li className="flex items-center gap-2">
-                <CheckCircle2 className="w-3.5 h-3.5 text-amber-400" /> Real-time rate packaging & deliverables
+                <CheckCircle2 className="w-3.5 h-3.5 text-zinc-300" /> Real-time rate packaging & deliverables
               </li>
             </ul>
           </div>
@@ -135,7 +135,7 @@ export function FeatureGrid() {
           {/* Card 6: Real-time Analytics */}
           <div className="p-7 rounded-3xl glass-panel border border-white/10 glass-panel-hover flex flex-col justify-between">
             <div>
-              <div className="w-12 h-12 rounded-2xl bg-indigo-600/20 text-indigo-400 flex items-center justify-center mb-5 border border-indigo-500/30">
+              <div className="w-12 h-12 rounded-2xl bg-zinc-800 text-white flex items-center justify-center mb-5 border border-zinc-700/80">
                 <Zap className="w-6 h-6" />
               </div>
               <h3 className="text-lg font-bold text-white mb-2">Real-Time Attribution Analytics</h3>
@@ -145,10 +145,10 @@ export function FeatureGrid() {
             </div>
             <ul className="mt-5 space-y-2 text-xs text-slate-300 border-t border-white/5 pt-4">
               <li className="flex items-center gap-2">
-                <CheckCircle2 className="w-3.5 h-3.5 text-indigo-400" /> UTM campaign parameter tracking
+                <CheckCircle2 className="w-3.5 h-3.5 text-zinc-300" /> UTM campaign parameter tracking
               </li>
               <li className="flex items-center gap-2">
-                <CheckCircle2 className="w-3.5 h-3.5 text-indigo-400" /> Real-time visitor click heatmaps
+                <CheckCircle2 className="w-3.5 h-3.5 text-zinc-300" /> Real-time visitor click heatmaps
               </li>
             </ul>
           </div>

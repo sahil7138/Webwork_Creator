@@ -10,7 +10,7 @@ export function PricingCards() {
           <ShieldCheck className="w-3.5 h-3.5" /> Zero Subscription Fees • Zero Take Rate
         </div>
         <h2 className="text-3xl sm:text-5xl font-extrabold text-white mt-1 tracking-tight">
-          100% Free Forever. <span className="text-gradient-purple">No Paywalls.</span>
+          100% Free Forever. <span className="text-zinc-300">No Paywalls.</span>
         </h2>
         <p className="text-sm sm:text-base text-slate-400 mt-4 leading-relaxed">
           We believe creators should keep every dollar they make. Every feature is unlocked from day one with zero monthly subscription costs and 0% platform transaction fees.
@@ -18,14 +18,12 @@ export function PricingCards() {
       </div>
 
       {/* Main Single Master Card: 100% Free Creator Tier */}
-      <div className="max-w-4xl mx-auto rounded-3xl bg-gradient-to-b from-slate-900 via-slate-900/90 to-slate-950 border-2 border-violet-500/40 p-8 sm:p-12 shadow-2xl shadow-violet-950/40 relative overflow-hidden">
-        <div className="ambient-glow-purple -top-24 -right-24 opacity-30 pointer-events-none" />
-
+      <div className="max-w-4xl mx-auto rounded-3xl bg-zinc-900 border border-zinc-800 p-8 sm:p-12 shadow-2xl shadow-black/80 relative overflow-hidden">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
           {/* Left Column: Cost & Guarantee */}
           <div className="md:col-span-5 space-y-4 border-b md:border-b-0 md:border-r border-white/10 pb-8 md:pb-0 md:pr-8">
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-violet-600/20 text-violet-300 text-xs font-bold uppercase tracking-wider">
-              <Zap className="w-3.5 h-3.5 text-violet-400" /> Full Access Pass
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-zinc-800 text-zinc-300 border border-zinc-700/60 text-xs font-bold uppercase tracking-wider">
+              <Zap className="w-3.5 h-3.5 text-zinc-300" /> Full Access Pass
             </div>
 
             <div className="text-5xl sm:text-6xl font-extrabold text-white tracking-tight">
@@ -46,7 +44,7 @@ export function PricingCards() {
 
             <Link
               href="/signup"
-              className="w-full mt-4 py-3.5 px-6 rounded-xl bg-gradient-to-r from-violet-600 via-indigo-600 to-cyan-500 hover:brightness-110 text-white text-xs font-bold flex items-center justify-center gap-2 shadow-lg shadow-violet-500/25 transition-all"
+              className="w-full mt-4 py-3.5 px-6 rounded-xl bg-white hover:bg-zinc-200 text-zinc-950 text-xs font-bold flex items-center justify-center gap-2 shadow-sm transition-all"
             >
               <span>Get Started Free</span>
               <ArrowRight className="w-4 h-4" />

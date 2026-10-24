@@ -22,20 +22,17 @@ export default function LoginPage() {
   return (
     <div className="min-h-screen bg-[#06080e] flex flex-col justify-center items-center px-4 relative overflow-hidden">
       <div className="bg-grid-pattern absolute inset-0 opacity-30 pointer-events-none" />
-      <div className="ambient-glow-purple -top-20 left-1/2 -translate-x-1/2 opacity-30" />
 
       {/* Top Logo */}
       <Link href="/" className="flex items-center gap-2 mb-8 z-10 group">
-        <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-violet-600 via-indigo-600 to-cyan-400 p-0.5 shadow-lg shadow-violet-500/20 group-hover:scale-105 transition-transform">
-          <div className="w-full h-full bg-[#090d1a] rounded-[10px] flex items-center justify-center">
-            <Sparkles className="w-5 h-5 text-violet-400" />
-          </div>
+        <div className="w-10 h-10 rounded-xl bg-zinc-900 border border-zinc-750 flex items-center justify-center text-white font-extrabold text-sm group-hover:border-zinc-500 transition-colors">
+          W
         </div>
         <span className="font-extrabold text-xl text-white tracking-tight">Webworks</span>
       </Link>
 
       {/* Auth Card */}
-      <div className="w-full max-w-md rounded-3xl glass-panel border border-white/10 p-8 shadow-2xl shadow-violet-950/40 relative z-10">
+      <div className="w-full max-w-md rounded-3xl glass-panel border border-white/10 p-8 shadow-2xl shadow-black/80 relative z-10">
         <div className="text-center mb-6">
           <h1 className="text-2xl font-bold text-white tracking-tight">Welcome Back</h1>
           <p className="text-xs text-slate-400 mt-1.5">
@@ -107,7 +104,7 @@ export default function LoginPage() {
           <div>
             <div className="flex justify-between items-center mb-1.5">
               <label className="block text-xs font-medium text-slate-300">Password</label>
-              <a href="#forgot" className="text-[11px] text-violet-400 hover:underline">
+              <a href="#forgot" className="text-[11px] text-zinc-400 hover:text-white hover:underline">
                 Forgot password?
               </a>
             </div>
@@ -127,10 +124,10 @@ export default function LoginPage() {
           <button
             type="submit"
             disabled={isLoading}
-            className="w-full py-2.5 rounded-xl bg-gradient-to-r from-violet-600 to-indigo-600 hover:from-violet-500 hover:to-indigo-500 text-white text-xs font-bold shadow-lg shadow-violet-500/25 transition-all flex items-center justify-center gap-2 mt-2"
+            className="w-full py-2.5 rounded-xl bg-white hover:bg-zinc-200 text-zinc-950 text-xs font-bold shadow-sm transition-all flex items-center justify-center gap-2 mt-2"
           >
             {isLoading ? (
-              <span className="inline-block w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+              <span className="inline-block w-4 h-4 border-2 border-zinc-900 border-t-zinc-400 rounded-full animate-spin" />
             ) : (
               <>
                 <span>Sign In to Studio</span>
@@ -142,7 +139,7 @@ export default function LoginPage() {
 
         <p className="text-center text-xs text-slate-400 mt-6">
           Don't have an account yet?{" "}
-          <Link href="/signup" className="text-violet-400 font-semibold hover:underline">
+          <Link href="/signup" className="text-white font-semibold hover:underline">
             Claim Handle Free
           </Link>
         </p>

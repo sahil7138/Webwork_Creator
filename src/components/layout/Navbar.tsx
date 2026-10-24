@@ -10,15 +10,13 @@ export function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-18 flex items-center justify-between">
         {/* Brand Logo */}
         <Link href="/" className="flex items-center gap-2.5 group">
-          <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-violet-600 via-indigo-600 to-cyan-400 p-0.5 shadow-lg shadow-violet-500/20 group-hover:scale-105 transition-transform">
-            <div className="w-full h-full bg-[#090d1a] rounded-[10px] flex items-center justify-center">
-              <Sparkles className="w-5 h-5 text-violet-400" />
-            </div>
+          <div className="w-9 h-9 rounded-xl bg-zinc-900 border border-zinc-750 flex items-center justify-center text-white group-hover:border-zinc-500 transition-colors">
+            <span className="font-extrabold text-sm tracking-wider">W</span>
           </div>
           <div className="flex flex-col">
-            <span className="font-extrabold text-lg text-white tracking-tight flex items-center gap-1">
+            <span className="font-extrabold text-lg text-white tracking-tight flex items-center gap-1.5">
               Webworks
-              <span className="text-[10px] font-semibold px-1.5 py-0.2 rounded-full bg-violet-500/20 text-violet-400 border border-violet-500/30">
+              <span className="text-[10px] font-semibold px-1.5 py-0.2 rounded bg-zinc-800 text-zinc-300 border border-zinc-700/60">
                 CREATOR OS
               </span>
             </span>
@@ -39,7 +37,7 @@ export function Navbar() {
           <a href="#pricing" className="hover:text-white transition-colors">
             Pricing
           </a>
-          <Link href="/p/alexa" className="hover:text-violet-400 flex items-center gap-1 transition-colors">
+          <Link href="/p/alexa" className="hover:text-white flex items-center gap-1 transition-colors">
             Demo Profile <ExternalLink className="w-3 h-3" />
           </Link>
         </nav>
@@ -54,7 +52,7 @@ export function Navbar() {
           </Link>
           <Link
             href="/dashboard"
-            className="px-4 py-2 rounded-xl bg-gradient-to-r from-violet-600 to-indigo-600 hover:from-violet-500 hover:to-indigo-500 text-white text-sm font-semibold shadow-md shadow-violet-500/20 transition-all active:scale-95 flex items-center gap-1.5"
+            className="px-4 py-2 rounded-xl bg-white hover:bg-zinc-200 text-zinc-950 text-sm font-bold shadow-sm transition-all active:scale-95 flex items-center gap-1.5"
           >
             <span>Creator Studio</span>
             <ArrowRight className="w-4 h-4" />

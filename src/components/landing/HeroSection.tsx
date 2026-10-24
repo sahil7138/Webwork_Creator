@@ -19,15 +19,15 @@ export function HeroSection() {
     <section className="relative pt-16 pb-20 sm:pt-24 sm:pb-28">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         {/* Top Badge */}
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-violet-500/10 border border-violet-500/20 text-xs font-semibold text-violet-300 mb-8 backdrop-blur-md">
+        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-zinc-900 border border-zinc-800 text-xs font-semibold text-zinc-300 mb-8 backdrop-blur-md">
           <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-          <span>Introducing Webworks 2.0 — The Complete Creator SaaS Suite</span>
+          <span>Introducing Webworks 2.0 — The Creator Operating System</span>
         </div>
 
         {/* Main Headline */}
         <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white max-w-5xl mx-auto leading-[1.12]">
           Turn Your Audience Into a{" "}
-          <span className="text-gradient-purple">Multi-Revenue Powerhouse</span>
+          <span className="text-zinc-300">Multi-Revenue Powerhouse</span>
         </h1>
 
         <p className="mt-6 text-base sm:text-lg lg:text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed">
@@ -37,10 +37,10 @@ export function HeroSection() {
         {/* Inline Claim Handle Form */}
         <form
           onSubmit={handleClaimSubmit}
-          className="mt-10 max-w-md mx-auto p-1.5 rounded-2xl glass-panel border border-white/15 flex items-center shadow-2xl shadow-violet-950/40"
+          className="mt-10 max-w-md mx-auto p-1.5 rounded-2xl glass-panel border border-white/15 flex items-center shadow-2xl shadow-black/80"
         >
           <div className="pl-3.5 pr-1 text-sm font-medium text-slate-400 select-none">
-            webworks.ai/
+            webworks.io/
           </div>
           <input
             type="text"
@@ -51,7 +51,7 @@ export function HeroSection() {
           />
           <button
             type="submit"
-            className="px-5 py-2.5 rounded-xl bg-gradient-to-r from-violet-600 via-indigo-600 to-cyan-500 hover:brightness-110 text-white text-sm font-bold shadow-md shadow-violet-500/30 transition-all shrink-0 flex items-center gap-1.5"
+            className="px-5 py-2.5 rounded-xl bg-white hover:bg-zinc-200 text-zinc-950 text-sm font-bold shadow-sm transition-all shrink-0 flex items-center gap-1.5"
           >
             <span>Claim Handle</span>
             <ArrowRight className="w-4 h-4" />
@@ -65,11 +65,11 @@ export function HeroSection() {
             <span>100% Free Forever • 0% Fees</span>
           </div>
           <div className="flex items-center gap-2">
-            <CheckCircle2 className="w-4 h-4 text-cyan-400" />
+            <CheckCircle2 className="w-4 h-4 text-zinc-300" />
             <span>Instant Stripe Connect Payouts</span>
           </div>
           <div className="flex items-center gap-2">
-            <CheckCircle2 className="w-4 h-4 text-violet-400" />
+            <CheckCircle2 className="w-4 h-4 text-zinc-300" />
             <span>Custom Domains & SSL Included</span>
           </div>
         </div>

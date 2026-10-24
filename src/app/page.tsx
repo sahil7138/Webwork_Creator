@@ -10,10 +10,8 @@ import { PricingCards } from "@/components/landing/PricingCards";
 export default function LandingPage() {
   return (
     <div className="relative min-h-screen bg-[#06080e] overflow-hidden flex flex-col justify-between">
-      {/* Background ambient lighting */}
-      <div className="bg-grid-pattern absolute inset-0 opacity-40 pointer-events-none" />
-      <div className="ambient-glow-purple top-12 left-1/4 -translate-x-1/2 opacity-35" />
-      <div className="ambient-glow-cyan top-96 right-10 opacity-25" />
+      {/* Subtle architectural background grid */}
+      <div className="bg-grid-pattern absolute inset-0 opacity-25 pointer-events-none" />
 
       {/* Top Navigation */}
       <Navbar />
@@ -26,7 +24,7 @@ export default function LandingPage() {
         <section id="interactive-preview" className="relative py-16 lg:py-24 border-y border-white/5 bg-[#080b14]/60">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-3xl mx-auto mb-12">
-              <span className="text-xs font-bold text-violet-400 uppercase tracking-widest">
+              <span className="text-xs font-bold text-zinc-400 uppercase tracking-widest">
                 Live Interactive Prototype
               </span>
               <h2 className="text-3xl sm:text-4xl font-extrabold text-white mt-2">

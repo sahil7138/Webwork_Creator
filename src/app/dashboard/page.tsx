@@ -49,8 +49,8 @@ export default function DashboardPage() {
                 onClick={() => setActiveTab(tab.id as any)}
                 className={`px-4 py-2 rounded-xl text-xs font-semibold flex items-center gap-2 transition-all whitespace-nowrap ${
                   isActive
-                    ? "bg-violet-600 text-white shadow-md shadow-violet-500/25"
-                    : "text-slate-400 hover:text-white hover:bg-white/5"
+                    ? "bg-white text-zinc-950 font-bold shadow-sm"
+                    : "text-zinc-400 hover:text-white hover:bg-white/5"
                 }`}
               >
                 <Icon className="w-3.5 h-3.5" />
@@ -75,7 +75,7 @@ export default function DashboardPage() {
                     <h3 className="text-sm font-bold text-white">Active Brand Sponsorship Pipeline</h3>
                     <button
                       onClick={() => setActiveTab("deals")}
-                      className="text-xs text-violet-400 hover:underline flex items-center gap-1"
+                      className="text-xs text-zinc-300 hover:text-white flex items-center gap-1"
                     >
                       View all <ChevronRight className="w-3 h-3" />
                     </button>
@@ -88,7 +88,7 @@ export default function DashboardPage() {
                         className="p-3.5 rounded-2xl bg-white/5 border border-white/5 flex items-center justify-between"
                       >
                         <div className="flex items-center gap-3">
-                          <div className="w-10 h-10 rounded-xl bg-violet-600/20 text-violet-400 flex items-center justify-center font-bold text-sm">
+                          <div className="w-10 h-10 rounded-xl bg-zinc-800 text-white border border-zinc-700/60 flex items-center justify-center font-bold text-sm">
                             {deal.brandLogo}
                           </div>
                           <div>
@@ -101,7 +101,7 @@ export default function DashboardPage() {
                           <div className="text-xs font-bold text-emerald-400">
                             {formatCurrency(deal.dealValue)}
                           </div>
-                          <span className="inline-block mt-0.5 text-[9px] uppercase font-semibold px-2 py-0.5 rounded-full bg-violet-500/20 text-violet-300">
+                          <span className="inline-block mt-0.5 text-[9px] uppercase font-semibold px-2 py-0.5 rounded-full bg-zinc-800 text-zinc-300 border border-zinc-700/60">
                             {deal.status.replace("_", " ")}
                           </span>
                         </div>
@@ -184,9 +184,9 @@ export default function DashboardPage() {
 
                     <button
                       onClick={() => setActiveTab("builder")}
-                      className="w-full mt-3 py-2 px-3 rounded-xl bg-violet-600/20 hover:bg-violet-600/30 text-violet-300 text-xs font-semibold flex items-center justify-between border border-violet-500/30 transition-all"
+                      className="w-full mt-3 py-2 px-3 rounded-xl bg-white hover:bg-zinc-200 text-zinc-950 text-xs font-bold flex items-center justify-between shadow-sm transition-all"
                     >
-                      <span>⚡ Open Easy Profile & Portfolio Builder</span>
+                      <span>⚡ Open Profile & Portfolio Builder</span>
                       <ChevronRight className="w-3.5 h-3.5" />
                     </button>
                   </div>
@@ -211,7 +211,7 @@ export default function DashboardPage() {
               </div>
               <button
                 onClick={() => alert("Digital product creation wizard opened")}
-                className="px-4 py-2 rounded-xl bg-cyan-600 hover:bg-cyan-500 text-white text-xs font-bold flex items-center gap-1.5"
+                className="px-4 py-2 rounded-xl bg-white hover:bg-zinc-200 text-zinc-950 text-xs font-bold flex items-center gap-1.5 shadow-sm"
               >
                 <Plus className="w-3.5 h-3.5" /> Add Digital Product
               </button>
@@ -230,7 +230,7 @@ export default function DashboardPage() {
                       className="w-full h-40 rounded-2xl object-cover mb-4"
                     />
                     <div className="flex items-center justify-between mb-1">
-                      <span className="text-[10px] font-bold text-cyan-400 uppercase tracking-wider">
+                      <span className="text-[10px] font-bold text-zinc-400 uppercase tracking-wider">
                         {prod.type}
                       </span>
                       <span className="text-sm font-extrabold text-emerald-400">${prod.price}</span>
@@ -241,7 +241,7 @@ export default function DashboardPage() {
 
                   <div className="mt-5 pt-4 border-t border-white/10 flex items-center justify-between text-xs text-slate-400">
                     <span>{prod.salesCount} purchases</span>
-                    <button className="text-xs text-violet-400 font-semibold hover:underline">
+                    <button className="text-xs text-zinc-300 font-semibold hover:text-white">
                       Edit details
                     </button>
                   </div>
@@ -263,7 +263,7 @@ export default function DashboardPage() {
               </div>
               <button
                 onClick={() => alert("Broadcast newsletter composer opened")}
-                className="px-4 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold flex items-center gap-1.5"
+                className="px-4 py-2 rounded-xl bg-white hover:bg-zinc-200 text-zinc-950 text-xs font-bold flex items-center gap-1.5 shadow-sm"
               >
                 <Send className="w-3.5 h-3.5" /> Compose Newsletter
               </button>
@@ -292,7 +292,7 @@ export default function DashboardPage() {
                         <td className="py-3 text-white font-medium">{row.email}</td>
                         <td className="py-3 text-slate-400">{row.source}</td>
                         <td className="py-3">
-                          <span className="px-2 py-0.5 rounded-full bg-violet-500/20 text-violet-300 text-[10px] font-semibold">
+                          <span className="px-2 py-0.5 rounded-full bg-zinc-800 text-zinc-300 border border-zinc-700/60 text-[10px] font-semibold">
                             {row.tag}
                           </span>
                         </td>
@@ -323,7 +323,7 @@ export default function DashboardPage() {
               </div>
               <button
                 onClick={() => alert("New deal tracker dialog opened")}
-                className="px-4 py-2 rounded-xl bg-violet-600 hover:bg-violet-500 text-white text-xs font-bold flex items-center gap-1.5"
+                className="px-4 py-2 rounded-xl bg-white hover:bg-zinc-200 text-zinc-950 text-xs font-bold flex items-center gap-1.5 shadow-sm"
               >
                 <Plus className="w-3.5 h-3.5" /> Log Sponsorship
               </button>
@@ -337,10 +337,10 @@ export default function DashboardPage() {
                 >
                   <div>
                     <div className="flex items-center justify-between mb-3">
-                      <div className="w-10 h-10 rounded-xl bg-violet-600/20 text-violet-300 flex items-center justify-center font-bold">
+                      <div className="w-10 h-10 rounded-xl bg-zinc-800 text-zinc-200 border border-zinc-700/60 flex items-center justify-center font-bold">
                         {deal.brandLogo}
                       </div>
-                      <span className="text-[10px] font-bold uppercase px-2.5 py-1 rounded-full bg-violet-500/20 text-violet-300">
+                      <span className="text-[10px] font-bold uppercase px-2.5 py-1 rounded-full bg-zinc-800 text-zinc-300 border border-zinc-700/60">
                         {deal.status.replace("_", " ")}
                       </span>
                     </div>

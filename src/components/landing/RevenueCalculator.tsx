@@ -33,18 +33,15 @@ export function RevenueCalculator() {
 
   return (
     <div className="relative rounded-3xl p-8 lg:p-12 glass-panel border border-white/10 overflow-hidden">
-      {/* Background radial glow */}
-      <div className="ambient-glow-purple -top-32 -right-32 opacity-40 pointer-events-none" />
-
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
         {/* Left Inputs */}
         <div className="lg:col-span-7 space-y-6">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-violet-500/10 border border-violet-500/20 text-xs font-semibold text-violet-400">
-            <Zap className="w-3.5 h-3.5" /> Interactive Earnings Model
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-zinc-900 border border-zinc-800 text-xs font-semibold text-zinc-300">
+            <Zap className="w-3.5 h-3.5 text-zinc-300" /> Interactive Earnings Model
           </div>
 
           <h3 className="text-2xl sm:text-3xl font-bold tracking-tight text-white">
-            Calculate your earning potential with <span className="text-gradient-purple">Webworks</span>
+            Calculate your earning potential with <span className="text-zinc-300">Webworks</span>
           </h3>
           <p className="text-sm text-slate-400 leading-relaxed">
             Unlike fragmented link-in-bio tools, Webworks combines your storefront, community tips,
@@ -56,7 +53,7 @@ export function RevenueCalculator() {
             <div>
               <div className="flex justify-between items-center text-sm font-medium mb-2">
                 <span className="text-slate-300">Total Social Audience</span>
-                <span className="text-violet-400 font-bold">
+                <span className="text-white font-bold">
                   {followers.toLocaleString()} followers
                 </span>
               </div>
@@ -67,7 +64,7 @@ export function RevenueCalculator() {
                 step="5000"
                 value={followers}
                 onChange={(e) => setFollowers(Number(e.target.value))}
-                className="w-full h-2 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-violet-500"
+                className="w-full h-2 bg-zinc-800 rounded-lg appearance-none cursor-pointer accent-white"
               />
             </div>
 
@@ -75,7 +72,7 @@ export function RevenueCalculator() {
             <div>
               <div className="flex justify-between items-center text-sm font-medium mb-2">
                 <span className="text-slate-300">Average Digital Product Price</span>
-                <span className="text-cyan-400 font-bold">${avgProductPrice} USD</span>
+                <span className="text-white font-bold">${avgProductPrice} USD</span>
               </div>
               <input
                 type="range"
@@ -84,14 +81,14 @@ export function RevenueCalculator() {
                 step="5"
                 value={avgProductPrice}
                 onChange={(e) => setAvgProductPrice(Number(e.target.value))}
-                className="w-full h-2 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-cyan-400"
+                className="w-full h-2 bg-zinc-800 rounded-lg appearance-none cursor-pointer accent-white"
               />
             </div>
           </div>
         </div>
 
         {/* Right Output Card */}
-        <div className="lg:col-span-5 rounded-2xl p-6 bg-gradient-to-b from-slate-900/90 to-slate-950/90 border border-violet-500/30 shadow-xl shadow-violet-950/40 relative">
+        <div className="lg:col-span-5 rounded-2xl p-6 bg-zinc-900 border border-zinc-800 shadow-2xl shadow-black/80 relative">
           <div className="text-xs font-semibold uppercase tracking-wider text-slate-400">
             Estimated Monthly Earnings
           </div>
@@ -122,7 +119,7 @@ export function RevenueCalculator() {
 
           <a
             href="/dashboard"
-            className="w-full mt-6 py-3 px-4 rounded-xl bg-gradient-to-r from-violet-600 to-indigo-600 hover:from-violet-500 hover:to-indigo-500 text-white text-xs font-bold flex items-center justify-center gap-2 shadow-lg shadow-violet-500/25 transition-all"
+            className="w-full mt-6 py-3 px-4 rounded-xl bg-white hover:bg-zinc-200 text-zinc-950 text-xs font-bold flex items-center justify-center gap-2 shadow-sm transition-all"
           >
             Claim Your Free Webworks Handle <ArrowRight className="w-3.5 h-3.5" />
           </a>

@@ -52,7 +52,7 @@ export function PhonePreview() {
             onClick={() => setCurrentTheme(theme)}
             className={`px-3 py-1 rounded-full text-xs font-semibold transition-all ${
               currentTheme.id === theme.id
-                ? "bg-violet-600 text-white shadow-lg shadow-violet-500/25"
+                ? "bg-white text-zinc-950 font-bold shadow-sm"
                 : "text-slate-400 hover:text-white hover:bg-white/5"
             }`}
           >
@@ -62,7 +62,7 @@ export function PhonePreview() {
       </div>
 
       {/* Realistic Mobile Device Frame */}
-      <div className="relative w-[340px] sm:w-[380px] h-[720px] rounded-[48px] p-3 bg-gradient-to-b from-neutral-800 via-neutral-900 to-black shadow-2xl shadow-violet-950/30 border-4 border-neutral-700/60 ring-1 ring-white/10">
+      <div className="relative w-[340px] sm:w-[380px] h-[720px] rounded-[48px] p-3 bg-gradient-to-b from-neutral-800 via-neutral-900 to-black shadow-2xl shadow-black/80 border-4 border-neutral-700/60 ring-1 ring-white/10">
         {/* Dynamic Island / Notch */}
         <div className="absolute top-6 left-1/2 -translate-x-1/2 w-28 h-5 bg-black rounded-full z-40 flex items-center justify-between px-3">
           <div className="w-2.5 h-2.5 rounded-full bg-neutral-900 ring-1 ring-neutral-800" />
@@ -90,7 +90,7 @@ export function PhonePreview() {
               onClick={() => setActiveTab("links")}
               className={`px-2.5 py-1 rounded-lg text-xs font-medium transition-all ${
                 activeTab === "links"
-                  ? "bg-white/15 text-white shadow-xs font-semibold"
+                  ? "bg-white text-zinc-950 font-bold shadow-xs"
                   : "text-slate-400 hover:text-slate-200"
               }`}
             >
@@ -100,31 +100,31 @@ export function PhonePreview() {
               onClick={() => setActiveTab("portfolio")}
               className={`px-2.5 py-1 rounded-lg text-xs font-medium transition-all flex items-center gap-1 ${
                 activeTab === "portfolio"
-                  ? "bg-white/15 text-white shadow-xs font-semibold"
+                  ? "bg-white text-zinc-950 font-bold shadow-xs"
                   : "text-slate-400 hover:text-slate-200"
               }`}
             >
-              <FolderGit2 className="w-3 h-3 text-cyan-400" /> Portfolio
+              <FolderGit2 className="w-3 h-3 text-zinc-300" /> Portfolio
             </button>
             <button
               onClick={() => setActiveTab("store")}
               className={`px-2.5 py-1 rounded-lg text-xs font-medium transition-all flex items-center gap-1 ${
                 activeTab === "store"
-                  ? "bg-white/15 text-white shadow-xs font-semibold"
+                  ? "bg-white text-zinc-950 font-bold shadow-xs"
                   : "text-slate-400 hover:text-slate-200"
               }`}
             >
-              <ShoppingBag className="w-3 h-3 text-emerald-400" /> Store
+              <ShoppingBag className="w-3 h-3 text-zinc-300" /> Store
             </button>
             <button
               onClick={() => setActiveTab("mediakit")}
               className={`px-2.5 py-1 rounded-lg text-xs font-medium transition-all flex items-center gap-1 ${
                 activeTab === "mediakit"
-                  ? "bg-white/15 text-white shadow-xs font-semibold"
+                  ? "bg-white text-zinc-950 font-bold shadow-xs"
                   : "text-slate-400 hover:text-slate-200"
               }`}
             >
-              <TrendingUp className="w-3 h-3 text-violet-400" /> Stats
+              <TrendingUp className="w-3 h-3 text-zinc-300" /> Stats
             </button>
           </div>
 
@@ -136,9 +136,9 @@ export function PhonePreview() {
                 <img
                   src={DEMO_CREATOR.avatarUrl}
                   alt={DEMO_CREATOR.displayName}
-                  className="w-18 h-18 rounded-full object-cover ring-2 ring-violet-500/50 shadow-lg"
+                  className="w-18 h-18 rounded-full object-cover ring-1 ring-white/20 shadow-lg"
                 />
-                <span className="absolute bottom-0 right-0 p-1 bg-violet-600 rounded-full text-white shadow-md">
+                <span className="absolute bottom-0 right-0 p-1 bg-white text-zinc-950 rounded-full shadow-md">
                   <CheckCircle2 className="w-3.5 h-3.5" />
                 </span>
               </div>
@@ -178,7 +178,7 @@ export function PhonePreview() {
                     />
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center justify-between">
-                        <span className="text-[10px] font-semibold text-violet-400 tracking-wider">
+                        <span className="text-[10px] font-semibold text-zinc-400 tracking-wider">
                           BESTSELLER
                         </span>
                         <span className="text-xs font-bold text-white">$49</span>
@@ -196,10 +196,10 @@ export function PhonePreview() {
                 {/* Community Link Block */}
                 <a
                   href="#discord"
-                  className={`p-3 rounded-2xl border flex items-center justify-between transition-all ${currentTheme.cardBg} hover:border-violet-500/50`}
+                  className={`p-3 rounded-2xl border flex items-center justify-between transition-all ${currentTheme.cardBg} hover:border-white/20`}
                 >
                   <div className="flex items-center gap-2.5">
-                    <div className="w-8 h-8 rounded-xl bg-indigo-500/20 text-indigo-400 flex items-center justify-center shrink-0">
+                    <div className="w-8 h-8 rounded-xl bg-white/5 text-zinc-300 flex items-center justify-center shrink-0">
                       <Users className="w-4 h-4" />
                     </div>
                     <div>
@@ -217,7 +217,7 @@ export function PhonePreview() {
                 {/* Email Newsletter Box */}
                 <div className={`p-3 rounded-2xl border ${currentTheme.cardBg}`}>
                   <div className="flex items-center gap-2 mb-1.5">
-                    <Mail className="w-3.5 h-3.5 text-cyan-400" />
+                    <Mail className="w-3.5 h-3.5 text-zinc-300" />
                     <span className="text-xs font-semibold text-white">Weekly Design Digest</span>
                   </div>
                   <p className="text-[10px] text-slate-400 mb-2">
@@ -229,11 +229,11 @@ export function PhonePreview() {
                       value={userEmail}
                       onChange={(e) => setUserEmail(e.target.value)}
                       placeholder="Your email address"
-                      className="flex-1 text-[11px] px-2.5 py-1.5 rounded-xl bg-black/40 border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-violet-500"
+                      className="flex-1 text-[11px] px-2.5 py-1.5 rounded-xl bg-black/40 border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-white/40"
                     />
                     <button
                       type="submit"
-                      className="px-2.5 py-1.5 rounded-xl bg-violet-600 hover:bg-violet-500 text-white text-[11px] font-medium shrink-0"
+                      className="px-2.5 py-1.5 rounded-xl bg-white hover:bg-zinc-200 text-zinc-950 text-[11px] font-bold shrink-0 shadow-sm"
                     >
                       {emailSubscribed ? "✓ Joined" : "Join"}
                     </button>
@@ -256,7 +256,7 @@ export function PhonePreview() {
                         onClick={() => setTipAmount(amt)}
                         className={`py-1 rounded-lg text-xs font-medium border transition-all ${
                           tipAmount === amt
-                            ? "bg-violet-600/30 border-violet-500 text-white"
+                            ? "bg-white text-zinc-950 font-bold border-white"
                             : "bg-white/5 border-white/5 text-slate-300 hover:bg-white/10"
                         }`}
                       >
@@ -266,7 +266,7 @@ export function PhonePreview() {
                   </div>
                   <button
                     onClick={handleTip}
-                    className="w-full py-1.5 rounded-xl bg-gradient-to-r from-violet-600 to-indigo-600 text-white text-xs font-medium shadow-md hover:brightness-110 active:scale-95 transition-all"
+                    className="w-full py-1.5 rounded-xl bg-white hover:bg-zinc-200 text-zinc-950 text-xs font-bold shadow-sm active:scale-95 transition-all"
                   >
                     {tipSent ? "❤️ Thank you so much!" : `Send $${tipAmount} Tip`}
                   </button>
@@ -279,7 +279,7 @@ export function PhonePreview() {
               <div className="space-y-3 pt-1 text-left">
                 <div className="flex items-center justify-between text-xs text-slate-400 px-1">
                   <span>Selected Projects ({DEMO_PORTFOLIO_PROJECTS.length})</span>
-                  <span className="text-cyan-400 font-medium">Interactive Demo</span>
+                  <span className="text-zinc-400 font-medium">Interactive Demo</span>
                 </div>
 
                 {DEMO_PORTFOLIO_PROJECTS.map((proj) => (
@@ -293,7 +293,7 @@ export function PhonePreview() {
                         alt={proj.title}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                       />
-                      <span className="absolute top-2 left-2 text-[9px] font-bold px-1.5 py-0.5 rounded bg-black/60 backdrop-blur-md text-cyan-300">
+                      <span className="absolute top-2 left-2 text-[9px] font-bold px-1.5 py-0.5 rounded bg-black/60 backdrop-blur-md text-zinc-200">
                         {proj.category}
                       </span>
                     </div>
@@ -318,7 +318,7 @@ export function PhonePreview() {
                         href={proj.projectUrl}
                         target="_blank"
                         rel="noreferrer"
-                        className="w-full py-1.5 rounded-lg bg-white/10 hover:bg-violet-600 text-white text-[10px] font-bold flex items-center justify-center gap-1 transition-colors"
+                        className="w-full py-1.5 rounded-lg bg-white hover:bg-zinc-200 text-zinc-950 text-[10px] font-bold flex items-center justify-center gap-1 transition-colors"
                       >
                         <span>View Project</span>
                         <ExternalLink className="w-2.5 h-2.5" />
@@ -386,8 +386,8 @@ export function PhonePreview() {
             {/* TAB 3: MEDIA KIT */}
             {activeTab === "mediakit" && (
               <div className="space-y-3 pt-1">
-                <div className="p-3 rounded-2xl border bg-violet-950/30 border-violet-800/40 text-center">
-                  <span className="text-[10px] font-semibold text-violet-300 uppercase tracking-wider">
+                <div className="p-3 rounded-2xl border bg-zinc-900 border-zinc-800 text-center">
+                  <span className="text-[10px] font-semibold text-zinc-400 uppercase tracking-wider">
                     Verified Creator Stats
                   </span>
                   <div className="text-xl font-bold text-white mt-0.5">850,000+</div>
@@ -423,7 +423,7 @@ export function PhonePreview() {
                       <span className="font-bold text-white">$750</span>
                     </div>
                   </div>
-                  <button className="w-full mt-3 py-1.5 rounded-xl bg-violet-600 hover:bg-violet-500 text-white text-xs font-medium">
+                  <button className="w-full mt-3 py-1.5 rounded-xl bg-white hover:bg-zinc-200 text-zinc-950 text-xs font-bold shadow-sm">
                     Inquire for Collaboration
                   </button>
                 </div>
@@ -434,7 +434,7 @@ export function PhonePreview() {
           {/* Bottom Branding Badge inside preview */}
           <div className="py-2.5 text-center bg-black/40 border-t border-white/5 z-20">
             <span className="text-[10px] text-slate-500 font-medium tracking-wide">
-              Powered by <span className="text-violet-400 font-semibold">Webworks</span>
+              Powered by <span className="text-white font-semibold">Webworks</span>
             </span>
           </div>
         </div>

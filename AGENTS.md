@@ -80,9 +80,10 @@ Webwork_Creator/
 ---
 
 ## 5. Visual Design Tokens & Aesthetic Standards
-- **Backgrounds**: Obsidian deep space (`#06080e`), surface slate (`#0c101c`).
-- **Glassmorphism**: `.glass-panel` (blur 16px, subtle border `rgba(255,255,255,0.08)`), `.glass-input`.
-- **Gradients**: Electric violet (`#8b5cf6`), radiant cyan (`#06b6d4`), emerald growth (`#10b981`), sunset rose (`#f43f5e`).
+- **Aesthetic**: Obsidian Minimalism (Linear, Bento, Apple Studio dark aesthetic). Authentic, grounded, tactile, zero gimmicks or AI-generated neon.
+- **Backgrounds**: Obsidian deep space (`#06080e`), surface slate (`#0c101c`), card neutral (`#121215`, `#18181b`).
+- **Borders & Dividers**: Crisp hairline borders (`border-white/10`, `border-zinc-800`), high-contrast subtle focus rings.
+- **Accents & CTAs**: Crisp solid white buttons with charcoal hover (`bg-white hover:bg-zinc-200 text-zinc-950 font-bold`), metallic silver accents, muted zinc secondary tags.
 - **Zero Placeholder Broken States**: All demo views, avatars, and blocks render realistic mock content.
 
 ---

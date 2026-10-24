@@ -18,10 +18,10 @@ export function StatCards() {
       <div className="p-5 rounded-2xl glass-panel border border-white/10">
         <div className="flex items-center justify-between text-xs text-slate-400">
           <span>Total Profile Views</span>
-          <Eye className="w-4 h-4 text-cyan-400" />
+          <Eye className="w-4 h-4 text-zinc-300" />
         </div>
         <div className="text-2xl font-bold text-white mt-2">84,200</div>
-        <div className="flex items-center gap-1 text-[11px] text-cyan-400 font-medium mt-1">
+        <div className="flex items-center gap-1 text-[11px] text-emerald-400 font-medium mt-1">
           <ArrowUpRight className="w-3 h-3" /> +12.5% unique visitors
         </div>
       </div>
@@ -29,10 +29,10 @@ export function StatCards() {
       <div className="p-5 rounded-2xl glass-panel border border-white/10">
         <div className="flex items-center justify-between text-xs text-slate-400">
           <span>Store Conversion Rate</span>
-          <ShoppingBag className="w-4 h-4 text-violet-400" />
+          <ShoppingBag className="w-4 h-4 text-zinc-300" />
         </div>
         <div className="text-2xl font-bold text-white mt-2">4.82%</div>
-        <div className="flex items-center gap-1 text-[11px] text-violet-400 font-medium mt-1">
+        <div className="flex items-center gap-1 text-[11px] text-emerald-400 font-medium mt-1">
           <ArrowUpRight className="w-3 h-3" /> 2.1x industry benchmark
         </div>
       </div>
