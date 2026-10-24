@@ -13,13 +13,14 @@ import {
   Users,
   BookOpen,
   ArrowRight,
+  FolderGit2,
 } from "lucide-react";
 import { InstagramIcon, YoutubeIcon, TwitterIcon } from "@/components/ui/SocialIcons";
-import { CREATOR_THEMES, DEMO_CREATOR } from "@/lib/constants";
+import { CREATOR_THEMES, DEMO_CREATOR, DEMO_PORTFOLIO_PROJECTS } from "@/lib/constants";
 import { CreatorTheme } from "@/types";
 
 export function PhonePreview() {
-  const [activeTab, setActiveTab] = useState<"links" | "store" | "mediakit">("links");
+  const [activeTab, setActiveTab] = useState<"links" | "portfolio" | "store" | "mediakit">("portfolio");
   const [currentTheme, setCurrentTheme] = useState<CreatorTheme>(CREATOR_THEMES[0]);
   const [tipAmount, setTipAmount] = useState<number>(5);
   const [emailSubscribed, setEmailSubscribed] = useState(false);
@@ -84,36 +85,46 @@ export function PhonePreview() {
           </div>
 
           {/* Nav / Tabs inside creator page */}
-          <div className="mt-4 px-4 flex justify-center gap-1 border-b border-white/5 pb-2.5">
+          <div className="mt-4 px-2 flex justify-center gap-1 border-b border-white/5 pb-2.5">
             <button
               onClick={() => setActiveTab("links")}
-              className={`px-3 py-1 rounded-lg text-xs font-medium transition-all ${
+              className={`px-2.5 py-1 rounded-lg text-xs font-medium transition-all ${
                 activeTab === "links"
-                  ? "bg-white/15 text-white shadow-xs"
+                  ? "bg-white/15 text-white shadow-xs font-semibold"
                   : "text-slate-400 hover:text-slate-200"
               }`}
             >
               Links
             </button>
             <button
-              onClick={() => setActiveTab("store")}
-              className={`px-3 py-1 rounded-lg text-xs font-medium transition-all flex items-center gap-1 ${
-                activeTab === "store"
-                  ? "bg-white/15 text-white shadow-xs"
+              onClick={() => setActiveTab("portfolio")}
+              className={`px-2.5 py-1 rounded-lg text-xs font-medium transition-all flex items-center gap-1 ${
+                activeTab === "portfolio"
+                  ? "bg-white/15 text-white shadow-xs font-semibold"
                   : "text-slate-400 hover:text-slate-200"
               }`}
             >
-              <ShoppingBag className="w-3 h-3 text-cyan-400" /> Store
+              <FolderGit2 className="w-3 h-3 text-cyan-400" /> Portfolio
+            </button>
+            <button
+              onClick={() => setActiveTab("store")}
+              className={`px-2.5 py-1 rounded-lg text-xs font-medium transition-all flex items-center gap-1 ${
+                activeTab === "store"
+                  ? "bg-white/15 text-white shadow-xs font-semibold"
+                  : "text-slate-400 hover:text-slate-200"
+              }`}
+            >
+              <ShoppingBag className="w-3 h-3 text-emerald-400" /> Store
             </button>
             <button
               onClick={() => setActiveTab("mediakit")}
-              className={`px-3 py-1 rounded-lg text-xs font-medium transition-all flex items-center gap-1 ${
+              className={`px-2.5 py-1 rounded-lg text-xs font-medium transition-all flex items-center gap-1 ${
                 activeTab === "mediakit"
-                  ? "bg-white/15 text-white shadow-xs"
+                  ? "bg-white/15 text-white shadow-xs font-semibold"
                   : "text-slate-400 hover:text-slate-200"
               }`}
             >
-              <TrendingUp className="w-3 h-3 text-violet-400" /> Media Kit
+              <TrendingUp className="w-3 h-3 text-violet-400" /> Stats
             </button>
           </div>
 
@@ -260,6 +271,61 @@ export function PhonePreview() {
                     {tipSent ? "❤️ Thank you so much!" : `Send $${tipAmount} Tip`}
                   </button>
                 </div>
+              </div>
+            )}
+
+            {/* TAB: PORTFOLIO SHOWCASE */}
+            {activeTab === "portfolio" && (
+              <div className="space-y-3 pt-1 text-left">
+                <div className="flex items-center justify-between text-xs text-slate-400 px-1">
+                  <span>Selected Projects ({DEMO_PORTFOLIO_PROJECTS.length})</span>
+                  <span className="text-cyan-400 font-medium">Interactive Demo</span>
+                </div>
+
+                {DEMO_PORTFOLIO_PROJECTS.map((proj) => (
+                  <div
+                    key={proj.id}
+                    className={`overflow-hidden border ${currentTheme.cardBg} ${currentTheme.buttonRadius} group transition-all hover:scale-[1.01]`}
+                  >
+                    <div className="relative h-28 w-full bg-slate-900 overflow-hidden">
+                      <img
+                        src={proj.thumbnailUrl}
+                        alt={proj.title}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      />
+                      <span className="absolute top-2 left-2 text-[9px] font-bold px-1.5 py-0.5 rounded bg-black/60 backdrop-blur-md text-cyan-300">
+                        {proj.category}
+                      </span>
+                    </div>
+                    <div className="p-3">
+                      <h4 className="text-xs font-bold text-white line-clamp-1">
+                        {proj.title}
+                      </h4>
+                      <p className="text-[10px] text-slate-300 line-clamp-2 mt-1 leading-snug">
+                        {proj.description}
+                      </p>
+                      <div className="flex flex-wrap gap-1 mt-2 mb-2.5">
+                        {proj.tags.slice(0, 3).map((tag, i) => (
+                          <span
+                            key={i}
+                            className="text-[8px] px-1.5 py-0.2 rounded bg-white/10 text-slate-200"
+                          >
+                            #{tag}
+                          </span>
+                        ))}
+                      </div>
+                      <a
+                        href={proj.projectUrl}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="w-full py-1.5 rounded-lg bg-white/10 hover:bg-violet-600 text-white text-[10px] font-bold flex items-center justify-center gap-1 transition-colors"
+                      >
+                        <span>View Project</span>
+                        <ExternalLink className="w-2.5 h-2.5" />
+                      </a>
+                    </div>
+                  </div>
+                ))}
               </div>
             )}
 

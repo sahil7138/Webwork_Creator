@@ -2,12 +2,24 @@ export type BlockType =
   | "header"
   | "link"
   | "product"
+  | "portfolio"
   | "email_collector"
   | "video"
   | "music"
   | "socials"
   | "tip_jar"
   | "text";
+
+export interface PortfolioProject {
+  id: string;
+  title: string;
+  description: string;
+  thumbnailUrl: string;
+  projectUrl: string;
+  category: string;
+  tags: string[];
+  featured?: boolean;
+}
 
 export interface CreatorBlock {
   id: string;
@@ -54,6 +66,7 @@ export interface CreatorProfile {
   };
   theme: CreatorTheme;
   blocks: CreatorBlock[];
+  portfolioProjects?: PortfolioProject[];
 }
 
 export interface DigitalProduct {

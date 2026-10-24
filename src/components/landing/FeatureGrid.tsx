@@ -27,23 +27,23 @@ export function FeatureGrid() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {/* Card 1: Page Builder */}
+          {/* Card 1: Beginner Profile & Portfolio Builder */}
           <div className="p-7 rounded-3xl glass-panel border border-white/10 glass-panel-hover flex flex-col justify-between">
             <div>
               <div className="w-12 h-12 rounded-2xl bg-violet-600/20 text-violet-400 flex items-center justify-center mb-5 border border-violet-500/30">
                 <Smartphone className="w-6 h-6" />
               </div>
-              <h3 className="text-lg font-bold text-white mb-2">Visual Block Page Builder</h3>
+              <h3 className="text-lg font-bold text-white mb-2">Beginner Profile & Portfolio Builder</h3>
               <p className="text-xs text-slate-400 leading-relaxed">
-                Drag-and-drop link trees, rich video players, Spotify/Apple Music embeds, custom headers, and instant mobile responsive previews.
+                Launch your personal brand in 60 seconds. Choose 1-click role presets for developers, designers, photographers, writers, and creators with live project cards and sync.
               </p>
             </div>
             <ul className="mt-5 space-y-2 text-xs text-slate-300 border-t border-white/5 pt-4">
               <li className="flex items-center gap-2">
-                <CheckCircle2 className="w-3.5 h-3.5 text-violet-400" /> Preset curated themes & custom CSS
+                <CheckCircle2 className="w-3.5 h-3.5 text-violet-400" /> 1-Click role templates & work showcase
               </li>
               <li className="flex items-center gap-2">
-                <CheckCircle2 className="w-3.5 h-3.5 text-violet-400" /> Subdomain & custom vanity URLs
+                <CheckCircle2 className="w-3.5 h-3.5 text-violet-400" /> Real-time mobile simulator & instant publish
               </li>
             </ul>
           </div>

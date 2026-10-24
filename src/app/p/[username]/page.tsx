@@ -16,6 +16,7 @@ import {
   ArrowRight,
   ShieldCheck,
   Check,
+  FolderGit2,
 } from "lucide-react";
 import {
   InstagramIcon,
@@ -23,13 +24,13 @@ import {
   TwitterIcon,
   GithubIcon,
 } from "@/components/ui/SocialIcons";
-import { CREATOR_THEMES, DEMO_CREATOR, DEMO_PRODUCTS } from "@/lib/constants";
+import { CREATOR_THEMES, DEMO_CREATOR, DEMO_PRODUCTS, DEMO_PORTFOLIO_PROJECTS } from "@/lib/constants";
 
 function ProfileContent() {
   const params = useParams();
   const username = (params?.username as string) || "alexa";
 
-  const [activeTab, setActiveTab] = useState<"links" | "store" | "mediakit">("links");
+  const [activeTab, setActiveTab] = useState<"links" | "portfolio" | "store" | "mediakit">("links");
   const [tipAmount, setTipAmount] = useState<number>(5);
   const [emailSubscribed, setEmailSubscribed] = useState(false);
   const [emailInput, setEmailInput] = useState("");
@@ -144,7 +145,17 @@ function ProfileContent() {
                 : "text-slate-400 hover:text-white"
             }`}
           >
-            Links & Bio
+            Links
+          </button>
+          <button
+            onClick={() => setActiveTab("portfolio")}
+            className={`flex-1 py-2 rounded-xl text-xs font-semibold transition-all flex items-center justify-center gap-1.5 ${
+              activeTab === "portfolio"
+                ? "bg-violet-600 text-white shadow-md shadow-violet-500/20"
+                : "text-slate-400 hover:text-white"
+            }`}
+          >
+            <FolderGit2 className="w-3.5 h-3.5 text-cyan-400" /> Portfolio
           </button>
           <button
             onClick={() => setActiveTab("store")}
@@ -154,7 +165,7 @@ function ProfileContent() {
                 : "text-slate-400 hover:text-white"
             }`}
           >
-            <ShoppingBag className="w-3.5 h-3.5" /> Store (3)
+            <ShoppingBag className="w-3.5 h-3.5" /> Store
           </button>
           <button
             onClick={() => setActiveTab("mediakit")}
@@ -164,7 +175,7 @@ function ProfileContent() {
                 : "text-slate-400 hover:text-white"
             }`}
           >
-            <TrendingUp className="w-3.5 h-3.5" /> Media Kit
+            <TrendingUp className="w-3.5 h-3.5" /> Stats
           </button>
         </div>
 
@@ -298,6 +309,64 @@ function ProfileContent() {
                 {tipSent ? "❤️ Thank you so much!" : `Send $${tipAmount} Espresso Tip`}
               </button>
             </div>
+          </div>
+        )}
+
+        {/* TAB: PORTFOLIO SHOWCASE */}
+        {activeTab === "portfolio" && (
+          <div className="space-y-4">
+            <div className="flex items-center justify-between text-xs text-slate-400 px-1">
+              <span>Selected Works & Case Studies</span>
+              <span className="text-cyan-400 font-semibold">{DEMO_PORTFOLIO_PROJECTS.length} Projects</span>
+            </div>
+
+            {DEMO_PORTFOLIO_PROJECTS.map((proj) => (
+              <div
+                key={proj.id}
+                className={`overflow-hidden rounded-3xl border ${theme.cardBg} shadow-xl group transition-all hover:scale-[1.01]`}
+              >
+                <div className="relative h-44 w-full bg-slate-900 overflow-hidden">
+                  <img
+                    src={proj.thumbnailUrl}
+                    alt={proj.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                  <span className="absolute top-3 left-3 text-[10px] font-bold px-2 py-0.5 rounded-full bg-black/60 backdrop-blur-md text-cyan-300 border border-white/10">
+                    {proj.category}
+                  </span>
+                </div>
+
+                <div className="p-4">
+                  <h3 className="text-sm font-bold text-white mb-1">
+                    {proj.title}
+                  </h3>
+                  <p className="text-xs text-slate-300 leading-relaxed line-clamp-2 mb-3">
+                    {proj.description}
+                  </p>
+
+                  <div className="flex flex-wrap gap-1.5 mb-3.5">
+                    {proj.tags.map((tag, i) => (
+                      <span
+                        key={i}
+                        className="text-[10px] px-2 py-0.5 rounded-full bg-white/5 text-slate-300 border border-white/5"
+                      >
+                        #{tag}
+                      </span>
+                    ))}
+                  </div>
+
+                  <a
+                    href={proj.projectUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="w-full py-2.5 rounded-xl bg-gradient-to-r from-violet-600 to-indigo-600 hover:brightness-110 text-white text-xs font-bold flex items-center justify-center gap-1.5 shadow-md shadow-violet-500/20 transition-all"
+                  >
+                    <span>Explore Project</span>
+                    <ExternalLink className="w-3.5 h-3.5" />
+                  </a>
+                </div>
+              </div>
+            ))}
           </div>
         )}
 

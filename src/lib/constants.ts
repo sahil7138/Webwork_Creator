@@ -1,4 +1,11 @@
-import { CreatorProfile, CreatorTheme, DigitalProduct, DealPipelineItem } from "@/types";
+import {
+  CreatorProfile,
+  CreatorTheme,
+  DigitalProduct,
+  DealPipelineItem,
+  PortfolioProject,
+  CreatorBlock,
+} from "@/types";
 
 export const CREATOR_THEMES: CreatorTheme[] = [
   {
@@ -47,6 +54,58 @@ export const CREATOR_THEMES: CreatorTheme[] = [
   },
 ];
 
+export const DEMO_PORTFOLIO_PROJECTS: PortfolioProject[] = [
+  {
+    id: "proj_1",
+    title: "HyperFlow — Fluid Design System",
+    description: "An open-source design system and React component suite used by 12,000+ developers worldwide.",
+    thumbnailUrl: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=600&q=80",
+    projectUrl: "https://github.com",
+    category: "Design System",
+    tags: ["React", "TypeScript", "Tailwind CSS", "Figma"],
+    featured: true,
+  },
+  {
+    id: "proj_2",
+    title: "Aura Sound — Audio Web Workstation",
+    description: "Generative ambient audio synthesizer built with Web Audio API and interactive canvas shaders.",
+    thumbnailUrl: "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=600&q=80",
+    projectUrl: "https://github.com",
+    category: "Web Application",
+    tags: ["Next.js", "WebAudio", "WebGL", "Creative Tech"],
+    featured: true,
+  },
+  {
+    id: "proj_3",
+    title: "Verve — Creator Financial Mobile UI",
+    description: "End-to-end mobile design and iOS prototype featuring real-time revenue and sponsor tracking.",
+    thumbnailUrl: "https://images.unsplash.com/photo-1551650975-87deedd944c3?auto=format&fit=crop&w=600&q=80",
+    projectUrl: "https://dribbble.com",
+    category: "Mobile UI/UX",
+    tags: ["iOS", "Figma", "Design Tokens", "Case Study"],
+    featured: false,
+  },
+  {
+    id: "proj_4",
+    title: "Kinetic Typography Poster Series",
+    description: "Experimental editorial typography series featured in international design galleries and Awwwards.",
+    thumbnailUrl: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=600&q=80",
+    projectUrl: "https://behance.net",
+    category: "Visual Arts",
+    tags: ["Typography", "3D Motion", "Poster Art"],
+    featured: false,
+  },
+];
+
+export const STARTER_AVATARS = [
+  { label: "Designer (Alexa)", url: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80" },
+  { label: "Developer (David)", url: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=400&q=80" },
+  { label: "Photographer (Elena)", url: "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=400&q=80" },
+  { label: "Creator (Marcus)", url: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80" },
+  { label: "Strategist (Sophia)", url: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80" },
+  { label: "Engineer (Alex)", url: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80" },
+];
+
 export const DEMO_CREATOR: CreatorProfile = {
   id: "creator_01",
   username: "alexa",
@@ -63,6 +122,7 @@ export const DEMO_CREATOR: CreatorProfile = {
     github: "https://github.com",
   },
   theme: CREATOR_THEMES[0],
+  portfolioProjects: DEMO_PORTFOLIO_PROJECTS,
   blocks: [
     {
       id: "b_1",
@@ -191,3 +251,387 @@ export const DEMO_DEALS: DealPipelineItem[] = [
     dueDate: "Oct 18, 2026",
   },
 ];
+
+export interface StarterTemplate {
+  id: string;
+  role: string;
+  label: string;
+  icon: string;
+  displayName: string;
+  username: string;
+  avatarUrl: string;
+  bio: string;
+  category: string;
+  themeId: string;
+  socials: {
+    github?: string;
+    twitter?: string;
+    youtube?: string;
+    instagram?: string;
+    linkedin?: string;
+  };
+  projects: PortfolioProject[];
+  starterBlocks: CreatorBlock[];
+}
+
+export const BEGINNER_PORTFOLIO_TEMPLATES: StarterTemplate[] = [
+  {
+    id: "developer",
+    role: "Developer & Engineer",
+    label: "Code & Web Apps",
+    icon: "Code",
+    displayName: "David Chen",
+    username: "davidchen",
+    avatarUrl: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=400&q=80",
+    bio: "Full-stack engineer building high-performance web apps. Specializing in TypeScript, React, Next.js, and cloud backends.",
+    category: "Software Engineering",
+    themeId: "midnight-neon",
+    socials: {
+      github: "https://github.com",
+      twitter: "https://x.com",
+      linkedin: "https://linkedin.com",
+    },
+    projects: [
+      {
+        id: "proj_dev_1",
+        title: "DevFlow — Git-Integrated Issue Tracker",
+        description: "Modern issue and sprint management tool with real-time WebSocket syncing and GitHub PR automations.",
+        thumbnailUrl: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=600&q=80",
+        projectUrl: "https://github.com",
+        category: "Web Application",
+        tags: ["Next.js", "TypeScript", "Tailwind CSS", "PostgreSQL"],
+        featured: true,
+      },
+      {
+        id: "proj_dev_2",
+        title: "PulseAPI — High Speed Caching Proxy",
+        description: "Sub-millisecond HTTP edge caching reverse proxy written in Go with Prometheus telemetry.",
+        thumbnailUrl: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=600&q=80",
+        projectUrl: "https://github.com",
+        category: "Backend Systems",
+        tags: ["Go", "Redis", "Docker", "Edge Runtime"],
+        featured: true,
+      },
+      {
+        id: "proj_dev_3",
+        title: "SuperUI — 45+ Accessible React Primitives",
+        description: "WCAG AAA compliant component primitives for rapid SaaS prototyping with zero CSS runtime.",
+        thumbnailUrl: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=600&q=80",
+        projectUrl: "https://github.com",
+        category: "Open Source",
+        tags: ["React", "Storybook", "NPM", "Accessibility"],
+        featured: false,
+      },
+    ],
+    starterBlocks: [
+      {
+        id: "sb_1",
+        type: "header",
+        title: "David Chen",
+        subtitle: "Full-Stack Engineer & Open Source Builder",
+        enabled: true,
+        order: 1,
+      },
+      {
+        id: "sb_2",
+        type: "link",
+        title: "View My GitHub Repositories",
+        subtitle: "Explore open-source libraries, microservices, and experiments",
+        url: "https://github.com",
+        badge: "CODE",
+        enabled: true,
+        order: 2,
+      },
+      {
+        id: "sb_3",
+        type: "link",
+        title: "Read Technical Articles & Guides",
+        subtitle: "In-depth engineering posts on architecture and scalable systems",
+        url: "https://dev.to",
+        badge: "BLOG",
+        enabled: true,
+        order: 3,
+      },
+      {
+        id: "sb_4",
+        type: "tip_jar",
+        title: "Sponsor My Open Source Work ☕",
+        subtitle: "Support open-source libraries and developer tools",
+        enabled: true,
+        order: 4,
+      },
+    ],
+  },
+  {
+    id: "designer",
+    role: "Product & UI/UX Designer",
+    label: "Design & Case Studies",
+    icon: "Palette",
+    displayName: "Alexa Stone",
+    username: "alexa",
+    avatarUrl: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80",
+    bio: "Product Designer & Design Systems Architect. Creating intuitive interfaces, modern web aesthetics, and mobile prototypes.",
+    category: "UI/UX & Product Design",
+    themeId: "cyber-emerald",
+    socials: {
+      instagram: "https://instagram.com",
+      twitter: "https://x.com",
+      github: "https://github.com",
+    },
+    projects: [
+      {
+        id: "proj_des_1",
+        title: "HyperFlow — Fluid Design System",
+        description: "An open-source design system and React component suite used by 12,000+ developers worldwide.",
+        thumbnailUrl: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=600&q=80",
+        projectUrl: "https://dribbble.com",
+        category: "Design System",
+        tags: ["Figma", "Design Tokens", "React", "Mobile"],
+        featured: true,
+      },
+      {
+        id: "proj_des_2",
+        title: "Verve — Creator Financial Mobile UI",
+        description: "End-to-end mobile design and iOS prototype featuring real-time revenue and sponsor tracking.",
+        thumbnailUrl: "https://images.unsplash.com/photo-1551650975-87deedd944c3?auto=format&fit=crop&w=600&q=80",
+        projectUrl: "https://behance.net",
+        category: "Mobile UI/UX",
+        tags: ["iOS", "Wireframing", "User Testing"],
+        featured: true,
+      },
+    ],
+    starterBlocks: [
+      {
+        id: "sbd_1",
+        type: "header",
+        title: "Alexa Stone",
+        subtitle: "Product Designer & Design Systems",
+        enabled: true,
+        order: 1,
+      },
+      {
+        id: "sbd_2",
+        type: "link",
+        title: "View My Design Portfolio & Case Studies",
+        subtitle: "Detailed breakdowns of consumer apps and design systems",
+        url: "https://dribbble.com",
+        badge: "PORTFOLIO",
+        enabled: true,
+        order: 2,
+      },
+      {
+        id: "sbd_3",
+        type: "email_collector",
+        title: "Subscribe to Weekly Design Digest",
+        subtitle: "Practical UX tips, token architectures, and Figma tricks",
+        badge: "NEWSLETTER",
+        enabled: true,
+        order: 3,
+      },
+    ],
+  },
+  {
+    id: "photographer",
+    role: "Photographer & Visual Artist",
+    label: "Photo & Galleries",
+    icon: "Camera",
+    displayName: "Elena Vance",
+    username: "elenavance",
+    avatarUrl: "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=400&q=80",
+    bio: "Visual artist & travel photographer. Capturing cinematic landscapes, street portraits, and editorial stories worldwide.",
+    category: "Photography & Visual Art",
+    themeId: "sunset-velvet",
+    socials: {
+      instagram: "https://instagram.com",
+      youtube: "https://youtube.com",
+      twitter: "https://x.com",
+    },
+    projects: [
+      {
+        id: "proj_photo_1",
+        title: "Nordic Solitude — Scandinavian Photo Essay",
+        description: "Atmospheric 35mm film series documenting remote fishing villages across Norway and Iceland.",
+        thumbnailUrl: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80",
+        projectUrl: "https://instagram.com",
+        category: "Editorial Photography",
+        tags: ["35mm Film", "Documentary", "Landscape"],
+        featured: true,
+      },
+      {
+        id: "proj_photo_2",
+        title: "Tokyo Neon — Midnight Cyberpunk Stories",
+        description: "Low-light rainy night series in Shinjuku and Akihabara exploring reflections and solitary commuters.",
+        thumbnailUrl: "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=600&q=80",
+        projectUrl: "https://instagram.com",
+        category: "Night Photography",
+        tags: ["Street", "Tokyo", "Cinematic"],
+        featured: true,
+      },
+    ],
+    starterBlocks: [
+      {
+        id: "sbp_1",
+        type: "header",
+        title: "Elena Vance",
+        subtitle: "Visual Artist & Travel Photographer",
+        enabled: true,
+        order: 1,
+      },
+      {
+        id: "sbp_2",
+        type: "link",
+        title: "Explore Full High-Res Photo Gallery",
+        subtitle: "Prints, editorial commissions, and commercial licenses",
+        url: "https://unsplash.com",
+        badge: "GALLERY",
+        enabled: true,
+        order: 2,
+      },
+      {
+        id: "sbp_3",
+        type: "tip_jar",
+        title: "Support Upcoming Photo Expeditions ✈️",
+        subtitle: "Help fund travel gear and independent documentary projects",
+        enabled: true,
+        order: 3,
+      },
+    ],
+  },
+  {
+    id: "creator",
+    role: "Content Creator & Video",
+    label: "Videos & Community",
+    icon: "Video",
+    displayName: "Marcus Rivera",
+    username: "marcusrivera",
+    avatarUrl: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80",
+    bio: "Tech YouTuber & digital educator. Demystifying modern creative workflows, creator economy, and productivity gear.",
+    category: "Media & Creation",
+    themeId: "monochrome-pro",
+    socials: {
+      youtube: "https://youtube.com",
+      twitter: "https://x.com",
+      instagram: "https://instagram.com",
+    },
+    projects: [
+      {
+        id: "proj_cr_1",
+        title: "Ultimate 2026 Minimal Creator Desk Setup",
+        description: "Comprehensive breakdown of audio, lighting, ergonomics, and 4K camera switching hardware.",
+        thumbnailUrl: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=600&q=80",
+        projectUrl: "https://youtube.com",
+        category: "Video Production",
+        tags: ["YouTube", "Studio Setup", "Hardware"],
+        featured: true,
+      },
+      {
+        id: "proj_cr_2",
+        title: "Creator Economy Deep-Dive Series",
+        description: "Interviews with 12 seven-figure creators discussing audience retention and monetization.",
+        thumbnailUrl: "https://images.unsplash.com/photo-1478760329108-5c3ed9d495a0?auto=format&fit=crop&w=600&q=80",
+        projectUrl: "https://youtube.com",
+        category: "Podcast Series",
+        tags: ["Interviews", "Audience Growth", "Strategy"],
+        featured: true,
+      },
+    ],
+    starterBlocks: [
+      {
+        id: "sbc_1",
+        type: "header",
+        title: "Marcus Rivera",
+        subtitle: "Tech Educator & Creator",
+        enabled: true,
+        order: 1,
+      },
+      {
+        id: "sbc_2",
+        type: "link",
+        title: "Watch My Latest YouTube Episode",
+        subtitle: "New video drops every Thursday at 9am EST",
+        url: "https://youtube.com",
+        badge: "LATEST",
+        enabled: true,
+        order: 2,
+      },
+      {
+        id: "sbc_3",
+        type: "link",
+        title: "Join My Free Discord Community",
+        subtitle: "Chat with 5,000+ creators sharing real gear reviews & edits",
+        url: "https://discord.com",
+        badge: "COMMUNITY",
+        enabled: true,
+        order: 3,
+      },
+    ],
+  },
+  {
+    id: "writer",
+    role: "Writer & Consultant",
+    label: "Essays & Services",
+    icon: "BookOpen",
+    displayName: "Sophia Lin",
+    username: "sophialin",
+    avatarUrl: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80",
+    bio: "Author & strategic advisor helping indie founders and creators craft high-impact positioning and authentic storytelling.",
+    category: "Writing & Strategy",
+    themeId: "midnight-neon",
+    socials: {
+      twitter: "https://x.com",
+      linkedin: "https://linkedin.com",
+    },
+    projects: [
+      {
+        id: "proj_wr_1",
+        title: "The Zero-To-One Storytelling Framework",
+        description: "A viral essay read by over 45,000 founders on narrative structure and brand affinity.",
+        thumbnailUrl: "https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=600&q=80",
+        projectUrl: "https://substack.com",
+        category: "Longform Essay",
+        tags: ["Storytelling", "Founders", "Essays"],
+        featured: true,
+      },
+      {
+        id: "proj_wr_2",
+        title: "Brand Positioning Playbook for Bootstrapped Startups",
+        description: "Field-tested messaging framework used by 30+ early-stage technology companies.",
+        thumbnailUrl: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=600&q=80",
+        projectUrl: "https://substack.com",
+        category: "Strategic Guide",
+        tags: ["Product Positioning", "Copywriting", "Strategy"],
+        featured: true,
+      },
+    ],
+    starterBlocks: [
+      {
+        id: "sbw_1",
+        type: "header",
+        title: "Sophia Lin",
+        subtitle: "Writer & Narrative Strategist",
+        enabled: true,
+        order: 1,
+      },
+      {
+        id: "sbw_2",
+        type: "email_collector",
+        title: "Subscribe to My Weekly Strategy Dispatch",
+        subtitle: "Short, punchy essays on positioning and creator leverage",
+        badge: "FREE",
+        enabled: true,
+        order: 2,
+      },
+      {
+        id: "sbw_3",
+        type: "link",
+        title: "Read Full Archives on Substack",
+        subtitle: "Over 80+ articles on storytelling and product growth",
+        url: "https://substack.com",
+        badge: "ESSAYS",
+        enabled: true,
+        order: 3,
+      },
+    ],
+  },
+];
+

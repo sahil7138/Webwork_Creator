@@ -18,6 +18,7 @@ import {
 import { DashboardHeader } from "@/components/dashboard/DashboardHeader";
 import { StatCards } from "@/components/dashboard/StatCards";
 import { BrandPitchBuilder } from "@/components/dashboard/BrandPitchBuilder";
+import { EasyProfileBuilder } from "@/components/dashboard/EasyProfileBuilder";
 import { DEMO_CREATOR, DEMO_PRODUCTS, DEMO_DEALS } from "@/lib/constants";
 import { formatCurrency } from "@/lib/utils";
 
@@ -35,7 +36,7 @@ export default function DashboardPage() {
         <div className="flex items-center gap-2 border-b border-white/10 pb-3 overflow-x-auto">
           {[
             { id: "overview", label: "Overview & Analytics", icon: LayoutGrid },
-            { id: "builder", label: "Page Builder", icon: Sliders },
+            { id: "builder", label: "Profile & Portfolio Builder", icon: Sliders },
             { id: "store", label: "Digital Store", icon: ShoppingBag },
             { id: "audience", label: "Audience CRM", icon: Mail },
             { id: "deals", label: "Brand Partnerships", icon: TrendingUp },
@@ -180,6 +181,14 @@ export default function DashboardPage() {
                     <div className="flex items-center gap-2 text-slate-400">
                       <Clock className="w-4 h-4 text-amber-400" /> Connect custom domain (Included Free)
                     </div>
+
+                    <button
+                      onClick={() => setActiveTab("builder")}
+                      className="w-full mt-3 py-2 px-3 rounded-xl bg-violet-600/20 hover:bg-violet-600/30 text-violet-300 text-xs font-semibold flex items-center justify-between border border-violet-500/30 transition-all"
+                    >
+                      <span>⚡ Open Easy Profile & Portfolio Builder</span>
+                      <ChevronRight className="w-3.5 h-3.5" />
+                    </button>
                   </div>
                 </div>
               </div>
@@ -187,78 +196,8 @@ export default function DashboardPage() {
           </div>
         )}
 
-        {/* TAB 2: BUILDER (Direct block editor inside studio) */}
-        {activeTab === "builder" && (
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-            <div className="lg:col-span-7 space-y-4">
-              <div className="flex items-center justify-between">
-                <div>
-                  <h2 className="text-lg font-bold text-white">Page Blocks</h2>
-                  <p className="text-xs text-slate-400">
-                    Drag, customize, and publish blocks to your public link-in-bio page.
-                  </p>
-                </div>
-                <button
-                  onClick={() => alert("Added new custom link block")}
-                  className="px-3.5 py-2 rounded-xl bg-violet-600 hover:bg-violet-500 text-white text-xs font-bold flex items-center gap-1.5 transition-all"
-                >
-                  <Plus className="w-3.5 h-3.5" /> Add Block
-                </button>
-              </div>
-
-              <div className="space-y-3">
-                {DEMO_CREATOR.blocks.map((block) => (
-                  <div
-                    key={block.id}
-                    className="p-4 rounded-2xl glass-panel border border-white/10 flex items-center justify-between gap-4"
-                  >
-                    <div className="flex items-center gap-3">
-                      <div className="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center text-xs font-bold text-violet-400">
-                        {block.order}
-                      </div>
-                      <div>
-                        <div className="text-xs font-bold text-white flex items-center gap-2">
-                          <span>{block.title}</span>
-                          {block.badge && (
-                            <span className="text-[9px] px-1.5 py-0.2 rounded bg-violet-500/20 text-violet-300 font-semibold">
-                              {block.badge}
-                            </span>
-                          )}
-                        </div>
-                        {block.subtitle && (
-                          <div className="text-[10px] text-slate-400 truncate max-w-sm">
-                            {block.subtitle}
-                          </div>
-                        )}
-                      </div>
-                    </div>
-
-                    <div className="flex items-center gap-2">
-                      <span className="text-[10px] font-semibold text-emerald-400 px-2 py-0.5 rounded-full bg-emerald-500/10">
-                        Active
-                      </span>
-                      <button className="text-xs text-slate-400 hover:text-white px-2 py-1">
-                        Edit
-                      </button>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Device Preview on Right */}
-            <div className="lg:col-span-5 flex flex-col items-center sticky top-24">
-              <span className="text-xs font-semibold text-slate-400 mb-2">Live Preview</span>
-              <div className="scale-90 origin-top">
-                <iframe
-                  src={`/p/${DEMO_CREATOR.username}`}
-                  title="Profile Preview"
-                  className="w-[360px] h-[650px] rounded-[40px] border-4 border-neutral-800 shadow-2xl bg-black"
-                />
-              </div>
-            </div>
-          </div>
-        )}
+        {/* TAB 2: EASY PROFILE & PORTFOLIO BUILDER */}
+        {activeTab === "builder" && <EasyProfileBuilder />}
 
         {/* TAB 3: STORE */}
         {activeTab === "store" && (
