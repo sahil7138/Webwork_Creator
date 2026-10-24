@@ -5,7 +5,7 @@ import {
   ShoppingBag,
   Mail,
   TrendingUp,
-  Bot,
+  Briefcase,
   Zap,
   CheckCircle2,
 } from "lucide-react";
@@ -111,23 +111,23 @@ export function FeatureGrid() {
             </ul>
           </div>
 
-          {/* Card 5: AI Copilot */}
+          {/* Card 5: Sponsorship Proposal Builder */}
           <div className="p-7 rounded-3xl glass-panel border border-white/10 glass-panel-hover flex flex-col justify-between">
             <div>
               <div className="w-12 h-12 rounded-2xl bg-amber-600/20 text-amber-400 flex items-center justify-center mb-5 border border-amber-500/30">
-                <Bot className="w-6 h-6" />
+                <Briefcase className="w-6 h-6" />
               </div>
-              <h3 className="text-lg font-bold text-white mb-2">AI Creator Pitch Assistant</h3>
+              <h3 className="text-lg font-bold text-white mb-2">Sponsorship Proposal Builder</h3>
               <p className="text-xs text-slate-400 leading-relaxed">
-                Generate customized brand pitch emails, SEO product descriptions, bio punchlines, and price recommendations powered by creator benchmarks.
+                Assembles professional brand sponsorship pitches, rate card packages, and deliverable agreements backed by your live audience data.
               </p>
             </div>
             <ul className="mt-5 space-y-2 text-xs text-slate-300 border-t border-white/5 pt-4">
               <li className="flex items-center gap-2">
-                <CheckCircle2 className="w-3.5 h-3.5 text-amber-400" /> 1-Click tailored brand pitch emails
+                <CheckCircle2 className="w-3.5 h-3.5 text-amber-400" /> Executive pitch email templates
               </li>
               <li className="flex items-center gap-2">
-                <CheckCircle2 className="w-3.5 h-3.5 text-amber-400" /> High-converting sales page copy
+                <CheckCircle2 className="w-3.5 h-3.5 text-amber-400" /> Real-time rate packaging & deliverables
               </li>
             </ul>
           </div>

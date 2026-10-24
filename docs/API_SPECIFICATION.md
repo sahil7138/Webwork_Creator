@@ -42,10 +42,9 @@
 - `GET /api/v1/workspaces/:slug/analytics`
   - Returns aggregated stats: 30-day views, unique clicks, conversion CTR, top referrers.
 
-## 6. AI Creator Tools
-- `POST /api/v1/ai/brand-pitch`
-  - Body: `{ brandName, creatorBio, stats }`
-  - Returns AI-generated custom sponsorship proposal pitch email.
-- `POST /api/v1/ai/product-copy`
-  - Body: `{ productTitle, category, audience }`
-  - Returns compelling product descriptions and suggested pricing.
+## 6. Brand Sponsorships & Proposals
+- `POST /api/v1/workspaces/:slug/proposals/generate`
+  - Body: `{ brandName, contactRole, packageType, customDeliverables }`
+  - Assembles structured, verified sponsorship proposal with media kit embed URL and rate calculation.
+- `GET /api/v1/workspaces/:slug/deals`
+  - Returns active sponsorship pipeline items, deliverables, and payment tracking.

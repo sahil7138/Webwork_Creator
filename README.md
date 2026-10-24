@@ -8,7 +8,7 @@
 3. **Audience CRM & Email Broadcasts** (fan contact capture, tag management, newsletter composer)
 4. **Attribution & Real-Time Analytics** (CTR, traffic referrers, UTM tracking, geo metrics)
 5. **Dynamic Media Kits & Sponsorship Pipeline** (live verified stats, rate cards, deal tracker)
-6. **AI Creator Tools** (sponsorship pitch generator, copy assistant, price recommendations)
+6. **Sponsorship Pitch & Proposal Builder** (rate cards, deliverable packages, verified outreach templates)
 7. **SaaS Billing & Super-Admin Console** (multi-tier subscriptions, commission splits)
 
 ---
@@ -65,7 +65,7 @@ Webwork_Creator/
 │   ├── components/
 │   │   ├── layout/            # Navbar, Footer
 │   │   ├── landing/           # Hero, PhonePreview, RevenueCalculator, Features, Pricing
-│   │   ├── dashboard/         # DashboardHeader, StatCards, DealsPipeline, AIPitchCopilot
+│   │   ├── dashboard/         # DashboardHeader, StatCards, DealsPipeline, BrandPitchBuilder
 │   │   └── ui/                # SocialIcons, reusable UI primitives
 │   ├── lib/
 │   │   ├── supabase/          # Schema.sql & Supabase client

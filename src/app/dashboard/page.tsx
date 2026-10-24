@@ -3,111 +3,31 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import {
-  Sparkles,
   LayoutGrid,
   ShoppingBag,
   Mail,
   TrendingUp,
-  Bot,
-  ExternalLink,
-  Plus,
-  DollarSign,
-  Users,
-  Eye,
-  CheckCircle2,
-  Clock,
-  ArrowUpRight,
-  ChevronRight,
   Sliders,
-  Copy,
-  Check,
+  Plus,
+  Clock,
+  CheckCircle2,
+  ChevronRight,
   Send,
-  Zap,
+  Briefcase,
 } from "lucide-react";
+import { DashboardHeader } from "@/components/dashboard/DashboardHeader";
+import { StatCards } from "@/components/dashboard/StatCards";
+import { BrandPitchBuilder } from "@/components/dashboard/BrandPitchBuilder";
 import { DEMO_CREATOR, DEMO_PRODUCTS, DEMO_DEALS } from "@/lib/constants";
-import { formatCurrency, formatCompactNumber } from "@/lib/utils";
+import { formatCurrency } from "@/lib/utils";
 
 export default function DashboardPage() {
-  const [copiedLink, setCopiedLink] = useState(false);
   const [activeTab, setActiveTab] = useState<"overview" | "builder" | "store" | "audience" | "deals">("overview");
-
-  // AI pitch generator state
-  const [targetBrand, setTargetBrand] = useState("");
-  const [generatedPitch, setGeneratedPitch] = useState("");
-  const [isGeneratingPitch, setIsGeneratingPitch] = useState(false);
-
-  const handleCopy = () => {
-    navigator.clipboard.writeText(`http://localhost:3000/p/${DEMO_CREATOR.username}`);
-    setCopiedLink(true);
-    setTimeout(() => setCopiedLink(false), 2000);
-  };
-
-  const generateAIPitch = () => {
-    if (!targetBrand) return;
-    setIsGeneratingPitch(true);
-    setTimeout(() => {
-      setGeneratedPitch(
-        `Hi ${targetBrand} Partnerships Team,\n\nI’m Alexa Stone, a design engineer and tech creator reaching 850k+ founders, developers, and product designers monthly across YouTube and X/Twitter.\n\nOur audience has a 5.4% engagement rate with high purchasing intent for modern developer & design tools. I’ve loved what ${targetBrand} is doing and would love to propose a dedicated integration or product showcase in our upcoming tech stack deep dive.\n\nCheck out my verified live media kit and audience metrics here: webworks.ai/alexa\n\nBest,\nAlexa Stone`
-      );
-      setIsGeneratingPitch(false);
-    }, 900);
-  };
 
   return (
     <div className="min-h-screen bg-[#06080e] text-slate-100 flex flex-col">
       {/* Top Studio Navbar */}
-      <header className="sticky top-0 z-40 w-full border-b border-white/10 bg-[#080c16]/90 backdrop-blur-xl">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <Link href="/" className="flex items-center gap-2">
-              <div className="w-8 h-8 rounded-lg bg-gradient-to-tr from-violet-600 to-cyan-400 p-0.5 shadow-md shadow-violet-500/20">
-                <div className="w-full h-full bg-[#090d1a] rounded-[6px] flex items-center justify-center">
-                  <Sparkles className="w-4 h-4 text-violet-400" />
-                </div>
-              </div>
-              <span className="font-extrabold text-base text-white">Webworks Studio</span>
-            </Link>
-
-            <span className="text-slate-600">/</span>
-
-            {/* Live profile pill */}
-            <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-white/5 border border-white/10 text-xs">
-              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-              <span className="text-slate-300 font-mono">webworks.ai/{DEMO_CREATOR.username}</span>
-              <button
-                onClick={handleCopy}
-                className="ml-1 text-slate-400 hover:text-white p-0.5 rounded transition-colors"
-                title="Copy profile link"
-              >
-                {copiedLink ? <Check className="w-3 h-3 text-emerald-400" /> : <Copy className="w-3 h-3" />}
-              </button>
-            </div>
-          </div>
-
-          <div className="flex items-center gap-3">
-            <Link
-              href={`/p/${DEMO_CREATOR.username}`}
-              target="_blank"
-              className="px-3 py-1.5 rounded-xl border border-white/15 hover:bg-white/10 text-xs font-semibold text-slate-200 flex items-center gap-1.5 transition-all"
-            >
-              <span>View Public Bio</span>
-              <ExternalLink className="w-3 h-3 text-slate-400" />
-            </Link>
-
-            {/* Creator Avatar */}
-            <div className="flex items-center gap-2 pl-2 border-l border-white/10">
-              <img
-                src={DEMO_CREATOR.avatarUrl}
-                alt={DEMO_CREATOR.displayName}
-                className="w-8 h-8 rounded-full object-cover ring-1 ring-violet-500"
-              />
-              <span className="text-xs font-medium text-white hidden sm:inline">
-                {DEMO_CREATOR.displayName}
-              </span>
-            </div>
-          </div>
-        </div>
-      </header>
+      <DashboardHeader />
 
       {/* Main Studio Body */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-1 w-full space-y-8">
@@ -143,55 +63,11 @@ export default function DashboardPage() {
         {activeTab === "overview" && (
           <div className="space-y-8">
             {/* Top Stat Cards */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-              <div className="p-5 rounded-2xl glass-panel border border-white/10">
-                <div className="flex items-center justify-between text-xs text-slate-400">
-                  <span>30-Day Creator Revenue</span>
-                  <DollarSign className="w-4 h-4 text-emerald-400" />
-                </div>
-                <div className="text-2xl font-bold text-white mt-2">$14,850</div>
-                <div className="flex items-center gap-1 text-[11px] text-emerald-400 font-medium mt-1">
-                  <ArrowUpRight className="w-3 h-3" /> +18.4% vs last month
-                </div>
-              </div>
+            <StatCards />
 
-              <div className="p-5 rounded-2xl glass-panel border border-white/10">
-                <div className="flex items-center justify-between text-xs text-slate-400">
-                  <span>Total Profile Views</span>
-                  <Eye className="w-4 h-4 text-cyan-400" />
-                </div>
-                <div className="text-2xl font-bold text-white mt-2">84,200</div>
-                <div className="flex items-center gap-1 text-[11px] text-cyan-400 font-medium mt-1">
-                  <ArrowUpRight className="w-3 h-3" /> +12.5% unique visitors
-                </div>
-              </div>
-
-              <div className="p-5 rounded-2xl glass-panel border border-white/10">
-                <div className="flex items-center justify-between text-xs text-slate-400">
-                  <span>Store Conversion Rate</span>
-                  <ShoppingBag className="w-4 h-4 text-violet-400" />
-                </div>
-                <div className="text-2xl font-bold text-white mt-2">4.82%</div>
-                <div className="flex items-center gap-1 text-[11px] text-violet-400 font-medium mt-1">
-                  <ArrowUpRight className="w-3 h-3" /> 2.1x industry benchmark
-                </div>
-              </div>
-
-              <div className="p-5 rounded-2xl glass-panel border border-white/10">
-                <div className="flex items-center justify-between text-xs text-slate-400">
-                  <span>Audience Subscribers</span>
-                  <Users className="w-4 h-4 text-rose-400" />
-                </div>
-                <div className="text-2xl font-bold text-white mt-2">3,420</div>
-                <div className="flex items-center gap-1 text-[11px] text-emerald-400 font-medium mt-1">
-                  <ArrowUpRight className="w-3 h-3" /> +340 this week
-                </div>
-              </div>
-            </div>
-
-            {/* Quick Actions & AI Pitch Generator */}
+            {/* In-Flight Deals & Brand Pitch Builder */}
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
-              {/* Left Column: Recent Orders & Pipeline */}
+              {/* Left Column: Recent Deals & Best Selling Products */}
               <div className="lg:col-span-7 space-y-6">
                 <div className="p-6 rounded-3xl glass-panel border border-white/10">
                   <div className="flex items-center justify-between mb-4">
@@ -279,66 +155,9 @@ export default function DashboardPage() {
                 </div>
               </div>
 
-              {/* Right Column: AI Brand Pitch Copilot */}
+              {/* Right Column: Realistic Sponsorship Proposal Builder & Checklist */}
               <div className="lg:col-span-5 space-y-6">
-                <div className="p-6 rounded-3xl glass-panel border border-violet-500/30 relative overflow-hidden">
-                  <div className="ambient-glow-purple -top-20 -right-20 opacity-30" />
-
-                  <div className="flex items-center gap-2 text-violet-400 text-xs font-bold uppercase tracking-wider mb-2">
-                    <Bot className="w-4 h-4" /> AI Brand Pitch Copilot
-                  </div>
-                  <h3 className="text-base font-bold text-white mb-2">
-                    Generate an Instant Sponsorship Proposal
-                  </h3>
-                  <p className="text-xs text-slate-400 mb-4 leading-relaxed">
-                    Enter any brand name. Webworks AI synthesizes your verified audience demographics,
-                    reach metrics, and past deal performance into a high-converting outreach email.
-                  </p>
-
-                  <div className="space-y-3">
-                    <div className="flex gap-2">
-                      <input
-                        type="text"
-                        value={targetBrand}
-                        onChange={(e) => setTargetBrand(e.target.value)}
-                        placeholder="e.g. Figma, Notion, Linear, Vercel"
-                        className="flex-1 text-xs px-3 py-2 rounded-xl glass-input"
-                      />
-                      <button
-                        onClick={generateAIPitch}
-                        disabled={!targetBrand || isGeneratingPitch}
-                        className="px-4 py-2 rounded-xl bg-violet-600 hover:bg-violet-500 disabled:opacity-50 text-white text-xs font-bold flex items-center gap-1.5 transition-all shrink-0"
-                      >
-                        {isGeneratingPitch ? (
-                          <span className="w-3.5 h-3.5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-                        ) : (
-                          <>
-                            <Sparkles className="w-3.5 h-3.5" />
-                            <span>Pitch</span>
-                          </>
-                        )}
-                      </button>
-                    </div>
-
-                    {generatedPitch && (
-                      <div className="mt-4 p-4 rounded-2xl bg-black/50 border border-violet-500/30 text-xs font-mono text-slate-300 whitespace-pre-wrap leading-relaxed relative">
-                        <div className="flex justify-between items-center text-[10px] text-violet-400 font-sans font-bold border-b border-white/10 pb-2 mb-2">
-                          <span>READY TO SEND</span>
-                          <button
-                            onClick={() => {
-                              navigator.clipboard.writeText(generatedPitch);
-                              alert("Pitch copied to clipboard!");
-                            }}
-                            className="hover:underline flex items-center gap-1"
-                          >
-                            <Copy className="w-3 h-3" /> Copy
-                          </button>
-                        </div>
-                        {generatedPitch}
-                      </div>
-                    )}
-                  </div>
-                </div>
+                <BrandPitchBuilder />
 
                 {/* Quick Profile Setup Checklist */}
                 <div className="p-6 rounded-3xl glass-panel border border-white/10">
@@ -380,7 +199,7 @@ export default function DashboardPage() {
                   </p>
                 </div>
                 <button
-                  onClick={() => alert("Added new custom link block!")}
+                  onClick={() => alert("Added new custom link block")}
                   className="px-3.5 py-2 rounded-xl bg-violet-600 hover:bg-violet-500 text-white text-xs font-bold flex items-center gap-1.5 transition-all"
                 >
                   <Plus className="w-3.5 h-3.5" /> Add Block

@@ -80,7 +80,7 @@ export function PricingCards() {
                 <CheckCircle2 className="w-4 h-4 text-violet-400" /> Live Media Kit & Brand Deals Pipeline
               </div>
               <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-violet-400" /> AI Brand Pitch Copilot
+                <CheckCircle2 className="w-4 h-4 text-violet-400" /> Sponsorship Proposal & Rate Card Builder
               </div>
             </div>
           </div>
