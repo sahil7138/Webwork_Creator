@@ -46,6 +46,16 @@ export interface CreatorTheme {
   buttonRadius: "rounded-md" | "rounded-lg" | "rounded-xl" | "rounded-2xl" | "rounded-full";
   blurClass: string;
   glowColor: string;
+  bgHex?: string;
+  cardBgHex?: string;
+  borderHex?: string;
+  textHex?: string;
+  secondaryTextHex?: string;
+  accentHex?: string;
+  accentTextHex?: string;
+  badgeBgHex?: string;
+  badgeTextHex?: string;
+  radiusPx?: string;
 }
 
 export interface CreatorProfile {

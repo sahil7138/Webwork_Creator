@@ -1029,34 +1029,41 @@ export function EasyProfileBuilder() {
                           : "border-zinc-200 bg-white hover:border-zinc-300 hover:shadow-xs"
                       }`}
                     >
-                      <div className="flex items-center justify-between mb-2">
-                        <span className="text-xs font-bold text-zinc-950">
-                          {th.name}
-                        </span>
+                      <div className="flex items-center justify-between mb-2.5">
+                        <div className="flex items-center gap-2">
+                          <span
+                            className="w-3.5 h-3.5 rounded-full border border-black/15 shadow-2xs shrink-0"
+                            style={{ backgroundColor: th.bgHex }}
+                          />
+                          <span className="text-xs font-bold text-zinc-950">
+                            {th.name}
+                          </span>
+                        </div>
                         {isSelected && (
                           <CheckCircle2 className="w-4 h-4 text-emerald-600" />
                         )}
                       </div>
 
                       <div
-                        className="h-10 rounded-xl bg-gradient-to-r p-2 flex items-center justify-between text-[10px] font-bold text-white shadow-inner"
+                        className="h-9 rounded-xl p-2 flex items-center justify-between text-[10px] font-bold shadow-2xs border"
                         style={{
-                          background:
-                            th.id === "studio-light"
-                              ? "linear-gradient(to right, #09090b, #27272a)"
-                              : th.id === "porcelain-minimal"
-                              ? "linear-gradient(to right, #242321, #5a5853)"
-                              : th.id === "crisp-slate"
-                              ? "linear-gradient(to right, #0f172a, #334155)"
-                              : "linear-gradient(to right, #18181b, #71717a)",
-                          color: "#fff",
+                          backgroundColor: th.cardBgHex || "#ffffff",
+                          borderColor: th.borderHex || "#e4e4e7",
+                          color: th.textHex || "#09090b",
                         }}
                       >
-                        <span className="px-2 py-0.5 rounded bg-black/40 backdrop-blur-sm">
-                          Preview Button
+                        <span
+                          className="px-2 py-0.5"
+                          style={{
+                            backgroundColor: th.accentHex || "#09090b",
+                            color: th.accentTextHex || "#ffffff",
+                            borderRadius: th.radiusPx || "6px",
+                          }}
+                        >
+                          Button
                         </span>
-                        <span className="text-[10px] text-white/90">
-                          {th.buttonRadius}
+                        <span className="text-[10px]" style={{ color: th.secondaryTextHex }}>
+                          {th.radiusPx}
                         </span>
                       </div>
                     </div>
@@ -1089,7 +1096,11 @@ export function EasyProfileBuilder() {
 
             {/* Inner Phone Screen */}
             <div
-              className={`w-full rounded-[36px] min-h-[580px] max-h-[640px] overflow-y-auto ${profile.theme.background} p-4 pt-10 text-zinc-900 flex flex-col text-center scrollbar-none transition-colors duration-300`}
+              style={{
+                backgroundColor: profile.theme.bgHex || "#ffffff",
+                color: profile.theme.textHex || "#09090b",
+              }}
+              className="w-full rounded-[36px] min-h-[580px] max-h-[640px] overflow-y-auto p-4 pt-10 flex flex-col text-center scrollbar-none transition-colors duration-300"
             >
               {/* Creator Avatar & Verified Badge */}
               <div className="relative mx-auto mt-2 mb-3">
