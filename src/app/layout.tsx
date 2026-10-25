@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Playfair_Display } from "next/font/google";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -12,10 +12,16 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const playfair = Playfair_Display({
+  variable: "--font-serif",
+  subsets: ["latin"],
+  style: ["normal", "italic"],
+});
+
 export const metadata: Metadata = {
   title: "Webworks — Everything you need to build your creator business",
   description:
-    "Share your work, sell digital products, grow your email list, collect tips, and manage brand deals — all from one place.",
+    "Turn your audience into revenue with a simple platform to sell digital products, grow your email list, get brand deals, and more.",
   keywords: [
     "creator platform",
     "link in bio",
@@ -35,9 +41,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} ${playfair.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-[#fafafa] text-zinc-900 selection:bg-emerald-100 selection:text-emerald-950">
+      <body className="min-h-full flex flex-col bg-[#FAFAFA] text-zinc-900 selection:bg-purple-100 selection:text-purple-900">
         {children}
       </body>
     </html>
