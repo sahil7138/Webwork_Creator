@@ -13,9 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Webworks | The All-in-One Creator Operating System",
+  title: "Webworks — Everything you need to build your creator business",
   description:
-    "Empower your creative business with customizable link-in-bio pages, digital product stores, audience CRM, media kits, and real-time income analytics.",
+    "Share your work, sell digital products, grow your email list, collect tips, and manage brand deals — all from one place.",
   keywords: [
     "creator platform",
     "link in bio",

@@ -25,13 +25,13 @@ export default function LandingPage() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-3xl mx-auto mb-12">
               <span className="text-xs font-bold text-zinc-500 uppercase tracking-widest">
-                Live Interactive Prototype
+                See what a Webworks profile looks like
               </span>
               <h2 className="text-3xl sm:text-4xl font-extrabold text-zinc-950 mt-2">
-                Experience the Public Creator Experience
+                Try a creator profile before you sign up.
               </h2>
               <p className="text-sm text-zinc-600 mt-3">
-                Try switching themes, tapping between the Store and Media Kit tabs, or simulating a tip. Every pixel is engineered for conversion.
+                Switch themes, browse the Store and Media Kit, and try the tip flow. This is an example of what your public profile can look like.
               </p>
             </div>
 

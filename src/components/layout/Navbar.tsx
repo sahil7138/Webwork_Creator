@@ -17,7 +17,7 @@ export function Navbar() {
             <span className="font-extrabold text-lg text-zinc-950 tracking-tight flex items-center gap-1.5">
               Webworks
               <span className="text-[10px] font-semibold px-1.5 py-0.5 rounded-md bg-zinc-100 text-zinc-700 border border-zinc-200">
-                CREATOR OS
+                Platform
               </span>
             </span>
           </div>
@@ -32,13 +32,13 @@ export function Navbar() {
             Live Preview
           </a>
           <a href="#calculator" className="hover:text-zinc-950 transition-colors">
-            Earnings Model
+            Earnings
           </a>
           <a href="#pricing" className="hover:text-zinc-950 transition-colors">
             Pricing
           </a>
           <Link href="/p/alexa" className="hover:text-zinc-950 flex items-center gap-1 transition-colors">
-            Demo Profile <ExternalLink className="w-3 h-3 text-zinc-400" />
+            Demo <ExternalLink className="w-3 h-3 text-zinc-400" />
           </Link>
         </nav>
 

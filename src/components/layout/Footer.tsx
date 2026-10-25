@@ -9,11 +9,11 @@ export function Footer() {
           <div className="w-8 h-8 rounded-lg bg-zinc-950 flex items-center justify-center text-white font-extrabold text-xs shadow-2xs">
             W
           </div>
-          <span className="text-sm font-bold text-zinc-950">Webworks Creator Platform</span>
+          <span className="text-sm font-bold text-zinc-950">Webworks — tools for independent creators</span>
         </div>
 
         <p className="text-xs text-zinc-500">
-          © 2026 Webworks Inc. All rights reserved. Built for independent creators.
+          © 2026 Webworks Inc. All rights reserved.
         </p>
 
         <div className="flex items-center gap-6 text-xs text-zinc-600">

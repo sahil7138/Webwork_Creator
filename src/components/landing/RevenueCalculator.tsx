@@ -37,22 +37,21 @@ export function RevenueCalculator() {
         {/* Left Inputs */}
         <div className="lg:col-span-7 space-y-6">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-zinc-100 border border-zinc-200 text-xs font-semibold text-zinc-700 shadow-2xs">
-            <Zap className="w-3.5 h-3.5 text-zinc-950" /> Interactive Earnings Model
+            <Zap className="w-3.5 h-3.5 text-zinc-950" /> See what you could earn
           </div>
 
           <h3 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-zinc-950">
-            Calculate your earning potential with <span className="text-zinc-500">Webworks</span>
+            Try a simple earnings estimate based on your audience and products.
           </h3>
           <p className="text-sm text-zinc-600 leading-relaxed">
-            Unlike fragmented link-in-bio tools, Webworks combines your storefront, community tips,
-            automated newsletter sales funnels, and verified brand deal kits in one workflow.
+            Webworks brings your store, tips, audience, and brand deals together, so you can manage your creator business from one place.
           </p>
 
           <div className="space-y-5 pt-2">
             {/* Slider 1: Followers */}
             <div>
               <div className="flex justify-between items-center text-sm font-medium mb-2">
-                <span className="text-zinc-600">Total Social Audience</span>
+                <span className="text-zinc-600">Total Social Audience <span className="text-xs text-zinc-400 font-normal">(sample audience)</span></span>
                 <span className="text-zinc-950 font-bold">
                   {followers.toLocaleString()} followers
                 </span>
@@ -71,7 +70,7 @@ export function RevenueCalculator() {
             {/* Slider 2: Average Product Price */}
             <div>
               <div className="flex justify-between items-center text-sm font-medium mb-2">
-                <span className="text-zinc-600">Average Digital Product Price</span>
+                <span className="text-zinc-600">Average Digital Product Price <span className="text-xs text-zinc-400 font-normal">(example)</span></span>
                 <span className="text-zinc-950 font-bold">${avgProductPrice} USD</span>
               </div>
               <input
@@ -89,8 +88,13 @@ export function RevenueCalculator() {
 
         {/* Right Output Card */}
         <div className="lg:col-span-5 rounded-2xl p-6 bg-zinc-950 border border-zinc-800 text-white shadow-2xl relative">
-          <div className="text-xs font-semibold uppercase tracking-wider text-zinc-400">
-            Estimated Monthly Earnings
+          <div className="flex items-center justify-between">
+            <span className="text-xs font-semibold uppercase tracking-wider text-zinc-400">
+              Estimated Monthly Earnings
+            </span>
+            <span className="text-[10px] px-2 py-0.5 rounded-full bg-zinc-800 text-zinc-300 font-medium">
+              Example estimate
+            </span>
           </div>
 
           <div className="text-4xl sm:text-5xl font-extrabold text-white mt-2 mb-1 tracking-tight">
@@ -99,7 +103,7 @@ export function RevenueCalculator() {
           </div>
 
           <div className="text-xs text-emerald-400 font-medium flex items-center gap-1 mb-6">
-            <ShieldCheck className="w-3.5 h-3.5" /> 100% Free • 0% platform fee for all creators
+            <ShieldCheck className="w-3.5 h-3.5" /> Free forever • 0% Webworks platform fee
           </div>
 
           <div className="space-y-3 pt-3 border-t border-zinc-800 text-xs">
@@ -121,7 +125,7 @@ export function RevenueCalculator() {
             href="/dashboard"
             className="w-full mt-6 py-3 px-4 rounded-xl bg-white hover:bg-zinc-200 text-zinc-950 text-xs font-bold flex items-center justify-center gap-2 shadow-sm transition-all"
           >
-            Claim Your Free Webworks Handle <ArrowRight className="w-3.5 h-3.5" />
+            Create your free Webworks page <ArrowRight className="w-3.5 h-3.5" />
           </a>
         </div>
       </div>

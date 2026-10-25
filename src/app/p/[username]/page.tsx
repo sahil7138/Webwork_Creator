@@ -221,8 +221,8 @@ function ProfileContent() {
                   <Users className="w-5 h-5" />
                 </div>
                 <div>
-                  <div className="text-xs font-bold text-zinc-950">Private Creator Discord</div>
-                  <div className="text-[11px] text-zinc-500">4,200+ engineers building in public</div>
+                  <div className="text-xs font-bold text-zinc-950">Creator community</div>
+                  <div className="text-[11px] text-zinc-500">Connect with other creators, designers, and builders.</div>
                 </div>
               </div>
               <ExternalLink className="w-4 h-4 text-zinc-400" />
@@ -252,10 +252,10 @@ function ProfileContent() {
             <div className={`p-4 rounded-3xl border border-zinc-200/90 ${theme.cardBg} shadow-sm`}>
               <div className="flex items-center gap-2 mb-1">
                 <Mail className="w-4 h-4 text-zinc-600" />
-                <span className="text-xs font-bold text-zinc-950">Weekly Design Digest</span>
+                <span className="text-xs font-bold text-zinc-950">Weekly design digest</span>
               </div>
               <p className="text-[11px] text-zinc-600 mb-3">
-                Actionable tactics for design engineers delivered every Tuesday.
+                Useful design and creator tips, delivered every Tuesday.
               </p>
               <form onSubmit={handleSubscribe} className="flex gap-2">
                 <input
@@ -279,9 +279,9 @@ function ProfileContent() {
             <div className={`p-4 rounded-3xl border border-zinc-200/90 ${theme.cardBg} shadow-sm`}>
               <div className="flex items-center justify-between mb-2.5">
                 <span className="text-xs font-bold text-zinc-950 flex items-center gap-1.5">
-                  <Heart className="w-3.5 h-3.5 text-zinc-600" /> Support My Work
+                  <Heart className="w-3.5 h-3.5 text-zinc-600" /> Support my work
                 </span>
-                <span className="text-[10px] text-zinc-500">Instant tip via Apple Pay</span>
+                <span className="text-[10px] text-zinc-500">Send a tip</span>
               </div>
               <div className="grid grid-cols-3 gap-2 mb-3">
                 {[3, 5, 15].map((amt) => (
@@ -303,7 +303,7 @@ function ProfileContent() {
                 onClick={handleTip}
                 className="w-full py-2.5 rounded-xl bg-zinc-950 hover:bg-zinc-800 text-white text-xs font-bold shadow-sm transition-all"
               >
-                {tipSent ? "❤️ Thank you so much!" : `Send $${tipAmount} Espresso Tip`}
+                {tipSent ? "❤️ Thank you so much!" : `Send $${tipAmount} Tip`}
               </button>
             </div>
           </div>
@@ -392,7 +392,7 @@ function ProfileContent() {
                       onClick={() => handleBuy(prod)}
                       className="px-3.5 py-1.5 rounded-xl bg-zinc-950 hover:bg-zinc-800 text-white text-xs font-bold shadow-sm transition-all"
                     >
-                      Instant Buy
+                      Buy Now
                     </button>
                   </div>
                 </div>
@@ -406,17 +406,17 @@ function ProfileContent() {
           <div className="space-y-4">
             <div className="p-5 rounded-3xl border bg-zinc-50 border-zinc-200 text-center shadow-sm">
               <span className="text-[10px] font-bold text-zinc-500 uppercase tracking-widest">
-                Verified Creator Audience
+                Audience Metrics (Sample)
               </span>
               <div className="text-3xl font-extrabold text-zinc-950 mt-1">850,000+</div>
-              <div className="text-xs text-zinc-500 mt-0.5">Total Monthly Reach across YouTube & X</div>
+              <div className="text-xs text-zinc-500 mt-0.5">Total monthly reach across YouTube & X (sample data)</div>
             </div>
 
             <div className="grid grid-cols-2 gap-3">
               <div className={`p-4 rounded-2xl border border-zinc-200/90 ${theme.cardBg} text-center shadow-sm`}>
                 <div className="text-xs text-zinc-500">Engagement Rate</div>
                 <div className="text-lg font-bold text-zinc-950 mt-1">5.4%</div>
-                <div className="text-[10px] text-emerald-600 font-semibold mt-0.5">3.2x industry avg</div>
+                <div className="text-[10px] text-emerald-600 font-semibold mt-0.5">Example metric</div>
               </div>
               <div className={`p-4 rounded-2xl border border-zinc-200/90 ${theme.cardBg} text-center shadow-sm`}>
                 <div className="text-xs text-zinc-500">Audience Geography</div>
@@ -458,7 +458,7 @@ function ProfileContent() {
             href="/"
             className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-zinc-100 hover:bg-zinc-200 border border-zinc-200 text-[11px] text-zinc-600 hover:text-zinc-950 transition-all shadow-sm"
           >
-            <span>Create your page with <strong className="text-zinc-950">Webworks</strong></span>
+            <span>Create your free <strong className="text-zinc-950">Webworks</strong> page</span>
           </a>
         </div>
       </div>

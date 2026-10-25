@@ -185,7 +185,7 @@ export default function DashboardPage() {
                       onClick={() => setActiveTab("builder")}
                       className="w-full mt-3 py-2.5 px-3 rounded-xl bg-zinc-950 hover:bg-zinc-800 text-white text-xs font-bold flex items-center justify-between shadow-sm transition-all"
                     >
-                      <span>⚡ Open Profile & Portfolio Builder</span>
+                      <span>Open Profile & Portfolio Builder</span>
                       <ChevronRight className="w-3.5 h-3.5" />
                     </button>
                   </div>

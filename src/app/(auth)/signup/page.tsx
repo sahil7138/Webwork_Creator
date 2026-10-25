@@ -47,10 +47,10 @@ function SignUpContent() {
       <div className="w-full max-w-lg rounded-3xl bg-white border border-zinc-200/90 p-8 sm:p-10 shadow-xl shadow-zinc-200/50 relative z-10">
         <div className="text-center mb-6">
           <h1 className="text-2xl sm:text-3xl font-bold text-zinc-950 tracking-tight">
-            Create Your Creator Account
+            Create Your Account
           </h1>
           <p className="text-xs text-zinc-500 mt-1.5">
-            Join 42,000+ creators building on Webworks with zero technical hassle.
+            Start building your creator page in minutes.
           </p>
         </div>
 
@@ -58,7 +58,7 @@ function SignUpContent() {
         <div className="p-3.5 rounded-2xl bg-emerald-50 border border-emerald-200/80 mb-6 flex items-center justify-between text-xs">
           <div className="flex items-center gap-2 text-emerald-800 font-semibold">
             <CheckCircle2 className="w-4 h-4 text-emerald-600" />
-            <span>100% Free Forever Access</span>
+            <span>Free forever • All features included</span>
           </div>
           <span className="text-[11px] font-bold px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800">
             0% Platform Fee
@@ -69,7 +69,7 @@ function SignUpContent() {
           {/* Claim Handle Input */}
           <div>
             <label className="block text-xs font-medium text-zinc-700 mb-1.5">
-              Claim Your Vanity URL
+              Choose your handle
             </label>
             <div className="relative flex items-center">
               <span className="absolute left-3.5 text-xs text-zinc-400 select-none">

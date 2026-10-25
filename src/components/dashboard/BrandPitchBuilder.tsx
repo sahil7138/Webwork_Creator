@@ -65,15 +65,15 @@ alexa@creator.com`;
           <Briefcase className="w-4 h-4 text-zinc-900" /> Sponsorship Proposal Builder
         </div>
         <span className="text-[10px] text-zinc-500 font-semibold px-2 py-0.5 rounded-full bg-zinc-100 border border-zinc-200">
-          Executive Pitch
+          Proposal Template
         </span>
       </div>
 
       <h3 className="text-base font-bold text-zinc-950 mb-1.5">
-        Prepare a Verified Brand Pitch
+        Prepare a Sponsorship Proposal
       </h3>
       <p className="text-xs text-zinc-600 mb-4 leading-relaxed">
-        Select a deliverable package to assemble a personalized sponsorship pitch backed by your verified audience demographics and live media kit link.
+        Select a deliverable package to assemble a sponsorship proposal with your media kit link, audience stats, and rates.
       </p>
 
       {/* Configuration Controls */}

@@ -175,7 +175,7 @@ export function PhonePreview() {
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center justify-between">
                         <span className="text-[10px] font-bold text-zinc-500 tracking-wider">
-                          BESTSELLER
+                          POPULAR
                         </span>
                         <span className="text-xs font-bold text-zinc-950">$49</span>
                       </div>
@@ -183,7 +183,7 @@ export function PhonePreview() {
                         Mastering Modern UI
                       </h4>
                       <p className="text-[10px] text-zinc-500 truncate">
-                        240pg Guide + 40 Figma components
+                        240-page guide + 40 Figma components
                       </p>
                     </div>
                   </div>
@@ -200,10 +200,10 @@ export function PhonePreview() {
                     </div>
                     <div>
                       <div className="text-xs font-bold text-zinc-950">
-                        Private Creator Community
+                        Creator community
                       </div>
                       <div className="text-[10px] text-zinc-500">
-                        4,200+ engineers & builders
+                        Connect with other creators, designers, and builders.
                       </div>
                     </div>
                   </div>
@@ -214,10 +214,10 @@ export function PhonePreview() {
                 <div className={`p-3 rounded-2xl border ${currentTheme.cardBg}`}>
                   <div className="flex items-center gap-2 mb-1.5">
                     <Mail className="w-3.5 h-3.5 text-zinc-700" />
-                    <span className="text-xs font-bold text-zinc-950">Weekly Design Digest</span>
+                    <span className="text-xs font-bold text-zinc-950">Weekly design digest</span>
                   </div>
                   <p className="text-[10px] text-zinc-500 mb-2">
-                    Actionable creator tips delivered every Tuesday.
+                    Useful design and creator tips, delivered every Tuesday.
                   </p>
                   <form onSubmit={handleSubscribe} className="flex gap-1.5">
                     <input
@@ -240,9 +240,9 @@ export function PhonePreview() {
                 <div className={`p-3 rounded-2xl border ${currentTheme.cardBg}`}>
                   <div className="flex items-center justify-between mb-2">
                     <span className="text-xs font-bold text-zinc-950 flex items-center gap-1.5">
-                      <Heart className="w-3 h-3 text-rose-500 fill-rose-500" /> Support the Work
+                      <Heart className="w-3 h-3 text-rose-500 fill-rose-500" /> Support my work
                     </span>
-                    <span className="text-[10px] text-zinc-500">Instant tip</span>
+                    <span className="text-[10px] text-zinc-500">Send a tip</span>
                   </div>
                   <div className="grid grid-cols-3 gap-1.5 mb-2">
                     {[3, 5, 10].map((amt) => (
@@ -384,17 +384,17 @@ export function PhonePreview() {
               <div className="space-y-3 pt-1">
                 <div className="p-3 rounded-2xl border bg-white border-zinc-200 text-center shadow-xs">
                   <span className="text-[10px] font-bold text-zinc-500 uppercase tracking-wider">
-                    Verified Creator Stats
+                    Audience Reach (Sample)
                   </span>
                   <div className="text-xl font-bold text-zinc-950 mt-0.5">850,000+</div>
-                  <div className="text-[10px] text-zinc-500">Total Monthly Audience Reach</div>
+                  <div className="text-[10px] text-zinc-500">Total monthly reach across platforms (sample)</div>
                 </div>
 
                 <div className="grid grid-cols-2 gap-2">
                   <div className={`p-2.5 rounded-xl border ${currentTheme.cardBg}`}>
                     <div className="text-[10px] text-zinc-500">Engagement</div>
                     <div className="text-sm font-bold text-zinc-950 mt-0.5">5.4%</div>
-                    <div className="text-[9px] text-emerald-600 font-semibold">3x industry avg</div>
+                    <div className="text-[9px] text-emerald-600 font-semibold">Example rate</div>
                   </div>
                   <div className={`p-2.5 rounded-xl border ${currentTheme.cardBg}`}>
                     <div className="text-[10px] text-zinc-500">Audience Geo</div>

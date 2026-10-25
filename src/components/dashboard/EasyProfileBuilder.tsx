@@ -214,13 +214,13 @@ export function EasyProfileBuilder() {
         <div>
           <div className="flex items-center gap-2 text-xs font-bold text-zinc-500 uppercase tracking-wider mb-1">
             <Sparkles className="w-3.5 h-3.5 text-zinc-900" />
-            <span>Profile & Portfolio Studio</span>
+            <span>Profile & Portfolio</span>
           </div>
           <h2 className="text-lg font-extrabold text-zinc-950">
-            Build Your Personal Bio & Portfolio in 60 Seconds
+            Create your profile and portfolio
           </h2>
           <p className="text-xs text-zinc-500 mt-0.5">
-            Pick a starter role preset, customize your projects, and preview your live mobile portfolio instantly.
+            Pick a starter template, add your projects and links, and preview your page in real time.
           </p>
         </div>
 

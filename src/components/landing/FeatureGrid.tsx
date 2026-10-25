@@ -16,34 +16,34 @@ export function FeatureGrid() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-zinc-200/90 text-xs font-semibold text-zinc-700 mb-3 shadow-2xs">
-            <Layers className="w-3.5 h-3.5 text-zinc-900" /> All-in-One Architecture
+            <Layers className="w-3.5 h-3.5 text-zinc-900" /> Everything in one place
           </div>
           <h2 className="text-3xl sm:text-5xl font-extrabold text-zinc-950 tracking-tight">
-            Six Built-In Engines. Zero Third-Party Chaos.
+            Six tools to help you run your creator business.
           </h2>
           <p className="text-sm sm:text-base text-zinc-600 mt-4 leading-relaxed">
-            Designed according to modern SaaS principles. Every module feeds data into your central creator CRM and financial intelligence engine.
+            Your profile, store, audience, sponsorships, and analytics work together, so you spend less time switching between tools.
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {/* Card 1: Beginner Profile & Portfolio Builder */}
+          {/* Card 1: Profile & Portfolio */}
           <div className="p-7 rounded-3xl bg-white border border-zinc-200/90 shadow-sm hover:shadow-md hover:border-zinc-300 transition-all flex flex-col justify-between">
             <div>
               <div className="w-12 h-12 rounded-2xl bg-zinc-100 text-zinc-900 flex items-center justify-center mb-5 border border-zinc-200">
                 <Smartphone className="w-6 h-6" />
               </div>
-              <h3 className="text-lg font-bold text-zinc-950 mb-2">Beginner Profile & Portfolio Builder</h3>
+              <h3 className="text-lg font-bold text-zinc-950 mb-2">Profile & Portfolio</h3>
               <p className="text-xs text-zinc-600 leading-relaxed">
-                Launch your personal brand in 60 seconds. Choose 1-click role presets for developers, designers, photographers, writers, and creators with live project cards and sync.
+                Create a professional profile in minutes. Add your work, links, projects, and social accounts, then publish everything from one page.
               </p>
             </div>
             <ul className="mt-5 space-y-2 text-xs text-zinc-600 border-t border-zinc-100 pt-4">
               <li className="flex items-center gap-2">
-                <CheckCircle2 className="w-3.5 h-3.5 text-zinc-500" /> 1-Click role templates & work showcase
+                <CheckCircle2 className="w-3.5 h-3.5 text-zinc-500" /> Ready-to-use templates for different creator types
               </li>
               <li className="flex items-center gap-2">
-                <CheckCircle2 className="w-3.5 h-3.5 text-zinc-500" /> Real-time mobile simulator & instant publish
+                <CheckCircle2 className="w-3.5 h-3.5 text-zinc-500" /> Preview your page and publish changes instantly
               </li>
             </ul>
           </div>
@@ -54,17 +54,17 @@ export function FeatureGrid() {
               <div className="w-12 h-12 rounded-2xl bg-zinc-100 text-zinc-900 flex items-center justify-center mb-5 border border-zinc-200">
                 <ShoppingBag className="w-6 h-6" />
               </div>
-              <h3 className="text-lg font-bold text-zinc-950 mb-2">Creator Store & Checkout</h3>
+              <h3 className="text-lg font-bold text-zinc-950 mb-2">Sell your digital products</h3>
               <p className="text-xs text-zinc-600 leading-relaxed">
-                Sell eBooks, presets, Notion templates, video courses, and 1-on-1 coaching consultations with 1-click Apple Pay & Google Pay.
+                Sell ebooks, presets, templates, courses, and consultations directly from your profile.
               </p>
             </div>
             <ul className="mt-5 space-y-2 text-xs text-zinc-600 border-t border-zinc-100 pt-4">
               <li className="flex items-center gap-2">
-                <CheckCircle2 className="w-3.5 h-3.5 text-zinc-500" /> Stripe Connect direct creator payouts
+                <CheckCircle2 className="w-3.5 h-3.5 text-zinc-500" /> Get paid directly through Stripe
               </li>
               <li className="flex items-center gap-2">
-                <CheckCircle2 className="w-3.5 h-3.5 text-zinc-500" /> Automated secure download links
+                <CheckCircle2 className="w-3.5 h-3.5 text-zinc-500" /> Secure, automatic product delivery
               </li>
             </ul>
           </div>
@@ -75,17 +75,17 @@ export function FeatureGrid() {
               <div className="w-12 h-12 rounded-2xl bg-zinc-100 text-zinc-900 flex items-center justify-center mb-5 border border-zinc-200">
                 <Mail className="w-6 h-6" />
               </div>
-              <h3 className="text-lg font-bold text-zinc-950 mb-2">Audience CRM & Email Broadcasts</h3>
+              <h3 className="text-lg font-bold text-zinc-950 mb-2">Grow and manage your audience</h3>
               <p className="text-xs text-zinc-600 leading-relaxed">
-                Capture fan emails right on your profile. Auto-tag buyers, segment by activity, and send rich marketing newsletters with zero third-party fees.
+                Collect email subscribers from your profile, organize them by activity, and send newsletters without needing another platform.
               </p>
             </div>
             <ul className="mt-5 space-y-2 text-xs text-zinc-600 border-t border-zinc-100 pt-4">
               <li className="flex items-center gap-2">
-                <CheckCircle2 className="w-3.5 h-3.5 text-zinc-500" /> Unlimited contact capture
+                <CheckCircle2 className="w-3.5 h-3.5 text-zinc-500" /> Collect and manage your subscribers
               </li>
               <li className="flex items-center gap-2">
-                <CheckCircle2 className="w-3.5 h-3.5 text-zinc-500" /> Auto-responder onboarding funnels
+                <CheckCircle2 className="w-3.5 h-3.5 text-zinc-500" /> Automated welcome emails
               </li>
             </ul>
           </div>
@@ -96,17 +96,17 @@ export function FeatureGrid() {
               <div className="w-12 h-12 rounded-2xl bg-zinc-100 text-zinc-900 flex items-center justify-center mb-5 border border-zinc-200">
                 <TrendingUp className="w-6 h-6" />
               </div>
-              <h3 className="text-lg font-bold text-zinc-950 mb-2">Live Media Kits & Sponsorships</h3>
+              <h3 className="text-lg font-bold text-zinc-950 mb-2">Your media kit, always up to date</h3>
               <p className="text-xs text-zinc-600 leading-relaxed">
-                Never send a PDF again. Share a live, verified media kit with your audience demographics, past brand deliverables, and custom rate cards.
+                Share a live media kit with your audience stats, previous work, services, and rates. Update it whenever your numbers change.
               </p>
             </div>
             <ul className="mt-5 space-y-2 text-xs text-zinc-600 border-t border-zinc-100 pt-4">
               <li className="flex items-center gap-2">
-                <CheckCircle2 className="w-3.5 h-3.5 text-zinc-500" /> Direct brand inquiry intake forms
+                <CheckCircle2 className="w-3.5 h-3.5 text-zinc-500" /> Let brands contact you directly
               </li>
               <li className="flex items-center gap-2">
-                <CheckCircle2 className="w-3.5 h-3.5 text-zinc-500" /> Deal pipeline tracking from pitch to paid
+                <CheckCircle2 className="w-3.5 h-3.5 text-zinc-500" /> Keep track of brand conversations and deals
               </li>
             </ul>
           </div>
@@ -117,17 +117,17 @@ export function FeatureGrid() {
               <div className="w-12 h-12 rounded-2xl bg-zinc-100 text-zinc-900 flex items-center justify-center mb-5 border border-zinc-200">
                 <Briefcase className="w-6 h-6" />
               </div>
-              <h3 className="text-lg font-bold text-zinc-950 mb-2">Sponsorship Proposal Builder</h3>
+              <h3 className="text-lg font-bold text-zinc-950 mb-2">Create sponsorship proposals</h3>
               <p className="text-xs text-zinc-600 leading-relaxed">
-                Assembles professional brand sponsorship pitches, rate card packages, and deliverable agreements backed by your live audience data.
+                Create brand proposals using your profile, audience data, rates, and planned deliverables.
               </p>
             </div>
             <ul className="mt-5 space-y-2 text-xs text-zinc-600 border-t border-zinc-100 pt-4">
               <li className="flex items-center gap-2">
-                <CheckCircle2 className="w-3.5 h-3.5 text-zinc-500" /> Executive pitch email templates
+                <CheckCircle2 className="w-3.5 h-3.5 text-zinc-500" /> Ready-to-edit pitch templates
               </li>
               <li className="flex items-center gap-2">
-                <CheckCircle2 className="w-3.5 h-3.5 text-zinc-500" /> Real-time rate packaging & deliverables
+                <CheckCircle2 className="w-3.5 h-3.5 text-zinc-500" /> Build packages and define deliverables
               </li>
             </ul>
           </div>
@@ -138,17 +138,17 @@ export function FeatureGrid() {
               <div className="w-12 h-12 rounded-2xl bg-zinc-100 text-zinc-900 flex items-center justify-center mb-5 border border-zinc-200">
                 <Zap className="w-6 h-6" />
               </div>
-              <h3 className="text-lg font-bold text-zinc-950 mb-2">Real-Time Attribution Analytics</h3>
+              <h3 className="text-lg font-bold text-zinc-950 mb-2">Understand what is working</h3>
               <p className="text-xs text-zinc-600 leading-relaxed">
-                Know exactly which platform drives your income. Track clicks per block, conversion rates, visitor referrers, and geo-breakdowns.
+                See where your visitors come from and which parts of your profile get the most attention.
               </p>
             </div>
             <ul className="mt-5 space-y-2 text-xs text-zinc-600 border-t border-zinc-100 pt-4">
               <li className="flex items-center gap-2">
-                <CheckCircle2 className="w-3.5 h-3.5 text-zinc-500" /> UTM campaign parameter tracking
+                <CheckCircle2 className="w-3.5 h-3.5 text-zinc-500" /> Track campaigns with UTM links
               </li>
               <li className="flex items-center gap-2">
-                <CheckCircle2 className="w-3.5 h-3.5 text-zinc-500" /> Real-time visitor click heatmaps
+                <CheckCircle2 className="w-3.5 h-3.5 text-zinc-500" /> See which links visitors interact with
               </li>
             </ul>
           </div>
