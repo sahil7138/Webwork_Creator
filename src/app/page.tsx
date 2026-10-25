@@ -24,11 +24,11 @@ export default function LandingPage() {
         {/* 3. Features Section (The tools to grow your creator business) */}
         <FeaturesSection />
 
-        {/* 4. Creator Showcase Section */}
-        <CreatorShowcase />
-
-        {/* 5. Statistics Section (10K+, 50K+, 1M+, $2M+) */}
+        {/* 4. Statistics Section (10K+, 50K+, 1M+, $2M+) */}
         <StatsSection />
+
+        {/* 5. Creator Showcase Section (Built by creators, for creators) */}
+        <CreatorShowcase />
 
         {/* 6. Final Rounded CTA Section */}
         <CtaSection />

@@ -3,11 +3,11 @@
 import React from "react";
 import Link from "next/link";
 import {
+  FacebookIcon,
+  LinkedInIcon,
+  TwitterIcon,
   InstagramIcon,
   YoutubeIcon,
-  TwitterIcon,
-  TikTokIcon,
-  LinkedInIcon,
 } from "@/components/ui/SocialIcons";
 
 export function Footer() {
@@ -25,7 +25,7 @@ export function Footer() {
         </Link>
 
         {/* Center: Navigation Links */}
-        <nav className="flex items-center gap-7 text-xs font-medium text-zinc-500">
+        <nav className="flex flex-wrap items-center justify-center gap-6 sm:gap-8 text-xs font-medium text-zinc-500">
           <a href="#features" className="hover:text-zinc-950 transition-colors">
             Features
           </a>
@@ -38,21 +38,27 @@ export function Footer() {
           <a href="#creators" className="hover:text-zinc-950 transition-colors">
             Creators
           </a>
+          <a href="#about" className="hover:text-zinc-950 transition-colors">
+            About
+          </a>
+          <a href="#contact" className="hover:text-zinc-950 transition-colors">
+            Contact
+          </a>
         </nav>
 
-        {/* Right: Social Media Icons */}
+        {/* Right: Subtle Social Icons */}
         <div className="flex items-center gap-3 text-zinc-400">
-          <YoutubeIcon className="w-4 h-4 hover:text-zinc-950 transition-colors cursor-pointer" />
-          <InstagramIcon className="w-4 h-4 hover:text-zinc-950 transition-colors cursor-pointer" />
-          <TikTokIcon className="w-4 h-4 hover:text-zinc-950 transition-colors cursor-pointer" />
+          <YoutubeIcon className="w-4 h-4 hover:text-red-600 transition-colors cursor-pointer" />
+          <InstagramIcon className="w-4 h-4 hover:text-pink-600 transition-colors cursor-pointer" />
           <TwitterIcon className="w-4 h-4 hover:text-zinc-950 transition-colors cursor-pointer" />
-          <LinkedInIcon className="w-4 h-4 hover:text-zinc-950 transition-colors cursor-pointer" />
+          <LinkedInIcon className="w-4 h-4 hover:text-blue-600 transition-colors cursor-pointer" />
+          <FacebookIcon className="w-4 h-4 hover:text-blue-700 transition-colors cursor-pointer" />
         </div>
       </div>
 
       {/* Bottom Copyright & Legal Links */}
       <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-[11px] text-zinc-400">
-        <div>© 2026 Webworks. All rights reserved.</div>
+        <div>© 2025 Webworks. All rights reserved.</div>
         <div className="flex items-center gap-5">
           <Link href="/privacy" className="hover:text-zinc-600 transition-colors">
             Privacy

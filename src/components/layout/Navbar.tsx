@@ -1,9 +1,12 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
+import { Menu, X } from "lucide-react";
 
 export function Navbar() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
   return (
     <header className="sticky top-4 z-50 w-full px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
       <div className="h-16 px-6 sm:px-8 rounded-full bg-white/95 backdrop-blur-md border border-zinc-200/80 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] flex items-center justify-between transition-all">
@@ -17,36 +20,24 @@ export function Navbar() {
           </span>
         </Link>
 
-        {/* Center: Navigation Links */}
+        {/* Center: Navigation Links (Desktop) */}
         <nav className="hidden md:flex items-center gap-8 text-xs font-medium text-zinc-600">
-          <a
-            href="#features"
-            className="hover:text-zinc-950 transition-colors"
-          >
+          <a href="#features" className="hover:text-zinc-950 transition-colors">
             Features
           </a>
-          <a
-            href="#how-it-works"
-            className="hover:text-zinc-950 transition-colors"
-          >
+          <a href="#how-it-works" className="hover:text-zinc-950 transition-colors">
             How It Works
           </a>
-          <a
-            href="#pricing"
-            className="hover:text-zinc-950 transition-colors"
-          >
+          <a href="#pricing" className="hover:text-zinc-950 transition-colors">
             Pricing
           </a>
-          <a
-            href="#creators"
-            className="hover:text-zinc-950 transition-colors"
-          >
+          <a href="#creators" className="hover:text-zinc-950 transition-colors">
             Creators
           </a>
         </nav>
 
-        {/* Right: Auth & Get Started CTA */}
-        <div className="flex items-center gap-4">
+        {/* Right: Auth & Get Started CTA (Desktop) */}
+        <div className="hidden sm:flex items-center gap-4">
           <Link
             href="/login"
             className="text-xs font-medium text-zinc-600 hover:text-zinc-950 transition-colors px-2 py-1"
@@ -60,7 +51,63 @@ export function Navbar() {
             <span>Get Started</span>
           </Link>
         </div>
+
+        {/* Mobile Hamburger Button */}
+        <button
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          className="flex sm:hidden p-2 text-zinc-700 hover:text-zinc-950 transition-colors cursor-pointer"
+          aria-label="Toggle Navigation"
+        >
+          {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+        </button>
       </div>
+
+      {/* Mobile Dropdown Menu */}
+      {mobileMenuOpen && (
+        <div className="sm:hidden mt-2 p-4 rounded-3xl bg-white border border-zinc-200/90 shadow-soft-card flex flex-col gap-3 text-center">
+          <a
+            href="#features"
+            onClick={() => setMobileMenuOpen(false)}
+            className="py-2 text-xs font-medium text-zinc-700 hover:text-zinc-950 transition-colors"
+          >
+            Features
+          </a>
+          <a
+            href="#how-it-works"
+            onClick={() => setMobileMenuOpen(false)}
+            className="py-2 text-xs font-medium text-zinc-700 hover:text-zinc-950 transition-colors"
+          >
+            How It Works
+          </a>
+          <a
+            href="#pricing"
+            onClick={() => setMobileMenuOpen(false)}
+            className="py-2 text-xs font-medium text-zinc-700 hover:text-zinc-950 transition-colors"
+          >
+            Pricing
+          </a>
+          <a
+            href="#creators"
+            onClick={() => setMobileMenuOpen(false)}
+            className="py-2 text-xs font-medium text-zinc-700 hover:text-zinc-950 transition-colors"
+          >
+            Creators
+          </a>
+          <div className="h-px bg-zinc-100 my-1" />
+          <Link
+            href="/login"
+            className="py-2 text-xs font-medium text-zinc-600 hover:text-zinc-950"
+          >
+            Sign In
+          </Link>
+          <Link
+            href="/signup"
+            className="w-full py-2.5 rounded-full bg-zinc-950 text-white text-xs font-semibold flex items-center justify-center"
+          >
+            Get Started
+          </Link>
+        </div>
+      )}
     </header>
   );
 }
