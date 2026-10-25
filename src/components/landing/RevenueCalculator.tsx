@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { ArrowRight, Zap, ShieldCheck, DollarSign, Sparkles } from "lucide-react";
+import { ArrowRight, Zap, ShieldCheck } from "lucide-react";
 import { formatCurrency } from "@/lib/utils";
 
 export function RevenueCalculator() {
@@ -32,23 +32,23 @@ export function RevenueCalculator() {
   const annualSavedWithWebworks = legacyPlatformLostCut * 12;
 
   return (
-    <div className="relative rounded-3xl p-8 sm:p-12 lg:p-16 bg-[#09090c]/90 border border-white/10 backdrop-blur-2xl shadow-2xl overflow-hidden">
+    <div className="relative rounded-3xl p-8 sm:p-12 lg:p-16 bg-white/95 border border-zinc-200/90 backdrop-blur-2xl shadow-xl shadow-zinc-200/50 overflow-hidden">
       {/* Decorative Technical Grid & Corner Elements */}
-      <div className="absolute top-6 right-8 font-mono text-[10px] text-zinc-600 hidden sm:block">
+      <div className="absolute top-6 right-8 font-mono text-[10px] text-zinc-400 hidden sm:block">
         [ FINANCIAL_MODEL // REVENUE_SIMULATOR_V2 ]
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
         {/* Left Inputs */}
         <div className="lg:col-span-7 space-y-7">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded bg-[#00FF66]/10 border border-[#00FF66]/20 text-[10px] font-mono uppercase tracking-wider text-[#00FF66]">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-emerald-50 border border-emerald-200/90 text-[10px] font-mono uppercase tracking-wider text-emerald-800 font-bold">
             <Zap className="w-3.5 h-3.5" /> Direct Creator Economics
           </div>
 
-          <h3 className="text-3xl sm:text-5xl font-black uppercase tracking-tight text-white leading-tight">
+          <h3 className="text-3xl sm:text-5xl font-black uppercase tracking-tight text-zinc-950 leading-tight">
             Calculate your monthly earnings. Keep every dollar.
           </h3>
-          <p className="text-sm sm:text-base text-zinc-400 leading-relaxed">
+          <p className="text-sm sm:text-base text-zinc-600 leading-relaxed">
             Adjust your audience reach and product price. Webworks charges zero platform take-rate, meaning you never surrender a percentage of your livelihood to middlemen.
           </p>
 
@@ -56,8 +56,8 @@ export function RevenueCalculator() {
             {/* Slider 1: Followers */}
             <div className="space-y-2">
               <div className="flex justify-between items-center text-xs font-mono">
-                <span className="text-zinc-400 uppercase">Total Social Audience</span>
-                <span className="text-white font-bold text-sm bg-white/5 px-2.5 py-1 rounded border border-white/10">
+                <span className="text-zinc-600 uppercase">Total Social Audience</span>
+                <span className="text-zinc-950 font-bold text-sm bg-zinc-100 px-2.5 py-1 rounded border border-zinc-200">
                   {followers.toLocaleString()} FOLLOWERS
                 </span>
               </div>
@@ -68,9 +68,9 @@ export function RevenueCalculator() {
                 step="5000"
                 value={followers}
                 onChange={(e) => setFollowers(Number(e.target.value))}
-                className="w-full h-2 bg-zinc-800 rounded-lg appearance-none cursor-pointer accent-[#00FF66]"
+                className="w-full h-2 bg-zinc-200 rounded-lg appearance-none cursor-pointer accent-emerald-600"
               />
-              <div className="flex justify-between text-[10px] font-mono text-zinc-600">
+              <div className="flex justify-between text-[10px] font-mono text-zinc-400">
                 <span>5K</span>
                 <span>250K</span>
                 <span>500K</span>
@@ -80,8 +80,8 @@ export function RevenueCalculator() {
             {/* Slider 2: Average Product Price */}
             <div className="space-y-2">
               <div className="flex justify-between items-center text-xs font-mono">
-                <span className="text-zinc-400 uppercase">Average Digital Product Price</span>
-                <span className="text-[#00FF66] font-bold text-sm bg-emerald-950/60 px-2.5 py-1 rounded border border-[#00FF66]/30">
+                <span className="text-zinc-600 uppercase">Average Digital Product Price</span>
+                <span className="text-emerald-800 font-bold text-sm bg-emerald-50 px-2.5 py-1 rounded border border-emerald-200">
                   ${avgProductPrice} USD
                 </span>
               </div>
@@ -92,9 +92,9 @@ export function RevenueCalculator() {
                 step="5"
                 value={avgProductPrice}
                 onChange={(e) => setAvgProductPrice(Number(e.target.value))}
-                className="w-full h-2 bg-zinc-800 rounded-lg appearance-none cursor-pointer accent-[#00FF66]"
+                className="w-full h-2 bg-zinc-200 rounded-lg appearance-none cursor-pointer accent-emerald-600"
               />
-              <div className="flex justify-between text-[10px] font-mono text-zinc-600">
+              <div className="flex justify-between text-[10px] font-mono text-zinc-400">
                 <span>$10</span>
                 <span>$125</span>
                 <span>$250</span>
@@ -104,30 +104,30 @@ export function RevenueCalculator() {
         </div>
 
         {/* Right Output Terminal */}
-        <div className="lg:col-span-5 rounded-2xl p-7 bg-[#050507] border border-white/15 text-white shadow-2xl relative space-y-6">
-          <div className="flex items-center justify-between pb-3 border-b border-white/10">
+        <div className="lg:col-span-5 rounded-2xl p-7 bg-zinc-950 border border-zinc-800 text-white shadow-2xl relative space-y-6">
+          <div className="flex items-center justify-between pb-3 border-b border-zinc-800">
             <span className="text-xs font-mono uppercase tracking-wider text-zinc-400">
               PROJECTED MONTHLY REVENUE
             </span>
-            <span className="text-[10px] font-mono font-bold px-2 py-0.5 rounded bg-[#00FF66]/10 text-[#00FF66] border border-[#00FF66]/20">
+            <span className="text-[10px] font-mono font-bold px-2 py-0.5 rounded bg-emerald-950/80 text-emerald-400 border border-emerald-500/30">
               0% PLATFORM FEE
             </span>
           </div>
 
           <div>
             <div className="text-4xl sm:text-6xl font-black text-white font-mono tracking-tight flex items-baseline gap-2">
-              <span className="text-[#00FF66]">$</span>
+              <span className="text-emerald-400">$</span>
               <span>{totalEstimatedMonthly.toLocaleString()}</span>
-              <span className="text-xs font-mono text-zinc-500 font-normal">/MO</span>
+              <span className="text-xs font-mono text-zinc-400 font-normal">/MO</span>
             </div>
             <div className="text-xs font-mono text-zinc-400 mt-2 flex items-center gap-1.5">
-              <ShieldCheck className="w-4 h-4 text-[#00FF66]" />
+              <ShieldCheck className="w-4 h-4 text-emerald-400" />
               <span>Direct Stripe settlement • Zero take-rate</span>
             </div>
           </div>
 
           {/* Revenue Breakdown */}
-          <div className="space-y-2.5 pt-3 border-t border-white/10 text-xs font-mono">
+          <div className="space-y-2.5 pt-3 border-t border-zinc-800 text-xs font-mono">
             <div className="flex justify-between text-zinc-400">
               <span>Digital Store Sales</span>
               <span className="text-white font-bold">{formatCurrency(productRevenue)}/mo</span>
@@ -143,14 +143,14 @@ export function RevenueCalculator() {
           </div>
 
           {/* Savings Highlight vs Legacy Platforms */}
-          <div className="p-3.5 rounded-xl bg-[#00FF66]/10 border border-[#00FF66]/30 text-xs font-mono text-[#00FF66] flex items-center justify-between">
+          <div className="p-3.5 rounded-xl bg-emerald-950/50 border border-emerald-500/30 text-xs font-mono text-emerald-300 flex items-center justify-between">
             <span>SAVED VS 10% PLATFORM FEES:</span>
             <span className="font-black text-white">+{formatCurrency(annualSavedWithWebworks)}/yr</span>
           </div>
 
           <a
             href="/dashboard"
-            className="w-full py-3.5 px-4 rounded-xl bg-[#00FF66] hover:bg-[#1eff7c] text-black text-xs font-black uppercase tracking-wider flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(0,255,102,0.3)] transition-all active:scale-95 cursor-pointer"
+            className="w-full py-3.5 px-4 rounded-xl bg-white hover:bg-zinc-100 text-zinc-950 text-xs font-black uppercase tracking-wider flex items-center justify-center gap-2 shadow-sm transition-all active:scale-95 cursor-pointer"
           >
             <span>Launch Your Page at 100% Payout</span>
             <ArrowRight className="w-4 h-4 stroke-[3]" />

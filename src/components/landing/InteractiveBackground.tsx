@@ -65,7 +65,7 @@ export function InteractiveBackground() {
 
     const initNodes = () => {
       nodes = [];
-      const density = Math.max(12, Math.floor(Math.sqrt((width * height) / 16000)));
+      const density = Math.max(12, Math.floor(Math.sqrt((width * height) / 18000)));
       for (let i = 0; i < density; i++) {
         const x = Math.random() * width;
         const y = Math.random() * height;
@@ -74,8 +74,8 @@ export function InteractiveBackground() {
           y,
           baseX: x,
           baseY: y,
-          vx: (Math.random() - 0.5) * 0.4,
-          vy: (Math.random() - 0.5) * 0.4,
+          vx: (Math.random() - 0.5) * 0.35,
+          vy: (Math.random() - 0.5) * 0.35,
           size: Math.random() * 1.5 + 1,
         });
       }
@@ -99,11 +99,11 @@ export function InteractiveBackground() {
           0,
           mouse.x,
           mouse.y,
-          380
+          360
         );
-        gradient.addColorStop(0, "rgba(0, 255, 102, 0.07)");
-        gradient.addColorStop(0.5, "rgba(0, 255, 102, 0.02)");
-        gradient.addColorStop(1, "rgba(0, 0, 0, 0)");
+        gradient.addColorStop(0, "rgba(16, 185, 129, 0.06)");
+        gradient.addColorStop(0.5, "rgba(16, 185, 129, 0.015)");
+        gradient.addColorStop(1, "rgba(255, 255, 255, 0)");
         ctx.fillStyle = gradient;
         ctx.fillRect(0, 0, width, height);
       }
@@ -126,8 +126,8 @@ export function InteractiveBackground() {
             const dist = Math.sqrt(dx * dx + dy * dy);
             if (dist < 180 && dist > 0) {
               const force = (180 - dist) / 180;
-              node.x -= (dx / dist) * force * 1.8;
-              node.y -= (dy / dist) * force * 1.8;
+              node.x -= (dx / dist) * force * 1.5;
+              node.y -= (dy / dist) * force * 1.5;
             }
           }
         }
@@ -140,7 +140,7 @@ export function InteractiveBackground() {
           const dist = Math.sqrt(dx * dx + dy * dy);
 
           if (dist < 130) {
-            const alpha = (1 - dist / 130) * 0.15;
+            const alpha = (1 - dist / 130) * 0.12;
             
             // Check if near mouse
             let isNearMouse = false;
@@ -155,8 +155,8 @@ export function InteractiveBackground() {
             ctx.moveTo(node.x, node.y);
             ctx.lineTo(other.x, other.y);
             ctx.strokeStyle = isNearMouse
-              ? `rgba(0, 255, 102, ${Math.min(0.6, alpha * 2.5)})`
-              : `rgba(255, 255, 255, ${alpha})`;
+              ? `rgba(16, 185, 129, ${Math.min(0.5, alpha * 2.5)})`
+              : `rgba(0, 0, 0, ${alpha})`;
             ctx.lineWidth = isNearMouse ? 1 : 0.6;
             ctx.stroke();
           }
@@ -173,13 +173,13 @@ export function InteractiveBackground() {
         }
 
         ctx.fillStyle = nodeNearMouse
-          ? "rgba(0, 255, 102, 0.9)"
-          : "rgba(255, 255, 255, 0.25)";
+          ? "rgba(16, 185, 129, 0.85)"
+          : "rgba(0, 0, 0, 0.16)";
         ctx.fill();
 
         if (nodeNearMouse) {
-          ctx.shadowColor = "#00ff66";
-          ctx.shadowBlur = 8;
+          ctx.shadowColor = "#10b981";
+          ctx.shadowBlur = 6;
         } else {
           ctx.shadowBlur = 0;
         }
@@ -200,18 +200,18 @@ export function InteractiveBackground() {
 
   return (
     <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
-      {/* Background Tech Grid */}
-      <div className="absolute inset-0 bg-tech-grid opacity-35" />
-      {/* Ambient static radial glows */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[550px] bg-[radial-gradient(ellipse_at_top,rgba(0,255,102,0.08),transparent_70%)] pointer-events-none" />
-      <div className="absolute top-[40%] right-[-10%] w-[650px] h-[650px] bg-[radial-gradient(circle,rgba(0,255,102,0.04),transparent_65%)] pointer-events-none" />
+      {/* Light Background Tech Grid */}
+      <div className="absolute inset-0 bg-tech-grid-light opacity-60" />
+      {/* Ambient static soft radial glows */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1100px] h-[550px] bg-[radial-gradient(ellipse_at_top,rgba(16,185,129,0.06),transparent_70%)] pointer-events-none" />
+      <div className="absolute top-[40%] right-[-10%] w-[650px] h-[650px] bg-[radial-gradient(circle,rgba(16,185,129,0.03),transparent_65%)] pointer-events-none" />
       {/* Dynamic Interactive Canvas */}
       <canvas
         ref={canvasRef}
-        className="absolute inset-0 w-full h-full opacity-60"
+        className="absolute inset-0 w-full h-full opacity-70"
       />
-      {/* Subtle Grain Overlay */}
-      <div className="grain-overlay" />
+      {/* Delicate Grain Overlay */}
+      <div className="grain-overlay-light" />
     </div>
   );
 }

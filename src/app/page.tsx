@@ -10,8 +10,8 @@ import { InteractiveBackground } from "@/components/landing/InteractiveBackgroun
 
 export default function LandingPage() {
   return (
-    <div className="relative min-h-screen bg-[#050505] text-white overflow-hidden flex flex-col justify-between selection:bg-[#00FF66] selection:text-black">
-      {/* Biova-inspired Interactive Background with Particles & Tech Grid */}
+    <div className="relative min-h-screen bg-[#fafafa] text-zinc-900 overflow-hidden flex flex-col justify-between selection:bg-emerald-100 selection:text-emerald-950">
+      {/* Soft Luminous Interactive Background with Delicate Nodes & Tech Grid */}
       <InteractiveBackground />
 
       {/* Top Floating Glass Navigation */}
@@ -24,21 +24,21 @@ export default function LandingPage() {
         {/* 2. Interactive Phone Preview Simulator */}
         <section
           id="interactive-preview"
-          className="relative py-24 sm:py-36 border-y border-white/[0.08] bg-black/40 backdrop-blur-md"
+          className="relative py-24 sm:py-36 border-y border-zinc-200/80 bg-zinc-50/70 backdrop-blur-md"
         >
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-3xl mx-auto mb-16">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-zinc-950 border border-white/10 text-[11px] font-mono uppercase tracking-widest text-zinc-400 mb-4">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#00FF66]" />
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-zinc-200/90 text-[11px] font-mono uppercase tracking-widest text-zinc-600 mb-4 shadow-2xs">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
                 <span>INTERACTIVE DEVICE SIMULATOR // REAL-TIME ENGINE</span>
               </div>
-              <h2 className="text-4xl sm:text-6xl font-black uppercase tracking-tight text-white">
+              <h2 className="text-4xl sm:text-6xl font-black uppercase tracking-tight text-zinc-950">
                 Experience your profile{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00FF66] to-emerald-400">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 via-teal-600 to-emerald-500">
                   before you publish.
                 </span>
               </h2>
-              <p className="text-sm sm:text-base text-zinc-400 mt-4 max-w-xl mx-auto leading-relaxed">
+              <p className="text-sm sm:text-base text-zinc-600 mt-4 max-w-xl mx-auto leading-relaxed">
                 Cycle through responsive palettes, inspect store deliverables, test tip flows, and view verified audience media cards.
               </p>
             </div>
