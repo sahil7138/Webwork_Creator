@@ -80,10 +80,10 @@ Webwork_Creator/
 ---
 
 ## 5. Visual Design Tokens & Aesthetic Standards
-- **Aesthetic**: Obsidian Minimalism (Linear, Bento, Apple Studio dark aesthetic). Authentic, grounded, tactile, zero gimmicks or AI-generated neon.
-- **Backgrounds**: Obsidian deep space (`#06080e`), surface slate (`#0c101c`), card neutral (`#121215`, `#18181b`).
-- **Borders & Dividers**: Crisp hairline borders (`border-white/10`, `border-zinc-800`), high-contrast subtle focus rings.
-- **Accents & CTAs**: Crisp solid white buttons with charcoal hover (`bg-white hover:bg-zinc-200 text-zinc-950 font-bold`), metallic silver accents, muted zinc secondary tags.
+- **Aesthetic**: Studio Light Minimalism (Linear light, Notion, Stripe, Apple Studio clean light aesthetic). Crisp, tactile, authentic, high-converting editorial design.
+- **Backgrounds**: Crisp light space (`#fafafa`, `#ffffff`), surface porcelain (`#f4f4f5`, `#f8fafc`), card neutral (`#ffffff`).
+- **Borders & Dividers**: Crisp hairline borders (`border-zinc-200`, `border-zinc-200/80`), subtle focus rings (`ring-zinc-950/10`).
+- **Accents & CTAs**: High-contrast solid charcoal/pitch-black buttons with hover (`bg-zinc-950 hover:bg-zinc-800 text-white font-bold`), metallic pewter secondary tags, emerald verified badges.
 - **Zero Placeholder Broken States**: All demo views, avatars, and blocks render realistic mock content.
 
 ---

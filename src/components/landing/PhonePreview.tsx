@@ -4,15 +4,11 @@ import React, { useState } from "react";
 import {
   ExternalLink,
   ShoppingBag,
-  Sparkles,
   Heart,
   Mail,
   CheckCircle2,
-  DollarSign,
   TrendingUp,
   Users,
-  BookOpen,
-  ArrowRight,
   FolderGit2,
 } from "lucide-react";
 import { InstagramIcon, YoutubeIcon, TwitterIcon } from "@/components/ui/SocialIcons";
@@ -44,16 +40,16 @@ export function PhonePreview() {
   return (
     <div className="relative flex flex-col items-center">
       {/* Theme Switcher Pills */}
-      <div className="flex items-center gap-2 p-1.5 mb-6 rounded-full glass-panel border border-white/10 z-20">
-        <span className="text-xs font-medium text-slate-400 px-2.5">Theme:</span>
+      <div className="flex items-center gap-2 p-1.5 mb-6 rounded-full bg-white border border-zinc-200 shadow-sm z-20">
+        <span className="text-xs font-medium text-zinc-500 px-2.5">Theme:</span>
         {CREATOR_THEMES.map((theme) => (
           <button
             key={theme.id}
             onClick={() => setCurrentTheme(theme)}
             className={`px-3 py-1 rounded-full text-xs font-semibold transition-all ${
               currentTheme.id === theme.id
-                ? "bg-white text-zinc-950 font-bold shadow-sm"
-                : "text-slate-400 hover:text-white hover:bg-white/5"
+                ? "bg-zinc-950 text-white font-bold shadow-xs"
+                : "text-zinc-600 hover:text-zinc-950 hover:bg-zinc-100"
             }`}
           >
             {theme.name}
@@ -62,36 +58,36 @@ export function PhonePreview() {
       </div>
 
       {/* Realistic Mobile Device Frame */}
-      <div className="relative w-[340px] sm:w-[380px] h-[720px] rounded-[48px] p-3 bg-gradient-to-b from-neutral-800 via-neutral-900 to-black shadow-2xl shadow-black/80 border-4 border-neutral-700/60 ring-1 ring-white/10">
+      <div className="relative w-[340px] sm:w-[380px] h-[720px] rounded-[48px] p-3 bg-gradient-to-b from-zinc-200 via-zinc-100 to-zinc-300 shadow-2xl shadow-zinc-400/40 border-4 border-zinc-300 ring-1 ring-zinc-400/30">
         {/* Dynamic Island / Notch */}
-        <div className="absolute top-6 left-1/2 -translate-x-1/2 w-28 h-5 bg-black rounded-full z-40 flex items-center justify-between px-3">
-          <div className="w-2.5 h-2.5 rounded-full bg-neutral-900 ring-1 ring-neutral-800" />
-          <div className="w-2 h-2 rounded-full bg-emerald-500/80 animate-pulse" />
+        <div className="absolute top-6 left-1/2 -translate-x-1/2 w-28 h-5 bg-zinc-950 rounded-full z-40 flex items-center justify-between px-3">
+          <div className="w-2.5 h-2.5 rounded-full bg-zinc-800 ring-1 ring-zinc-700" />
+          <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
         </div>
 
         {/* Inner Phone Screen */}
         <div
-          className={`relative w-full h-full rounded-[38px] overflow-hidden flex flex-col ${currentTheme.background} transition-colors duration-500`}
+          className={`relative w-full h-full rounded-[38px] overflow-hidden flex flex-col ${currentTheme.background} transition-colors duration-500 border border-zinc-200/50`}
         >
           {/* Top Status Bar */}
-          <div className="w-full pt-3 px-6 flex justify-between items-center text-[11px] font-medium text-slate-300 z-30 select-none">
+          <div className="w-full pt-3 px-6 flex justify-between items-center text-[11px] font-medium text-zinc-600 z-30 select-none">
             <span>9:41</span>
-            <div className="flex items-center gap-1.5 text-slate-300">
+            <div className="flex items-center gap-1.5 text-zinc-600">
               <span>5G</span>
-              <div className="w-5 h-2.5 rounded-sm border border-slate-300/80 p-0.5 flex items-center">
-                <div className="w-3 h-full bg-white rounded-xs" />
+              <div className="w-5 h-2.5 rounded-xs border border-zinc-500 p-0.5 flex items-center">
+                <div className="w-3 h-full bg-zinc-800 rounded-2xs" />
               </div>
             </div>
           </div>
 
           {/* Nav / Tabs inside creator page */}
-          <div className="mt-4 px-2 flex justify-center gap-1 border-b border-white/5 pb-2.5">
+          <div className="mt-4 px-2 flex justify-center gap-1 border-b border-zinc-200/80 pb-2.5">
             <button
               onClick={() => setActiveTab("links")}
               className={`px-2.5 py-1 rounded-lg text-xs font-medium transition-all ${
                 activeTab === "links"
-                  ? "bg-white text-zinc-950 font-bold shadow-xs"
-                  : "text-slate-400 hover:text-slate-200"
+                  ? "bg-zinc-950 text-white font-bold shadow-xs"
+                  : "text-zinc-600 hover:text-zinc-950 hover:bg-zinc-100"
               }`}
             >
               Links
@@ -100,31 +96,31 @@ export function PhonePreview() {
               onClick={() => setActiveTab("portfolio")}
               className={`px-2.5 py-1 rounded-lg text-xs font-medium transition-all flex items-center gap-1 ${
                 activeTab === "portfolio"
-                  ? "bg-white text-zinc-950 font-bold shadow-xs"
-                  : "text-slate-400 hover:text-slate-200"
+                  ? "bg-zinc-950 text-white font-bold shadow-xs"
+                  : "text-zinc-600 hover:text-zinc-950 hover:bg-zinc-100"
               }`}
             >
-              <FolderGit2 className="w-3 h-3 text-zinc-300" /> Portfolio
+              <FolderGit2 className="w-3 h-3" /> Portfolio
             </button>
             <button
               onClick={() => setActiveTab("store")}
               className={`px-2.5 py-1 rounded-lg text-xs font-medium transition-all flex items-center gap-1 ${
                 activeTab === "store"
-                  ? "bg-white text-zinc-950 font-bold shadow-xs"
-                  : "text-slate-400 hover:text-slate-200"
+                  ? "bg-zinc-950 text-white font-bold shadow-xs"
+                  : "text-zinc-600 hover:text-zinc-950 hover:bg-zinc-100"
               }`}
             >
-              <ShoppingBag className="w-3 h-3 text-zinc-300" /> Store
+              <ShoppingBag className="w-3 h-3" /> Store
             </button>
             <button
               onClick={() => setActiveTab("mediakit")}
               className={`px-2.5 py-1 rounded-lg text-xs font-medium transition-all flex items-center gap-1 ${
                 activeTab === "mediakit"
-                  ? "bg-white text-zinc-950 font-bold shadow-xs"
-                  : "text-slate-400 hover:text-slate-200"
+                  ? "bg-zinc-950 text-white font-bold shadow-xs"
+                  : "text-zinc-600 hover:text-zinc-950 hover:bg-zinc-100"
               }`}
             >
-              <TrendingUp className="w-3 h-3 text-zinc-300" /> Stats
+              <TrendingUp className="w-3 h-3" /> Stats
             </button>
           </div>
 
@@ -136,28 +132,28 @@ export function PhonePreview() {
                 <img
                   src={DEMO_CREATOR.avatarUrl}
                   alt={DEMO_CREATOR.displayName}
-                  className="w-18 h-18 rounded-full object-cover ring-1 ring-white/20 shadow-lg"
+                  className="w-18 h-18 rounded-full object-cover ring-2 ring-white shadow-md"
                 />
-                <span className="absolute bottom-0 right-0 p-1 bg-white text-zinc-950 rounded-full shadow-md">
+                <span className="absolute bottom-0 right-0 p-1 bg-zinc-950 text-white rounded-full shadow-md">
                   <CheckCircle2 className="w-3.5 h-3.5" />
                 </span>
               </div>
-              <h3 className="font-semibold text-base text-white flex items-center gap-1">
+              <h3 className="font-bold text-base text-zinc-950 flex items-center gap-1">
                 {DEMO_CREATOR.displayName}
               </h3>
-              <p className="text-xs text-slate-400 max-w-[240px] mt-0.5 line-clamp-2">
+              <p className="text-xs text-zinc-600 max-w-[240px] mt-0.5 line-clamp-2">
                 {DEMO_CREATOR.bio}
               </p>
 
               {/* Social Icons Bar */}
-              <div className="flex items-center gap-3 mt-2.5 text-slate-400">
-                <a href="#instagram" className="hover:text-pink-400 transition-colors">
+              <div className="flex items-center gap-3 mt-2.5 text-zinc-500">
+                <a href="#instagram" className="hover:text-pink-600 transition-colors">
                   <InstagramIcon className="w-3.5 h-3.5" />
                 </a>
-                <a href="#youtube" className="hover:text-red-400 transition-colors">
+                <a href="#youtube" className="hover:text-red-600 transition-colors">
                   <YoutubeIcon className="w-3.5 h-3.5" />
                 </a>
-                <a href="#twitter" className="hover:text-sky-400 transition-colors">
+                <a href="#twitter" className="hover:text-zinc-950 transition-colors">
                   <TwitterIcon className="w-3.5 h-3.5" />
                 </a>
               </div>
@@ -168,7 +164,7 @@ export function PhonePreview() {
               <div className="space-y-2.5 pt-1">
                 {/* Product Block */}
                 <div
-                  className={`p-3 rounded-2xl border transition-all ${currentTheme.cardBg} hover:scale-[1.01]`}
+                  className={`p-3 rounded-2xl border transition-all ${currentTheme.cardBg} hover:shadow-sm`}
                 >
                   <div className="flex items-center gap-3">
                     <img
@@ -178,15 +174,15 @@ export function PhonePreview() {
                     />
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center justify-between">
-                        <span className="text-[10px] font-semibold text-zinc-400 tracking-wider">
+                        <span className="text-[10px] font-bold text-zinc-500 tracking-wider">
                           BESTSELLER
                         </span>
-                        <span className="text-xs font-bold text-white">$49</span>
+                        <span className="text-xs font-bold text-zinc-950">$49</span>
                       </div>
-                      <h4 className="text-xs font-semibold text-white truncate mt-0.5">
+                      <h4 className="text-xs font-bold text-zinc-950 truncate mt-0.5">
                         Mastering Modern UI
                       </h4>
-                      <p className="text-[10px] text-slate-400 truncate">
+                      <p className="text-[10px] text-zinc-500 truncate">
                         240pg Guide + 40 Figma components
                       </p>
                     </div>
@@ -196,31 +192,31 @@ export function PhonePreview() {
                 {/* Community Link Block */}
                 <a
                   href="#discord"
-                  className={`p-3 rounded-2xl border flex items-center justify-between transition-all ${currentTheme.cardBg} hover:border-white/20`}
+                  className={`p-3 rounded-2xl border flex items-center justify-between transition-all ${currentTheme.cardBg} hover:border-zinc-300`}
                 >
                   <div className="flex items-center gap-2.5">
-                    <div className="w-8 h-8 rounded-xl bg-white/5 text-zinc-300 flex items-center justify-center shrink-0">
+                    <div className="w-8 h-8 rounded-xl bg-zinc-100 text-zinc-800 border border-zinc-200 flex items-center justify-center shrink-0">
                       <Users className="w-4 h-4" />
                     </div>
                     <div>
-                      <div className="text-xs font-semibold text-white">
+                      <div className="text-xs font-bold text-zinc-950">
                         Private Creator Community
                       </div>
-                      <div className="text-[10px] text-slate-400">
+                      <div className="text-[10px] text-zinc-500">
                         4,200+ engineers & builders
                       </div>
                     </div>
                   </div>
-                  <ExternalLink className="w-3.5 h-3.5 text-slate-400" />
+                  <ExternalLink className="w-3.5 h-3.5 text-zinc-400" />
                 </a>
 
                 {/* Email Newsletter Box */}
                 <div className={`p-3 rounded-2xl border ${currentTheme.cardBg}`}>
                   <div className="flex items-center gap-2 mb-1.5">
-                    <Mail className="w-3.5 h-3.5 text-zinc-300" />
-                    <span className="text-xs font-semibold text-white">Weekly Design Digest</span>
+                    <Mail className="w-3.5 h-3.5 text-zinc-700" />
+                    <span className="text-xs font-bold text-zinc-950">Weekly Design Digest</span>
                   </div>
-                  <p className="text-[10px] text-slate-400 mb-2">
+                  <p className="text-[10px] text-zinc-500 mb-2">
                     Actionable creator tips delivered every Tuesday.
                   </p>
                   <form onSubmit={handleSubscribe} className="flex gap-1.5">
@@ -229,11 +225,11 @@ export function PhonePreview() {
                       value={userEmail}
                       onChange={(e) => setUserEmail(e.target.value)}
                       placeholder="Your email address"
-                      className="flex-1 text-[11px] px-2.5 py-1.5 rounded-xl bg-black/40 border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-white/40"
+                      className="flex-1 text-[11px] px-2.5 py-1.5 rounded-xl bg-white border border-zinc-200 text-zinc-950 placeholder-zinc-400 focus:outline-none focus:border-zinc-800"
                     />
                     <button
                       type="submit"
-                      className="px-2.5 py-1.5 rounded-xl bg-white hover:bg-zinc-200 text-zinc-950 text-[11px] font-bold shrink-0 shadow-sm"
+                      className="px-2.5 py-1.5 rounded-xl bg-zinc-950 hover:bg-zinc-800 text-white text-[11px] font-bold shrink-0 shadow-xs"
                     >
                       {emailSubscribed ? "✓ Joined" : "Join"}
                     </button>
@@ -243,10 +239,10 @@ export function PhonePreview() {
                 {/* Tip Jar Block */}
                 <div className={`p-3 rounded-2xl border ${currentTheme.cardBg}`}>
                   <div className="flex items-center justify-between mb-2">
-                    <span className="text-xs font-semibold text-white flex items-center gap-1.5">
-                      <Heart className="w-3 h-3 text-rose-400 fill-rose-400" /> Support the Work
+                    <span className="text-xs font-bold text-zinc-950 flex items-center gap-1.5">
+                      <Heart className="w-3 h-3 text-rose-500 fill-rose-500" /> Support the Work
                     </span>
-                    <span className="text-[10px] text-slate-400">Instant tip</span>
+                    <span className="text-[10px] text-zinc-500">Instant tip</span>
                   </div>
                   <div className="grid grid-cols-3 gap-1.5 mb-2">
                     {[3, 5, 10].map((amt) => (
@@ -256,8 +252,8 @@ export function PhonePreview() {
                         onClick={() => setTipAmount(amt)}
                         className={`py-1 rounded-lg text-xs font-medium border transition-all ${
                           tipAmount === amt
-                            ? "bg-white text-zinc-950 font-bold border-white"
-                            : "bg-white/5 border-white/5 text-slate-300 hover:bg-white/10"
+                            ? "bg-zinc-950 text-white font-bold border-zinc-950"
+                            : "bg-white border-zinc-200 text-zinc-700 hover:bg-zinc-50"
                         }`}
                       >
                         ${amt}
@@ -266,7 +262,7 @@ export function PhonePreview() {
                   </div>
                   <button
                     onClick={handleTip}
-                    className="w-full py-1.5 rounded-xl bg-white hover:bg-zinc-200 text-zinc-950 text-xs font-bold shadow-sm active:scale-95 transition-all"
+                    className="w-full py-1.5 rounded-xl bg-zinc-950 hover:bg-zinc-800 text-white text-xs font-bold shadow-xs active:scale-95 transition-all"
                   >
                     {tipSent ? "❤️ Thank you so much!" : `Send $${tipAmount} Tip`}
                   </button>
@@ -277,38 +273,38 @@ export function PhonePreview() {
             {/* TAB: PORTFOLIO SHOWCASE */}
             {activeTab === "portfolio" && (
               <div className="space-y-3 pt-1 text-left">
-                <div className="flex items-center justify-between text-xs text-slate-400 px-1">
+                <div className="flex items-center justify-between text-xs text-zinc-500 px-1">
                   <span>Selected Projects ({DEMO_PORTFOLIO_PROJECTS.length})</span>
-                  <span className="text-zinc-400 font-medium">Interactive Demo</span>
+                  <span className="text-zinc-600 font-medium">Interactive Demo</span>
                 </div>
 
                 {DEMO_PORTFOLIO_PROJECTS.map((proj) => (
                   <div
                     key={proj.id}
-                    className={`overflow-hidden border ${currentTheme.cardBg} ${currentTheme.buttonRadius} group transition-all hover:scale-[1.01]`}
+                    className={`overflow-hidden border ${currentTheme.cardBg} ${currentTheme.buttonRadius} group transition-all hover:shadow-sm`}
                   >
-                    <div className="relative h-28 w-full bg-slate-900 overflow-hidden">
+                    <div className="relative h-28 w-full bg-zinc-100 overflow-hidden">
                       <img
                         src={proj.thumbnailUrl}
                         alt={proj.title}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                       />
-                      <span className="absolute top-2 left-2 text-[9px] font-bold px-1.5 py-0.5 rounded bg-black/60 backdrop-blur-md text-zinc-200">
+                      <span className="absolute top-2 left-2 text-[9px] font-bold px-1.5 py-0.5 rounded bg-white/90 backdrop-blur-md text-zinc-900 border border-zinc-200/60 shadow-2xs">
                         {proj.category}
                       </span>
                     </div>
                     <div className="p-3">
-                      <h4 className="text-xs font-bold text-white line-clamp-1">
+                      <h4 className="text-xs font-bold text-zinc-950 line-clamp-1">
                         {proj.title}
                       </h4>
-                      <p className="text-[10px] text-slate-300 line-clamp-2 mt-1 leading-snug">
+                      <p className="text-[10px] text-zinc-600 line-clamp-2 mt-1 leading-snug">
                         {proj.description}
                       </p>
                       <div className="flex flex-wrap gap-1 mt-2 mb-2.5">
                         {proj.tags.slice(0, 3).map((tag, i) => (
                           <span
                             key={i}
-                            className="text-[8px] px-1.5 py-0.2 rounded bg-white/10 text-slate-200"
+                            className="text-[8px] px-1.5 py-0.5 rounded bg-zinc-100 text-zinc-600 border border-zinc-200/80"
                           >
                             #{tag}
                           </span>
@@ -318,7 +314,7 @@ export function PhonePreview() {
                         href={proj.projectUrl}
                         target="_blank"
                         rel="noreferrer"
-                        className="w-full py-1.5 rounded-lg bg-white hover:bg-zinc-200 text-zinc-950 text-[10px] font-bold flex items-center justify-center gap-1 transition-colors"
+                        className="w-full py-1.5 rounded-lg bg-zinc-950 hover:bg-zinc-800 text-white text-[10px] font-bold flex items-center justify-center gap-1 transition-colors shadow-2xs"
                       >
                         <span>View Project</span>
                         <ExternalLink className="w-2.5 h-2.5" />
@@ -332,9 +328,9 @@ export function PhonePreview() {
             {/* TAB 2: STORE */}
             {activeTab === "store" && (
               <div className="space-y-3 pt-1">
-                <div className="flex items-center justify-between text-xs text-slate-400 px-1">
+                <div className="flex items-center justify-between text-xs text-zinc-500 px-1">
                   <span>3 Digital Products</span>
-                  <span className="text-cyan-400">Instant Delivery</span>
+                  <span className="text-emerald-600 font-semibold">Instant Delivery</span>
                 </div>
                 {[
                   {
@@ -369,11 +365,11 @@ export function PhonePreview() {
                       className="w-14 h-14 rounded-xl object-cover shrink-0"
                     />
                     <div className="flex-1 min-w-0">
-                      <h4 className="text-xs font-semibold text-white truncate">{prod.title}</h4>
-                      <p className="text-[10px] text-slate-400 truncate">{prod.type}</p>
+                      <h4 className="text-xs font-bold text-zinc-950 truncate">{prod.title}</h4>
+                      <p className="text-[10px] text-zinc-500 truncate">{prod.type}</p>
                       <div className="flex items-center justify-between mt-1.5">
-                        <span className="text-xs font-bold text-emerald-400">${prod.price}</span>
-                        <button className="px-2.5 py-1 rounded-lg bg-white/10 hover:bg-white/20 text-white text-[10px] font-medium transition-all">
+                        <span className="text-xs font-bold text-emerald-600">${prod.price}</span>
+                        <button className="px-2.5 py-1 rounded-lg bg-zinc-950 hover:bg-zinc-800 text-white text-[10px] font-medium transition-all shadow-2xs">
                           Get Access
                         </button>
                       </div>
@@ -386,44 +382,44 @@ export function PhonePreview() {
             {/* TAB 3: MEDIA KIT */}
             {activeTab === "mediakit" && (
               <div className="space-y-3 pt-1">
-                <div className="p-3 rounded-2xl border bg-zinc-900 border-zinc-800 text-center">
-                  <span className="text-[10px] font-semibold text-zinc-400 uppercase tracking-wider">
+                <div className="p-3 rounded-2xl border bg-white border-zinc-200 text-center shadow-xs">
+                  <span className="text-[10px] font-bold text-zinc-500 uppercase tracking-wider">
                     Verified Creator Stats
                   </span>
-                  <div className="text-xl font-bold text-white mt-0.5">850,000+</div>
-                  <div className="text-[10px] text-slate-400">Total Monthly Audience Reach</div>
+                  <div className="text-xl font-bold text-zinc-950 mt-0.5">850,000+</div>
+                  <div className="text-[10px] text-zinc-500">Total Monthly Audience Reach</div>
                 </div>
 
                 <div className="grid grid-cols-2 gap-2">
                   <div className={`p-2.5 rounded-xl border ${currentTheme.cardBg}`}>
-                    <div className="text-[10px] text-slate-400">Engagement</div>
-                    <div className="text-sm font-bold text-white mt-0.5">5.4%</div>
-                    <div className="text-[9px] text-emerald-400">3x industry avg</div>
+                    <div className="text-[10px] text-zinc-500">Engagement</div>
+                    <div className="text-sm font-bold text-zinc-950 mt-0.5">5.4%</div>
+                    <div className="text-[9px] text-emerald-600 font-semibold">3x industry avg</div>
                   </div>
                   <div className={`p-2.5 rounded-xl border ${currentTheme.cardBg}`}>
-                    <div className="text-[10px] text-slate-400">Audience Geo</div>
-                    <div className="text-sm font-bold text-white mt-0.5">68% US/UK</div>
-                    <div className="text-[9px] text-slate-400">Tech & Design</div>
+                    <div className="text-[10px] text-zinc-500">Audience Geo</div>
+                    <div className="text-sm font-bold text-zinc-950 mt-0.5">68% US/UK</div>
+                    <div className="text-[9px] text-zinc-500">Tech & Design</div>
                   </div>
                 </div>
 
                 <div className={`p-3 rounded-2xl border ${currentTheme.cardBg}`}>
-                  <div className="text-xs font-semibold text-white mb-2">Sponsorship Rates</div>
+                  <div className="text-xs font-bold text-zinc-950 mb-2">Sponsorship Rates</div>
                   <div className="space-y-1.5 text-[11px]">
-                    <div className="flex justify-between text-slate-300">
+                    <div className="flex justify-between text-zinc-600">
                       <span>YouTube Dedicated Video</span>
-                      <span className="font-bold text-white">$3,500</span>
+                      <span className="font-bold text-zinc-950">$3,500</span>
                     </div>
-                    <div className="flex justify-between text-slate-300">
+                    <div className="flex justify-between text-zinc-600">
                       <span>Newsletter Header Sponsor</span>
-                      <span className="font-bold text-white">$950</span>
+                      <span className="font-bold text-zinc-950">$950</span>
                     </div>
-                    <div className="flex justify-between text-slate-300">
+                    <div className="flex justify-between text-zinc-600">
                       <span>X / Twitter Thread</span>
-                      <span className="font-bold text-white">$750</span>
+                      <span className="font-bold text-zinc-950">$750</span>
                     </div>
                   </div>
-                  <button className="w-full mt-3 py-1.5 rounded-xl bg-white hover:bg-zinc-200 text-zinc-950 text-xs font-bold shadow-sm">
+                  <button className="w-full mt-3 py-1.5 rounded-xl bg-zinc-950 hover:bg-zinc-800 text-white text-xs font-bold shadow-xs">
                     Inquire for Collaboration
                   </button>
                 </div>
@@ -432,9 +428,9 @@ export function PhonePreview() {
           </div>
 
           {/* Bottom Branding Badge inside preview */}
-          <div className="py-2.5 text-center bg-black/40 border-t border-white/5 z-20">
-            <span className="text-[10px] text-slate-500 font-medium tracking-wide">
-              Powered by <span className="text-white font-semibold">Webworks</span>
+          <div className="py-2.5 text-center bg-zinc-50 border-t border-zinc-200 z-20">
+            <span className="text-[10px] text-zinc-500 font-medium tracking-wide">
+              Powered by <span className="text-zinc-950 font-bold">Webworks</span>
             </span>
           </div>
         </div>

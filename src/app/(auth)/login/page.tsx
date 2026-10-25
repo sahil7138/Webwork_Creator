@@ -20,22 +20,22 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#06080e] flex flex-col justify-center items-center px-4 relative overflow-hidden">
-      <div className="bg-grid-pattern absolute inset-0 opacity-30 pointer-events-none" />
+    <div className="min-h-screen bg-[#fafafa] flex flex-col justify-center items-center px-4 relative overflow-hidden">
+      <div className="bg-grid-pattern absolute inset-0 pointer-events-none" />
 
       {/* Top Logo */}
       <Link href="/" className="flex items-center gap-2 mb-8 z-10 group">
-        <div className="w-10 h-10 rounded-xl bg-zinc-900 border border-zinc-750 flex items-center justify-center text-white font-extrabold text-sm group-hover:border-zinc-500 transition-colors">
+        <div className="w-10 h-10 rounded-xl bg-zinc-950 border border-zinc-900 flex items-center justify-center text-white font-extrabold text-sm group-hover:scale-105 transition-transform">
           W
         </div>
-        <span className="font-extrabold text-xl text-white tracking-tight">Webworks</span>
+        <span className="font-extrabold text-xl text-zinc-950 tracking-tight">Webworks</span>
       </Link>
 
       {/* Auth Card */}
-      <div className="w-full max-w-md rounded-3xl glass-panel border border-white/10 p-8 shadow-2xl shadow-black/80 relative z-10">
+      <div className="w-full max-w-md rounded-3xl bg-white border border-zinc-200/90 p-8 shadow-xl shadow-zinc-200/50 relative z-10">
         <div className="text-center mb-6">
-          <h1 className="text-2xl font-bold text-white tracking-tight">Welcome Back</h1>
-          <p className="text-xs text-slate-400 mt-1.5">
+          <h1 className="text-2xl font-bold text-zinc-950 tracking-tight">Welcome Back</h1>
+          <p className="text-xs text-zinc-500 mt-1.5">
             Sign in to manage your link-in-bio, products, and brand deals
           </p>
         </div>
@@ -44,7 +44,7 @@ export default function LoginPage() {
         <div className="space-y-2.5 mb-6">
           <button
             onClick={() => (window.location.href = "/dashboard")}
-            className="w-full py-2.5 px-4 rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 text-white text-xs font-semibold flex items-center justify-center gap-2.5 transition-all"
+            className="w-full py-2.5 px-4 rounded-xl border border-zinc-200 bg-zinc-50 hover:bg-zinc-100 text-zinc-800 text-xs font-semibold flex items-center justify-center gap-2.5 transition-all shadow-sm"
           >
             <svg className="w-4 h-4" viewBox="0 0 24 24">
               <path
@@ -68,16 +68,16 @@ export default function LoginPage() {
           </button>
           <button
             onClick={() => (window.location.href = "/dashboard")}
-            className="w-full py-2.5 px-4 rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 text-white text-xs font-semibold flex items-center justify-center gap-2.5 transition-all"
+            className="w-full py-2.5 px-4 rounded-xl border border-zinc-200 bg-zinc-50 hover:bg-zinc-100 text-zinc-800 text-xs font-semibold flex items-center justify-center gap-2.5 transition-all shadow-sm"
           >
-            <GithubIcon className="w-4 h-4 text-white" />
+            <GithubIcon className="w-4 h-4 text-zinc-900" />
             Continue with GitHub
           </button>
         </div>
 
         <div className="relative flex items-center justify-center my-6">
-          <div className="border-t border-white/10 w-full" />
-          <span className="bg-[#0b101d] px-3 text-[11px] text-slate-500 uppercase tracking-wider relative">
+          <div className="border-t border-zinc-200 w-full" />
+          <span className="bg-white px-3 text-[11px] text-zinc-400 uppercase tracking-wider relative">
             Or with email
           </span>
         </div>
@@ -85,38 +85,38 @@ export default function LoginPage() {
         {/* Email Form */}
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
-            <label className="block text-xs font-medium text-slate-300 mb-1.5">
+            <label className="block text-xs font-medium text-zinc-700 mb-1.5">
               Email Address
             </label>
             <div className="relative">
-              <Mail className="w-4 h-4 text-slate-500 absolute left-3.5 top-3" />
+              <Mail className="w-4 h-4 text-zinc-400 absolute left-3.5 top-3" />
               <input
                 type="email"
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="alexa@creator.com"
-                className="w-full text-xs pl-10 pr-3.5 py-2.5 rounded-xl glass-input"
+                className="w-full text-xs pl-10 pr-3.5 py-2.5 rounded-xl bg-white border border-zinc-200 text-zinc-950 placeholder-zinc-400 focus:outline-none focus:border-zinc-950"
               />
             </div>
           </div>
 
           <div>
             <div className="flex justify-between items-center mb-1.5">
-              <label className="block text-xs font-medium text-slate-300">Password</label>
-              <a href="#forgot" className="text-[11px] text-zinc-400 hover:text-white hover:underline">
+              <label className="block text-xs font-medium text-zinc-700">Password</label>
+              <a href="#forgot" className="text-[11px] text-zinc-500 hover:text-zinc-950 hover:underline">
                 Forgot password?
               </a>
             </div>
             <div className="relative">
-              <Lock className="w-4 h-4 text-slate-500 absolute left-3.5 top-3" />
+              <Lock className="w-4 h-4 text-zinc-400 absolute left-3.5 top-3" />
               <input
                 type="password"
                 required
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="••••••••••••"
-                className="w-full text-xs pl-10 pr-3.5 py-2.5 rounded-xl glass-input"
+                className="w-full text-xs pl-10 pr-3.5 py-2.5 rounded-xl bg-white border border-zinc-200 text-zinc-950 placeholder-zinc-400 focus:outline-none focus:border-zinc-950"
               />
             </div>
           </div>
@@ -124,10 +124,10 @@ export default function LoginPage() {
           <button
             type="submit"
             disabled={isLoading}
-            className="w-full py-2.5 rounded-xl bg-white hover:bg-zinc-200 text-zinc-950 text-xs font-bold shadow-sm transition-all flex items-center justify-center gap-2 mt-2"
+            className="w-full py-2.5 rounded-xl bg-zinc-950 hover:bg-zinc-800 text-white text-xs font-bold shadow-sm transition-all flex items-center justify-center gap-2 mt-2"
           >
             {isLoading ? (
-              <span className="inline-block w-4 h-4 border-2 border-zinc-900 border-t-zinc-400 rounded-full animate-spin" />
+              <span className="inline-block w-4 h-4 border-2 border-white border-t-zinc-400 rounded-full animate-spin" />
             ) : (
               <>
                 <span>Sign In to Studio</span>
@@ -137,16 +137,16 @@ export default function LoginPage() {
           </button>
         </form>
 
-        <p className="text-center text-xs text-slate-400 mt-6">
+        <p className="text-center text-xs text-zinc-500 mt-6">
           Don't have an account yet?{" "}
-          <Link href="/signup" className="text-white font-semibold hover:underline">
+          <Link href="/signup" className="text-zinc-950 font-bold hover:underline">
             Claim Handle Free
           </Link>
         </p>
       </div>
 
-      <div className="mt-8 text-center text-xs text-slate-500 flex items-center gap-1.5">
-        <ShieldCheck className="w-4 h-4 text-emerald-400" /> 256-bit SSL encrypted & GDPR compliant
+      <div className="mt-8 text-center text-xs text-zinc-500 flex items-center gap-1.5">
+        <ShieldCheck className="w-4 h-4 text-emerald-600" /> 256-bit SSL encrypted & GDPR compliant
       </div>
     </div>
   );

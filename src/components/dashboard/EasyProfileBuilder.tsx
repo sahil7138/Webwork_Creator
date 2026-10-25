@@ -210,16 +210,16 @@ export function EasyProfileBuilder() {
   return (
     <div className="space-y-6">
       {/* Top Beginner Guide & Quick Publish Bar */}
-      <div className="p-5 rounded-2xl bg-zinc-900 border border-zinc-800 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+      <div className="p-5 rounded-2xl bg-white border border-zinc-200/90 shadow-sm flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
         <div>
-          <div className="flex items-center gap-2 text-xs font-semibold text-zinc-400 uppercase tracking-wider mb-1">
-            <Sparkles className="w-3.5 h-3.5 text-zinc-300" />
+          <div className="flex items-center gap-2 text-xs font-bold text-zinc-500 uppercase tracking-wider mb-1">
+            <Sparkles className="w-3.5 h-3.5 text-zinc-900" />
             <span>Profile & Portfolio Studio</span>
           </div>
-          <h2 className="text-lg font-bold text-white">
+          <h2 className="text-lg font-extrabold text-zinc-950">
             Build Your Personal Bio & Portfolio in 60 Seconds
           </h2>
-          <p className="text-xs text-zinc-400 mt-0.5">
+          <p className="text-xs text-zinc-500 mt-0.5">
             Pick a starter role preset, customize your projects, and preview your live mobile portfolio instantly.
           </p>
         </div>
@@ -227,7 +227,7 @@ export function EasyProfileBuilder() {
         <div className="flex items-center gap-2.5 w-full md:w-auto">
           <button
             onClick={handlePublish}
-            className="flex-1 md:flex-none px-4 py-2.5 rounded-xl bg-white hover:bg-zinc-200 text-zinc-950 text-xs font-bold flex items-center justify-center gap-1.5 shadow-sm transition-all"
+            className="flex-1 md:flex-none px-4 py-2.5 rounded-xl bg-zinc-950 hover:bg-zinc-800 text-white text-xs font-bold flex items-center justify-center gap-1.5 shadow-sm transition-all active:scale-95"
           >
             <CheckCircle2 className="w-4 h-4" />
             <span>Publish Live</span>
@@ -237,7 +237,7 @@ export function EasyProfileBuilder() {
             href={`/p/${profile.username}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="px-3 py-2.5 rounded-xl border border-white/10 hover:bg-white/5 text-slate-300 hover:text-white text-xs font-semibold flex items-center gap-1.5 transition-colors"
+            className="px-3 py-2.5 rounded-xl border border-zinc-200 hover:bg-zinc-100 text-zinc-700 hover:text-zinc-950 text-xs font-semibold flex items-center gap-1.5 transition-colors shadow-2xs"
           >
             <span>Live URL</span>
             <ExternalLink className="w-3.5 h-3.5" />
@@ -247,19 +247,19 @@ export function EasyProfileBuilder() {
 
       {/* Publish Toast Alert */}
       {publishSuccess && (
-        <div className="p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 text-xs flex items-center justify-between animate-fadeIn">
+        <div className="p-4 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs flex items-center justify-between animate-fadeIn shadow-2xs">
           <div className="flex items-center gap-2">
-            <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
+            <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
             <span>
               🎉 <strong>Your portfolio is published!</strong> Live at:{" "}
-              <code className="text-white bg-black/30 px-1.5 py-0.5 rounded">
-                webworks.ai/{profile.username}
+              <code className="text-zinc-950 bg-white border border-emerald-200 px-1.5 py-0.5 rounded font-mono">
+                webworks.io/{profile.username}
               </code>
             </span>
           </div>
           <button
             onClick={handleCopy}
-            className="px-2.5 py-1 rounded-lg bg-emerald-500/20 hover:bg-emerald-500/30 text-[11px] font-bold flex items-center gap-1"
+            className="px-2.5 py-1 rounded-lg bg-emerald-100 hover:bg-emerald-200 text-[11px] font-bold flex items-center gap-1 text-emerald-900"
           >
             {copiedLink ? <Check className="w-3 h-3" /> : <Copy className="w-3 h-3" />}
             <span>{copiedLink ? "Copied" : "Copy Link"}</span>
@@ -272,13 +272,13 @@ export function EasyProfileBuilder() {
         {/* Left Column: Easy Builder Controls */}
         <div className="lg:col-span-7 space-y-6">
           {/* Step Selection Tabs */}
-          <div className="flex items-center gap-1.5 p-1.5 rounded-2xl bg-zinc-900 border border-zinc-800 overflow-x-auto text-xs">
+          <div className="flex items-center gap-1.5 p-1.5 rounded-2xl bg-zinc-100 border border-zinc-200 overflow-x-auto text-xs">
             <button
               onClick={() => setActiveStep("templates")}
               className={`px-3.5 py-2 rounded-xl font-bold flex items-center gap-1.5 transition-all whitespace-nowrap ${
                 activeStep === "templates"
-                  ? "bg-white text-zinc-950 shadow-sm"
-                  : "text-zinc-400 hover:text-white hover:bg-white/5"
+                  ? "bg-zinc-950 text-white shadow-xs"
+                  : "text-zinc-600 hover:text-zinc-950 hover:bg-zinc-200/60"
               }`}
             >
               <Sparkles className="w-3.5 h-3.5" /> 1. Starter Presets
@@ -287,8 +287,8 @@ export function EasyProfileBuilder() {
               onClick={() => setActiveStep("basic")}
               className={`px-3.5 py-2 rounded-xl font-bold flex items-center gap-1.5 transition-all whitespace-nowrap ${
                 activeStep === "basic"
-                  ? "bg-white text-zinc-950 shadow-sm"
-                  : "text-zinc-400 hover:text-white hover:bg-white/5"
+                  ? "bg-zinc-950 text-white shadow-xs"
+                  : "text-zinc-600 hover:text-zinc-950 hover:bg-zinc-200/60"
               }`}
             >
               <span>2. Bio & Avatar</span>
@@ -300,8 +300,8 @@ export function EasyProfileBuilder() {
               }}
               className={`px-3.5 py-2 rounded-xl font-bold flex items-center gap-1.5 transition-all whitespace-nowrap ${
                 activeStep === "portfolio"
-                  ? "bg-white text-zinc-950 shadow-sm"
-                  : "text-zinc-400 hover:text-white hover:bg-white/5"
+                  ? "bg-zinc-950 text-white shadow-xs"
+                  : "text-zinc-600 hover:text-zinc-950 hover:bg-zinc-200/60"
               }`}
             >
               <FolderGit2 className="w-3.5 h-3.5" /> 3. Portfolio Projects (
@@ -314,8 +314,8 @@ export function EasyProfileBuilder() {
               }}
               className={`px-3.5 py-2 rounded-xl font-bold flex items-center gap-1.5 transition-all whitespace-nowrap ${
                 activeStep === "blocks"
-                  ? "bg-white text-zinc-950 shadow-sm"
-                  : "text-zinc-400 hover:text-white hover:bg-white/5"
+                  ? "bg-zinc-950 text-white shadow-xs"
+                  : "text-zinc-600 hover:text-zinc-950 hover:bg-zinc-200/60"
               }`}
             >
               <Layers className="w-3.5 h-3.5" /> 4. Custom Links
@@ -324,8 +324,8 @@ export function EasyProfileBuilder() {
               onClick={() => setActiveStep("theme")}
               className={`px-3.5 py-2 rounded-xl font-bold flex items-center gap-1.5 transition-all whitespace-nowrap ${
                 activeStep === "theme"
-                  ? "bg-white text-zinc-950 shadow-sm"
-                  : "text-zinc-400 hover:text-white hover:bg-white/5"
+                  ? "bg-zinc-950 text-white shadow-xs"
+                  : "text-zinc-600 hover:text-zinc-950 hover:bg-zinc-200/60"
               }`}
             >
               <Palette className="w-3.5 h-3.5" /> 5. Theme
@@ -337,11 +337,11 @@ export function EasyProfileBuilder() {
             <div className="space-y-4 animate-fadeIn">
               <div className="flex items-center justify-between">
                 <div>
-                  <h3 className="text-sm font-bold text-white flex items-center gap-2">
-                    <Sparkles className="w-4 h-4 text-zinc-300" />
+                  <h3 className="text-sm font-bold text-zinc-950 flex items-center gap-2">
+                    <Sparkles className="w-4 h-4 text-zinc-900" />
                     <span>Choose Your Starter Role Preset</span>
                   </h3>
-                  <p className="text-xs text-zinc-400 mt-0.5">
+                  <p className="text-xs text-zinc-500 mt-0.5">
                     Click any role below to pre-load a complete, professional bio, portfolio projects, and links.
                   </p>
                 </div>
@@ -354,36 +354,36 @@ export function EasyProfileBuilder() {
                     <div
                       key={tpl.id}
                       onClick={() => handleApplyTemplate(tpl)}
-                      className={`p-4 rounded-2xl border cursor-pointer transition-all hover:scale-[1.01] ${
+                      className={`p-4 rounded-2xl border cursor-pointer transition-all hover:shadow-xs ${
                         isSelected
-                          ? "border-white/50 bg-white/10 ring-1 ring-white/30"
-                          : "border-zinc-800 bg-zinc-900/60 hover:border-zinc-700 hover:bg-zinc-900"
+                          ? "border-zinc-950 bg-white ring-2 ring-zinc-950/10 shadow-sm"
+                          : "border-zinc-200 bg-white hover:border-zinc-300"
                       }`}
                     >
                       <div className="flex items-start gap-3">
                         <img
                           src={tpl.avatarUrl}
                           alt={tpl.displayName}
-                          className="w-12 h-12 rounded-xl object-cover ring-1 ring-white/20 shrink-0"
+                          className="w-12 h-12 rounded-xl object-cover ring-1 ring-zinc-200 shrink-0"
                         />
                         <div className="flex-1 min-w-0">
                           <div className="flex items-center justify-between gap-1">
-                            <h4 className="text-xs font-bold text-white truncate">
+                            <h4 className="text-xs font-bold text-zinc-950 truncate">
                               {tpl.role}
                             </h4>
                             {isSelected && (
-                              <span className="text-[10px] font-bold px-1.5 py-0.2 rounded bg-white text-zinc-950">
+                              <span className="text-[10px] font-bold px-1.5 py-0.5 rounded bg-zinc-950 text-white">
                                 Active
                               </span>
                             )}
                           </div>
-                          <div className="text-[11px] text-zinc-400 font-medium">
+                          <div className="text-[11px] text-zinc-500 font-medium">
                             {tpl.displayName} • @{tpl.username}
                           </div>
-                          <p className="text-[11px] text-zinc-400 line-clamp-2 mt-1">
+                          <p className="text-[11px] text-zinc-600 line-clamp-2 mt-1 leading-snug">
                             {tpl.bio}
                           </p>
-                          <div className="mt-2 text-[10px] text-zinc-500 flex items-center gap-2">
+                          <div className="mt-2 text-[10px] text-zinc-400 flex items-center gap-2">
                             <span>{tpl.projects.length} sample projects</span>
                             <span>•</span>
                             <span>{tpl.starterBlocks.length} links</span>
@@ -395,11 +395,11 @@ export function EasyProfileBuilder() {
                 })}
               </div>
 
-              <div className="p-3.5 rounded-xl bg-zinc-900 border border-zinc-800 text-xs text-zinc-300 flex items-center justify-between">
+              <div className="p-3.5 rounded-xl bg-zinc-100 border border-zinc-200 text-xs text-zinc-700 flex items-center justify-between">
                 <span>Want to customize the details? Move to the next tab.</span>
                 <button
                   onClick={() => setActiveStep("basic")}
-                  className="text-xs font-bold text-white hover:text-zinc-300 flex items-center gap-1"
+                  className="text-xs font-bold text-zinc-950 hover:text-zinc-700 flex items-center gap-1"
                 >
                   Edit Profile Info <ArrowRight className="w-3.5 h-3.5" />
                 </button>
@@ -409,12 +409,12 @@ export function EasyProfileBuilder() {
 
           {/* STEP 2: BIO, AVATAR & SOCIALS */}
           {activeStep === "basic" && (
-            <div className="space-y-5 animate-fadeIn p-6 rounded-2xl glass-panel border border-white/10">
-              <h3 className="text-sm font-bold text-white">Profile Basics</h3>
+            <div className="space-y-5 animate-fadeIn p-6 rounded-2xl bg-white border border-zinc-200/90 shadow-sm">
+              <h3 className="text-sm font-bold text-zinc-950">Profile Basics</h3>
 
               {/* Avatar Selector */}
               <div>
-                <label className="block text-xs font-medium text-slate-300 mb-2">
+                <label className="block text-xs font-semibold text-zinc-700 mb-2">
                   Choose an Avatar or Paste Image URL
                 </label>
                 <div className="flex flex-wrap items-center gap-2.5 mb-3">
@@ -427,7 +427,7 @@ export function EasyProfileBuilder() {
                       }
                       className={`relative rounded-full p-0.5 transition-all ${
                         profile.avatarUrl === item.url
-                          ? "ring-2 ring-white scale-105"
+                          ? "ring-2 ring-zinc-950 scale-105"
                           : "opacity-70 hover:opacity-100"
                       }`}
                     >
@@ -446,14 +446,14 @@ export function EasyProfileBuilder() {
                     setProfile({ ...profile, avatarUrl: e.target.value })
                   }
                   placeholder="https://images.unsplash.com/..."
-                  className="w-full text-xs px-3.5 py-2.5 rounded-xl glass-input text-slate-200"
+                  className="w-full text-xs px-3.5 py-2.5 rounded-xl bg-white border border-zinc-200 text-zinc-900 focus:outline-none focus:border-zinc-800"
                 />
               </div>
 
               {/* Display Name & Handle */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-xs font-medium text-slate-300 mb-1.5">
+                  <label className="block text-xs font-semibold text-zinc-700 mb-1.5">
                     Your Name / Brand
                   </label>
                   <input
@@ -462,15 +462,15 @@ export function EasyProfileBuilder() {
                     onChange={(e) =>
                       setProfile({ ...profile, displayName: e.target.value })
                     }
-                    className="w-full text-xs px-3.5 py-2.5 rounded-xl glass-input text-white font-medium"
+                    className="w-full text-xs px-3.5 py-2.5 rounded-xl bg-white border border-zinc-200 text-zinc-950 font-medium focus:outline-none focus:border-zinc-800"
                   />
                 </div>
                 <div>
-                  <label className="block text-xs font-medium text-slate-300 mb-1.5">
+                  <label className="block text-xs font-semibold text-zinc-700 mb-1.5">
                     Profile Vanity Slug
                   </label>
                   <div className="relative flex items-center">
-                    <span className="absolute left-3 text-xs text-zinc-500 select-none">
+                    <span className="absolute left-3 text-xs text-zinc-400 select-none">
                       webworks.io/
                     </span>
                     <input
@@ -484,7 +484,7 @@ export function EasyProfileBuilder() {
                             .replace(/[^a-z0-9_-]/g, ""),
                         })
                       }
-                      className="w-full text-xs pl-26 pr-3.5 py-2.5 rounded-xl glass-input text-white font-mono font-medium"
+                      className="w-full text-xs pl-26 pr-3.5 py-2.5 rounded-xl bg-white border border-zinc-200 text-zinc-950 font-mono font-medium focus:outline-none focus:border-zinc-800"
                     />
                   </div>
                 </div>
@@ -492,7 +492,7 @@ export function EasyProfileBuilder() {
 
               {/* Headline / Bio */}
               <div>
-                <label className="block text-xs font-medium text-slate-300 mb-1.5">
+                <label className="block text-xs font-semibold text-zinc-700 mb-1.5">
                   Bio / Headline
                 </label>
                 <textarea
@@ -502,13 +502,13 @@ export function EasyProfileBuilder() {
                     setProfile({ ...profile, bio: e.target.value })
                   }
                   placeholder="Tell visitors what you build, create, or offer..."
-                  className="w-full text-xs px-3.5 py-2.5 rounded-xl glass-input text-slate-200 resize-none"
+                  className="w-full text-xs px-3.5 py-2.5 rounded-xl bg-white border border-zinc-200 text-zinc-900 resize-none focus:outline-none focus:border-zinc-800"
                 />
               </div>
 
               {/* Category */}
               <div>
-                <label className="block text-xs font-medium text-slate-300 mb-1.5">
+                <label className="block text-xs font-semibold text-zinc-700 mb-1.5">
                   Primary Category
                 </label>
                 <input
@@ -517,18 +517,18 @@ export function EasyProfileBuilder() {
                   onChange={(e) =>
                     setProfile({ ...profile, category: e.target.value })
                   }
-                  className="w-full text-xs px-3.5 py-2.5 rounded-xl glass-input text-slate-200"
+                  className="w-full text-xs px-3.5 py-2.5 rounded-xl bg-white border border-zinc-200 text-zinc-900 focus:outline-none focus:border-zinc-800"
                 />
               </div>
 
               {/* Social Media Links */}
               <div>
-                <label className="block text-xs font-medium text-slate-300 mb-2">
+                <label className="block text-xs font-semibold text-zinc-700 mb-2">
                   Social Handles
                 </label>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
-                  <div className="flex items-center gap-2 p-2 rounded-xl bg-white/5 border border-white/10">
-                    <GithubIcon className="w-4 h-4 text-slate-400 shrink-0" />
+                  <div className="flex items-center gap-2 p-2 rounded-xl bg-zinc-50 border border-zinc-200">
+                    <GithubIcon className="w-4 h-4 text-zinc-600 shrink-0" />
                     <input
                       type="text"
                       placeholder="https://github.com/username"
@@ -539,11 +539,11 @@ export function EasyProfileBuilder() {
                           socials: { ...profile.socials, github: e.target.value },
                         })
                       }
-                      className="bg-transparent text-xs text-white focus:outline-none w-full"
+                      className="bg-transparent text-xs text-zinc-900 focus:outline-none w-full"
                     />
                   </div>
-                  <div className="flex items-center gap-2 p-2 rounded-xl bg-white/5 border border-white/10">
-                    <TwitterIcon className="w-4 h-4 text-slate-400 shrink-0" />
+                  <div className="flex items-center gap-2 p-2 rounded-xl bg-zinc-50 border border-zinc-200">
+                    <TwitterIcon className="w-4 h-4 text-zinc-600 shrink-0" />
                     <input
                       type="text"
                       placeholder="https://x.com/username"
@@ -554,11 +554,11 @@ export function EasyProfileBuilder() {
                           socials: { ...profile.socials, twitter: e.target.value },
                         })
                       }
-                      className="bg-transparent text-xs text-white focus:outline-none w-full"
+                      className="bg-transparent text-xs text-zinc-900 focus:outline-none w-full"
                     />
                   </div>
-                  <div className="flex items-center gap-2 p-2 rounded-xl bg-white/5 border border-white/10">
-                    <InstagramIcon className="w-4 h-4 text-slate-400 shrink-0" />
+                  <div className="flex items-center gap-2 p-2 rounded-xl bg-zinc-50 border border-zinc-200">
+                    <InstagramIcon className="w-4 h-4 text-zinc-600 shrink-0" />
                     <input
                       type="text"
                       placeholder="https://instagram.com/username"
@@ -572,11 +572,11 @@ export function EasyProfileBuilder() {
                           },
                         })
                       }
-                      className="bg-transparent text-xs text-white focus:outline-none w-full"
+                      className="bg-transparent text-xs text-zinc-900 focus:outline-none w-full"
                     />
                   </div>
-                  <div className="flex items-center gap-2 p-2 rounded-xl bg-white/5 border border-white/10">
-                    <YoutubeIcon className="w-4 h-4 text-slate-400 shrink-0" />
+                  <div className="flex items-center gap-2 p-2 rounded-xl bg-zinc-50 border border-zinc-200">
+                    <YoutubeIcon className="w-4 h-4 text-zinc-600 shrink-0" />
                     <input
                       type="text"
                       placeholder="https://youtube.com/@channel"
@@ -587,7 +587,7 @@ export function EasyProfileBuilder() {
                           socials: { ...profile.socials, youtube: e.target.value },
                         })
                       }
-                      className="bg-transparent text-xs text-white focus:outline-none w-full"
+                      className="bg-transparent text-xs text-zinc-900 focus:outline-none w-full"
                     />
                   </div>
                 </div>
@@ -600,18 +600,18 @@ export function EasyProfileBuilder() {
             <div className="space-y-4 animate-fadeIn">
               <div className="flex items-center justify-between">
                 <div>
-                  <h3 className="text-sm font-bold text-white flex items-center gap-2">
-                    <FolderGit2 className="w-4 h-4 text-zinc-300" />
+                  <h3 className="text-sm font-bold text-zinc-950 flex items-center gap-2">
+                    <FolderGit2 className="w-4 h-4 text-zinc-900" />
                     <span>Your Portfolio Works & Case Studies</span>
                   </h3>
-                  <p className="text-xs text-zinc-400 mt-0.5">
+                  <p className="text-xs text-zinc-500 mt-0.5">
                     Showcase apps, designs, videos, photography, or case studies with thumbnail images and live links.
                   </p>
                 </div>
 
                 <button
                   onClick={() => setShowProjectModal(true)}
-                  className="px-3.5 py-2 rounded-xl bg-white hover:bg-zinc-200 text-zinc-950 text-xs font-bold flex items-center gap-1.5 transition-all shadow-sm"
+                  className="px-3.5 py-2 rounded-xl bg-zinc-950 hover:bg-zinc-800 text-white text-xs font-bold flex items-center gap-1.5 transition-all shadow-sm active:scale-95"
                 >
                   <Plus className="w-3.5 h-3.5" />
                   <span>Add Project</span>
@@ -622,16 +622,16 @@ export function EasyProfileBuilder() {
               {showProjectModal && (
                 <form
                   onSubmit={handleAddProject}
-                  className="p-5 rounded-2xl bg-zinc-900 border border-zinc-700/80 space-y-3.5 shadow-2xl"
+                  className="p-5 rounded-2xl bg-white border border-zinc-200/90 space-y-3.5 shadow-2xl"
                 >
-                  <div className="flex items-center justify-between border-b border-white/10 pb-2">
-                    <span className="text-xs font-bold text-white">
+                  <div className="flex items-center justify-between border-b border-zinc-200 pb-2">
+                    <span className="text-xs font-bold text-zinc-950">
                       New Portfolio Item
                     </span>
                     <button
                       type="button"
                       onClick={() => setShowProjectModal(false)}
-                      className="text-slate-400 hover:text-white text-xs"
+                      className="text-zinc-500 hover:text-zinc-950 text-xs font-semibold"
                     >
                       Cancel
                     </button>
@@ -639,7 +639,7 @@ export function EasyProfileBuilder() {
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     <div>
-                      <label className="block text-[11px] font-medium text-slate-300 mb-1">
+                      <label className="block text-[11px] font-semibold text-zinc-700 mb-1">
                         Project Title *
                       </label>
                       <input
@@ -650,11 +650,11 @@ export function EasyProfileBuilder() {
                         onChange={(e) =>
                           setNewProject({ ...newProject, title: e.target.value })
                         }
-                        className="w-full text-xs px-3 py-2 rounded-xl glass-input text-white"
+                        className="w-full text-xs px-3 py-2 rounded-xl bg-white border border-zinc-200 text-zinc-950 focus:outline-none focus:border-zinc-800"
                       />
                     </div>
                     <div>
-                      <label className="block text-[11px] font-medium text-slate-300 mb-1">
+                      <label className="block text-[11px] font-semibold text-zinc-700 mb-1">
                         Category / Role
                       </label>
                       <input
@@ -667,13 +667,13 @@ export function EasyProfileBuilder() {
                             category: e.target.value,
                           })
                         }
-                        className="w-full text-xs px-3 py-2 rounded-xl glass-input text-white"
+                        className="w-full text-xs px-3 py-2 rounded-xl bg-white border border-zinc-200 text-zinc-950 focus:outline-none focus:border-zinc-800"
                       />
                     </div>
                   </div>
 
                   <div>
-                    <label className="block text-[11px] font-medium text-slate-300 mb-1">
+                    <label className="block text-[11px] font-semibold text-zinc-700 mb-1">
                       Short Description
                     </label>
                     <textarea
@@ -686,13 +686,13 @@ export function EasyProfileBuilder() {
                           description: e.target.value,
                         })
                       }
-                      className="w-full text-xs px-3 py-2 rounded-xl glass-input text-slate-200 resize-none"
+                      className="w-full text-xs px-3 py-2 rounded-xl bg-white border border-zinc-200 text-zinc-900 resize-none focus:outline-none focus:border-zinc-800"
                     />
                   </div>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     <div>
-                      <label className="block text-[11px] font-medium text-slate-300 mb-1">
+                      <label className="block text-[11px] font-semibold text-zinc-700 mb-1">
                         Project URL / Live Demo
                       </label>
                       <input
@@ -705,11 +705,11 @@ export function EasyProfileBuilder() {
                             projectUrl: e.target.value,
                           })
                         }
-                        className="w-full text-xs px-3 py-2 rounded-xl glass-input text-white font-mono"
+                        className="w-full text-xs px-3 py-2 rounded-xl bg-white border border-zinc-200 text-zinc-950 font-mono focus:outline-none focus:border-zinc-800"
                       />
                     </div>
                     <div>
-                      <label className="block text-[11px] font-medium text-slate-300 mb-1">
+                      <label className="block text-[11px] font-semibold text-zinc-700 mb-1">
                         Tags (comma separated)
                       </label>
                       <input
@@ -719,13 +719,13 @@ export function EasyProfileBuilder() {
                         onChange={(e) =>
                           setNewProject({ ...newProject, tags: e.target.value })
                         }
-                        className="w-full text-xs px-3 py-2 rounded-xl glass-input text-slate-200"
+                        className="w-full text-xs px-3 py-2 rounded-xl bg-white border border-zinc-200 text-zinc-900 focus:outline-none focus:border-zinc-800"
                       />
                     </div>
                   </div>
 
                   <div>
-                    <label className="block text-[11px] font-medium text-slate-300 mb-1">
+                    <label className="block text-[11px] font-semibold text-zinc-700 mb-1">
                       Thumbnail Image URL
                     </label>
                     <input
@@ -738,14 +738,14 @@ export function EasyProfileBuilder() {
                           thumbnailUrl: e.target.value,
                         })
                       }
-                      className="w-full text-xs px-3 py-2 rounded-xl glass-input text-slate-300"
+                      className="w-full text-xs px-3 py-2 rounded-xl bg-white border border-zinc-200 text-zinc-900 focus:outline-none focus:border-zinc-800"
                     />
                   </div>
 
                   <div className="pt-2 flex justify-end gap-2">
                     <button
                       type="submit"
-                      className="px-4 py-2 rounded-xl bg-white hover:bg-zinc-200 text-zinc-950 text-xs font-bold transition-all shadow-sm"
+                      className="px-4 py-2 rounded-xl bg-zinc-950 hover:bg-zinc-800 text-white text-xs font-bold transition-all shadow-sm active:scale-95"
                     >
                       Save Portfolio Project
                     </button>
@@ -756,12 +756,12 @@ export function EasyProfileBuilder() {
               {/* Projects List */}
               <div className="space-y-3">
                 {(profile.portfolioProjects || []).length === 0 ? (
-                  <div className="p-8 rounded-2xl glass-panel border border-white/10 text-center space-y-2">
-                    <FolderGit2 className="w-8 h-8 text-slate-500 mx-auto" />
-                    <div className="text-xs font-bold text-white">
+                  <div className="p-8 rounded-2xl bg-white border border-zinc-200/90 text-center space-y-2 shadow-sm">
+                    <FolderGit2 className="w-8 h-8 text-zinc-400 mx-auto" />
+                    <div className="text-xs font-bold text-zinc-950">
                       No portfolio projects added yet
                     </div>
-                    <p className="text-[11px] text-slate-400 max-w-sm mx-auto">
+                    <p className="text-[11px] text-zinc-500 max-w-sm mx-auto">
                       Click "Add Project" above or choose a starter role preset to auto-populate sample projects.
                     </p>
                   </div>
@@ -769,31 +769,31 @@ export function EasyProfileBuilder() {
                   profile.portfolioProjects?.map((proj) => (
                     <div
                       key={proj.id}
-                      className="p-4 rounded-2xl glass-panel border border-white/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 group"
+                      className="p-4 rounded-2xl bg-white border border-zinc-200/90 shadow-sm flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 group"
                     >
                       <div className="flex items-start sm:items-center gap-3.5 min-w-0">
                         <img
                           src={proj.thumbnailUrl}
                           alt={proj.title}
-                          className="w-16 h-14 rounded-xl object-cover ring-1 ring-white/10 shrink-0"
+                          className="w-16 h-14 rounded-xl object-cover ring-1 ring-zinc-200 shrink-0"
                         />
                         <div className="min-w-0">
                           <div className="flex items-center gap-2">
-                            <span className="text-xs font-bold text-white truncate">
+                            <span className="text-xs font-bold text-zinc-950 truncate">
                               {proj.title}
                             </span>
-                            <span className="text-[10px] px-1.5 py-0.2 rounded bg-zinc-800 text-zinc-300 border border-zinc-700/60 font-semibold shrink-0">
+                            <span className="text-[10px] px-1.5 py-0.5 rounded bg-zinc-100 text-zinc-700 border border-zinc-200 font-semibold shrink-0">
                               {proj.category}
                             </span>
                           </div>
-                          <p className="text-[11px] text-slate-400 line-clamp-1 mt-0.5">
+                          <p className="text-[11px] text-zinc-600 line-clamp-1 mt-0.5">
                             {proj.description}
                           </p>
                           <div className="flex flex-wrap items-center gap-1.5 mt-1.5">
                             {proj.tags.map((t, idx) => (
                               <span
                                 key={idx}
-                                className="text-[9px] px-1.5 py-0.2 rounded bg-white/5 text-slate-300"
+                                className="text-[9px] px-1.5 py-0.5 rounded bg-zinc-100 text-zinc-600 border border-zinc-200/60"
                               >
                                 #{t}
                               </span>
@@ -807,14 +807,14 @@ export function EasyProfileBuilder() {
                           href={proj.projectUrl}
                           target="_blank"
                           rel="noreferrer"
-                          className="text-xs text-slate-400 hover:text-white p-1.5 rounded-lg hover:bg-white/5 transition-colors"
+                          className="text-xs text-zinc-500 hover:text-zinc-950 p-1.5 rounded-lg hover:bg-zinc-100 transition-colors"
                           title="Open Link"
                         >
                           <ExternalLink className="w-3.5 h-3.5" />
                         </a>
                         <button
                           onClick={() => handleDeleteProject(proj.id)}
-                          className="text-xs text-slate-400 hover:text-rose-400 p-1.5 rounded-lg hover:bg-rose-500/10 transition-colors"
+                          className="text-xs text-zinc-400 hover:text-rose-600 p-1.5 rounded-lg hover:bg-rose-50 transition-colors"
                           title="Delete Project"
                         >
                           <Trash2 className="w-3.5 h-3.5" />
@@ -832,18 +832,18 @@ export function EasyProfileBuilder() {
             <div className="space-y-4 animate-fadeIn">
               <div className="flex items-center justify-between">
                 <div>
-                  <h3 className="text-sm font-bold text-white flex items-center gap-2">
-                    <Layers className="w-4 h-4 text-zinc-300" />
+                  <h3 className="text-sm font-bold text-zinc-950 flex items-center gap-2">
+                    <Layers className="w-4 h-4 text-zinc-900" />
                     <span>Page Links & Interactive Blocks</span>
                   </h3>
-                  <p className="text-xs text-slate-400 mt-0.5">
+                  <p className="text-xs text-zinc-500 mt-0.5">
                     Add quick links to your Discord, Newsletter, GitHub, or Tip Jar.
                   </p>
                 </div>
 
                 <button
                   onClick={() => setShowBlockModal(true)}
-                  className="px-3.5 py-2 rounded-xl bg-white hover:bg-zinc-200 text-zinc-950 text-xs font-bold flex items-center gap-1.5 transition-all shadow-sm"
+                  className="px-3.5 py-2 rounded-xl bg-zinc-950 hover:bg-zinc-800 text-white text-xs font-bold flex items-center gap-1.5 transition-all shadow-sm active:scale-95"
                 >
                   <Plus className="w-3.5 h-3.5" />
                   <span>Add Link Block</span>
@@ -854,16 +854,16 @@ export function EasyProfileBuilder() {
               {showBlockModal && (
                 <form
                   onSubmit={handleAddBlock}
-                  className="p-5 rounded-2xl bg-zinc-900 border border-zinc-700/80 space-y-3.5 shadow-2xl"
+                  className="p-5 rounded-2xl bg-white border border-zinc-200/90 space-y-3.5 shadow-2xl"
                 >
-                  <div className="flex items-center justify-between border-b border-white/10 pb-2">
-                    <span className="text-xs font-bold text-white">
+                  <div className="flex items-center justify-between border-b border-zinc-200 pb-2">
+                    <span className="text-xs font-bold text-zinc-950">
                       New Link / Action Block
                     </span>
                     <button
                       type="button"
                       onClick={() => setShowBlockModal(false)}
-                      className="text-slate-400 hover:text-white text-xs"
+                      className="text-zinc-500 hover:text-zinc-950 text-xs font-semibold"
                     >
                       Cancel
                     </button>
@@ -871,7 +871,7 @@ export function EasyProfileBuilder() {
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     <div>
-                      <label className="block text-[11px] font-medium text-slate-300 mb-1">
+                      <label className="block text-[11px] font-semibold text-zinc-700 mb-1">
                         Block Type
                       </label>
                       <select
@@ -882,7 +882,7 @@ export function EasyProfileBuilder() {
                             type: e.target.value as any,
                           })
                         }
-                        className="w-full text-xs px-3 py-2 rounded-xl glass-input text-white bg-slate-900"
+                        className="w-full text-xs px-3 py-2 rounded-xl bg-white border border-zinc-200 text-zinc-900 focus:outline-none focus:border-zinc-800"
                       >
                         <option value="link">Custom URL Link</option>
                         <option value="email_collector">
@@ -893,7 +893,7 @@ export function EasyProfileBuilder() {
                     </div>
 
                     <div>
-                      <label className="block text-[11px] font-medium text-slate-300 mb-1">
+                      <label className="block text-[11px] font-semibold text-zinc-700 mb-1">
                         Badge Label (Optional)
                       </label>
                       <input
@@ -903,13 +903,13 @@ export function EasyProfileBuilder() {
                         onChange={(e) =>
                           setNewBlock({ ...newBlock, badge: e.target.value })
                         }
-                        className="w-full text-xs px-3 py-2 rounded-xl glass-input text-white"
+                        className="w-full text-xs px-3 py-2 rounded-xl bg-white border border-zinc-200 text-zinc-950 focus:outline-none focus:border-zinc-800"
                       />
                     </div>
                   </div>
 
                   <div>
-                    <label className="block text-[11px] font-medium text-slate-300 mb-1">
+                    <label className="block text-[11px] font-semibold text-zinc-700 mb-1">
                       Title *
                     </label>
                     <input
@@ -920,12 +920,12 @@ export function EasyProfileBuilder() {
                       onChange={(e) =>
                         setNewBlock({ ...newBlock, title: e.target.value })
                       }
-                      className="w-full text-xs px-3 py-2 rounded-xl glass-input text-white"
+                      className="w-full text-xs px-3 py-2 rounded-xl bg-white border border-zinc-200 text-zinc-950 focus:outline-none focus:border-zinc-800"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-[11px] font-medium text-slate-300 mb-1">
+                    <label className="block text-[11px] font-semibold text-zinc-700 mb-1">
                       Subtitle / Helper Text
                     </label>
                     <input
@@ -935,13 +935,13 @@ export function EasyProfileBuilder() {
                       onChange={(e) =>
                         setNewBlock({ ...newBlock, subtitle: e.target.value })
                       }
-                      className="w-full text-xs px-3 py-2 rounded-xl glass-input text-slate-200"
+                      className="w-full text-xs px-3 py-2 rounded-xl bg-white border border-zinc-200 text-zinc-900 focus:outline-none focus:border-zinc-800"
                     />
                   </div>
 
                   {newBlock.type === "link" && (
                     <div>
-                      <label className="block text-[11px] font-medium text-slate-300 mb-1">
+                      <label className="block text-[11px] font-semibold text-zinc-700 mb-1">
                         Destination URL
                       </label>
                       <input
@@ -951,7 +951,7 @@ export function EasyProfileBuilder() {
                         onChange={(e) =>
                           setNewBlock({ ...newBlock, url: e.target.value })
                         }
-                        className="w-full text-xs px-3 py-2 rounded-xl glass-input text-white font-mono"
+                        className="w-full text-xs px-3 py-2 rounded-xl bg-white border border-zinc-200 text-zinc-950 font-mono focus:outline-none focus:border-zinc-800"
                       />
                     </div>
                   )}
@@ -959,7 +959,7 @@ export function EasyProfileBuilder() {
                   <div className="pt-2 flex justify-end gap-2">
                     <button
                       type="submit"
-                      className="px-4 py-2 rounded-xl bg-white hover:bg-zinc-200 text-zinc-950 text-xs font-bold transition-all shadow-sm"
+                      className="px-4 py-2 rounded-xl bg-zinc-950 hover:bg-zinc-800 text-white text-xs font-bold transition-all shadow-sm active:scale-95"
                     >
                       Add Block
                     </button>
@@ -972,23 +972,23 @@ export function EasyProfileBuilder() {
                 {profile.blocks.map((b) => (
                   <div
                     key={b.id}
-                    className="p-4 rounded-2xl glass-panel border border-white/10 flex items-center justify-between gap-4"
+                    className="p-4 rounded-2xl bg-white border border-zinc-200/90 shadow-sm flex items-center justify-between gap-4"
                   >
                     <div className="flex items-center gap-3 min-w-0">
-                      <div className="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center text-xs font-bold text-zinc-300 shrink-0">
+                      <div className="w-8 h-8 rounded-lg bg-zinc-100 flex items-center justify-center text-xs font-bold text-zinc-700 shrink-0 border border-zinc-200/80">
                         {b.order}
                       </div>
                       <div className="min-w-0">
-                        <div className="text-xs font-bold text-white flex items-center gap-2 truncate">
+                        <div className="text-xs font-bold text-zinc-950 flex items-center gap-2 truncate">
                           <span>{b.title}</span>
                           {b.badge && (
-                            <span className="text-[9px] px-1.5 py-0.2 rounded bg-zinc-800 text-zinc-300 border border-zinc-700/60 font-semibold shrink-0">
+                            <span className="text-[9px] px-1.5 py-0.5 rounded bg-zinc-100 text-zinc-700 border border-zinc-200 font-semibold shrink-0">
                               {b.badge}
                             </span>
                           )}
                         </div>
                         {b.subtitle && (
-                          <div className="text-[10px] text-slate-400 truncate mt-0.5">
+                          <div className="text-[10px] text-zinc-500 truncate mt-0.5">
                             {b.subtitle}
                           </div>
                         )}
@@ -997,7 +997,7 @@ export function EasyProfileBuilder() {
 
                     <button
                       onClick={() => handleDeleteBlock(b.id)}
-                      className="text-xs text-slate-400 hover:text-rose-400 p-1.5 rounded-lg hover:bg-rose-500/10 transition-colors shrink-0"
+                      className="text-xs text-zinc-400 hover:text-rose-600 p-1.5 rounded-lg hover:bg-rose-50 transition-colors shrink-0"
                       title="Remove Block"
                     >
                       <Trash2 className="w-3.5 h-3.5" />
@@ -1010,9 +1010,9 @@ export function EasyProfileBuilder() {
 
           {/* STEP 5: VISUAL THEME */}
           {activeStep === "theme" && (
-            <div className="space-y-4 animate-fadeIn p-6 rounded-2xl glass-panel border border-white/10">
-              <h3 className="text-sm font-bold text-white">Visual Profile Theme</h3>
-              <p className="text-xs text-zinc-400">
+            <div className="space-y-4 animate-fadeIn p-6 rounded-2xl bg-white border border-zinc-200/90 shadow-sm">
+              <h3 className="text-sm font-bold text-zinc-950">Visual Profile Theme</h3>
+              <p className="text-xs text-zinc-500">
                 Choose a sleek minimalist theme. Clean typography, subtle hairline borders, and zero clutter.
               </p>
 
@@ -1025,16 +1025,16 @@ export function EasyProfileBuilder() {
                       onClick={() => setProfile({ ...profile, theme: th })}
                       className={`p-4 rounded-2xl cursor-pointer border transition-all ${
                         isSelected
-                          ? "border-white/50 bg-white/10 ring-1 ring-white/30"
-                          : "border-zinc-800 bg-zinc-900/60 hover:border-zinc-700 hover:bg-zinc-900"
+                          ? "border-zinc-950 bg-white ring-2 ring-zinc-950/10 shadow-sm"
+                          : "border-zinc-200 bg-white hover:border-zinc-300 hover:shadow-xs"
                       }`}
                     >
                       <div className="flex items-center justify-between mb-2">
-                        <span className="text-xs font-bold text-white">
+                        <span className="text-xs font-bold text-zinc-950">
                           {th.name}
                         </span>
                         {isSelected && (
-                          <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+                          <CheckCircle2 className="w-4 h-4 text-emerald-600" />
                         )}
                       </div>
 
@@ -1042,14 +1042,14 @@ export function EasyProfileBuilder() {
                         className="h-10 rounded-xl bg-gradient-to-r p-2 flex items-center justify-between text-[10px] font-bold text-white shadow-inner"
                         style={{
                           background:
-                            th.id === "obsidian-minimal"
-                              ? "linear-gradient(to right, #27272a, #09090b)"
-                              : th.id === "slate-studio"
-                              ? "linear-gradient(to right, #1e293b, #0f172a)"
-                              : th.id === "warm-charcoal"
-                              ? "linear-gradient(to right, #292524, #1c1917)"
-                              : "linear-gradient(to right, #ffffff, #71717a)",
-                          color: th.id === "pure-monochrome" ? "#000" : "#fff",
+                            th.id === "studio-light"
+                              ? "linear-gradient(to right, #09090b, #27272a)"
+                              : th.id === "porcelain-minimal"
+                              ? "linear-gradient(to right, #242321, #5a5853)"
+                              : th.id === "crisp-slate"
+                              ? "linear-gradient(to right, #0f172a, #334155)"
+                              : "linear-gradient(to right, #18181b, #71717a)",
+                          color: "#fff",
                         }}
                       >
                         <span className="px-2 py-0.5 rounded bg-black/40 backdrop-blur-sm">
@@ -1070,51 +1070,51 @@ export function EasyProfileBuilder() {
         {/* Right Column: Real-Time Interactive Mobile Simulator */}
         <div className="lg:col-span-5 flex flex-col items-center sticky top-24">
           <div className="w-full flex items-center justify-between mb-3 px-2">
-            <div className="flex items-center gap-1.5 text-xs font-bold text-slate-300">
-              <Eye className="w-3.5 h-3.5 text-zinc-400" />
+            <div className="flex items-center gap-1.5 text-xs font-bold text-zinc-700">
+              <Eye className="w-3.5 h-3.5 text-zinc-500" />
               <span>Live Profile Preview</span>
             </div>
-            <span className="text-[10px] px-2 py-0.5 rounded-full bg-emerald-500/15 text-emerald-400 font-semibold flex items-center gap-1">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+            <span className="text-[10px] px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700 font-semibold border border-emerald-200/60 flex items-center gap-1">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
               Live Sync
             </span>
           </div>
 
           {/* Smartphone Frame */}
-          <div className="w-[320px] sm:w-[340px] rounded-[44px] p-3.5 bg-gradient-to-b from-zinc-800 via-zinc-900 to-black border-4 border-zinc-800 shadow-2xl shadow-black/80 relative overflow-hidden">
+          <div className="w-[320px] sm:w-[340px] rounded-[44px] p-3.5 bg-gradient-to-b from-zinc-200 via-zinc-100 to-zinc-300 border-4 border-zinc-300 shadow-2xl shadow-zinc-400/40 relative overflow-hidden">
             {/* Dynamic Island / Speaker Notch */}
-            <div className="absolute top-5 left-1/2 -translate-x-1/2 w-24 h-4 bg-black rounded-full z-30 flex items-center justify-center">
-              <div className="w-2.5 h-2.5 rounded-full bg-zinc-900 ml-auto mr-2" />
+            <div className="absolute top-5 left-1/2 -translate-x-1/2 w-24 h-4 bg-zinc-900 rounded-full z-30 flex items-center justify-center">
+              <div className="w-2.5 h-2.5 rounded-full bg-zinc-800 ml-auto mr-2" />
             </div>
 
             {/* Inner Phone Screen */}
             <div
-              className={`w-full rounded-[36px] min-h-[580px] max-h-[640px] overflow-y-auto ${profile.theme.background} p-4 pt-10 text-slate-100 flex flex-col text-center scrollbar-none transition-colors duration-300`}
+              className={`w-full rounded-[36px] min-h-[580px] max-h-[640px] overflow-y-auto ${profile.theme.background} p-4 pt-10 text-zinc-900 flex flex-col text-center scrollbar-none transition-colors duration-300`}
             >
               {/* Creator Avatar & Verified Badge */}
               <div className="relative mx-auto mt-2 mb-3">
                 <img
                   src={profile.avatarUrl}
                   alt={profile.displayName}
-                  className="w-18 h-18 rounded-full object-cover ring-1 ring-white/20 shadow-lg mx-auto"
+                  className="w-18 h-18 rounded-full object-cover ring-2 ring-zinc-200 shadow-md mx-auto"
                 />
                 {profile.verified && (
-                  <div className="absolute -bottom-1 -right-1 p-1 rounded-full bg-white text-zinc-950 shadow-md">
+                  <div className="absolute -bottom-1 -right-1 p-1 rounded-full bg-zinc-950 text-white shadow-md">
                     <CheckCircle2 className="w-3.5 h-3.5" />
                   </div>
                 )}
               </div>
 
               {/* Names & Category */}
-              <h3 className="text-sm font-extrabold text-white tracking-tight">
+              <h3 className="text-sm font-extrabold text-zinc-950 tracking-tight">
                 {profile.displayName || "Your Name"}
               </h3>
-              <p className="text-[11px] text-zinc-400 font-medium">
+              <p className="text-[11px] text-zinc-500 font-medium">
                 @{profile.username || "username"} • {profile.category}
               </p>
 
               {/* Bio */}
-              <p className="text-[11px] text-slate-300 mt-2 px-2 leading-relaxed">
+              <p className="text-[11px] text-zinc-600 mt-2 px-2 leading-relaxed">
                 {profile.bio || "Add a quick bio telling the world what you do."}
               </p>
 
@@ -1125,7 +1125,7 @@ export function EasyProfileBuilder() {
                     href={profile.socials.github}
                     target="_blank"
                     rel="noreferrer"
-                    className="p-1.5 rounded-full bg-white/5 hover:bg-white/10 text-slate-300 hover:text-white transition-colors"
+                    className="p-1.5 rounded-full bg-zinc-100 hover:bg-zinc-200 text-zinc-700 hover:text-zinc-950 border border-zinc-200/80 transition-colors"
                   >
                     <GithubIcon className="w-3.5 h-3.5" />
                   </a>
@@ -1135,7 +1135,7 @@ export function EasyProfileBuilder() {
                     href={profile.socials.twitter}
                     target="_blank"
                     rel="noreferrer"
-                    className="p-1.5 rounded-full bg-white/5 hover:bg-white/10 text-slate-300 hover:text-white transition-colors"
+                    className="p-1.5 rounded-full bg-zinc-100 hover:bg-zinc-200 text-zinc-700 hover:text-zinc-950 border border-zinc-200/80 transition-colors"
                   >
                     <TwitterIcon className="w-3.5 h-3.5" />
                   </a>
@@ -1145,7 +1145,7 @@ export function EasyProfileBuilder() {
                     href={profile.socials.instagram}
                     target="_blank"
                     rel="noreferrer"
-                    className="p-1.5 rounded-full bg-white/5 hover:bg-white/10 text-slate-300 hover:text-white transition-colors"
+                    className="p-1.5 rounded-full bg-zinc-100 hover:bg-zinc-200 text-zinc-700 hover:text-zinc-950 border border-zinc-200/80 transition-colors"
                   >
                     <InstagramIcon className="w-3.5 h-3.5" />
                   </a>
@@ -1155,7 +1155,7 @@ export function EasyProfileBuilder() {
                     href={profile.socials.youtube}
                     target="_blank"
                     rel="noreferrer"
-                    className="p-1.5 rounded-full bg-white/5 hover:bg-white/10 text-slate-300 hover:text-white transition-colors"
+                    className="p-1.5 rounded-full bg-zinc-100 hover:bg-zinc-200 text-zinc-700 hover:text-zinc-950 border border-zinc-200/80 transition-colors"
                   >
                     <YoutubeIcon className="w-3.5 h-3.5" />
                   </a>
@@ -1163,13 +1163,13 @@ export function EasyProfileBuilder() {
               </div>
 
               {/* Navigation Tabs inside Phone (Links / Portfolio / Store / MediaKit) */}
-              <div className="grid grid-cols-4 gap-1 p-1 rounded-xl bg-zinc-900 border border-zinc-800 mb-4 text-[10px] font-semibold">
+              <div className="grid grid-cols-4 gap-1 p-1 rounded-xl bg-zinc-100 border border-zinc-200 mb-4 text-[10px] font-semibold">
                 <button
                   onClick={() => setActivePreviewTab("links")}
                   className={`py-1.5 rounded-lg transition-all ${
                     activePreviewTab === "links"
-                      ? "bg-white text-zinc-950 font-bold shadow-sm"
-                      : "text-zinc-400 hover:text-white"
+                      ? "bg-zinc-950 text-white font-bold shadow-sm"
+                      : "text-zinc-600 hover:text-zinc-950"
                   }`}
                 >
                   Links
@@ -1178,8 +1178,8 @@ export function EasyProfileBuilder() {
                   onClick={() => setActivePreviewTab("portfolio")}
                   className={`py-1.5 rounded-lg transition-all ${
                     activePreviewTab === "portfolio"
-                      ? "bg-white text-zinc-950 font-bold shadow-sm"
-                      : "text-zinc-400 hover:text-white"
+                      ? "bg-zinc-950 text-white font-bold shadow-sm"
+                      : "text-zinc-600 hover:text-zinc-950"
                   }`}
                 >
                   Portfolio
@@ -1188,8 +1188,8 @@ export function EasyProfileBuilder() {
                   onClick={() => setActivePreviewTab("store")}
                   className={`py-1.5 rounded-lg transition-all ${
                     activePreviewTab === "store"
-                      ? "bg-white text-zinc-950 font-bold shadow-sm"
-                      : "text-zinc-400 hover:text-white"
+                      ? "bg-zinc-950 text-white font-bold shadow-sm"
+                      : "text-zinc-600 hover:text-zinc-950"
                   }`}
                 >
                   Store
@@ -1198,8 +1198,8 @@ export function EasyProfileBuilder() {
                   onClick={() => setActivePreviewTab("mediakit")}
                   className={`py-1.5 rounded-lg transition-all ${
                     activePreviewTab === "mediakit"
-                      ? "bg-white text-zinc-950 font-bold shadow-sm"
-                      : "text-zinc-400 hover:text-white"
+                      ? "bg-zinc-950 text-white font-bold shadow-sm"
+                      : "text-zinc-600 hover:text-zinc-950"
                   }`}
                 >
                   Stats
@@ -1212,26 +1212,26 @@ export function EasyProfileBuilder() {
                   {profile.blocks.map((block) => (
                     <div
                       key={block.id}
-                      className={`p-3 ${profile.theme.cardBg} ${profile.theme.buttonRadius} border flex items-center justify-between gap-2.5 group transition-all hover:brightness-110`}
+                      className={`p-3 ${profile.theme.cardBg} ${profile.theme.buttonRadius} border border-zinc-200/90 shadow-sm flex items-center justify-between gap-2.5 group transition-all hover:border-zinc-400`}
                     >
                       <div className="min-w-0">
                         <div className="flex items-center gap-1.5">
-                          <span className="text-[11px] font-bold text-white truncate">
+                          <span className="text-[11px] font-bold text-zinc-950 truncate">
                             {block.title}
                           </span>
                           {block.badge && (
-                            <span className="text-[8px] font-extrabold px-1.5 py-0.2 rounded bg-zinc-800 text-zinc-300 border border-zinc-700/60 shrink-0">
+                            <span className="text-[8px] font-extrabold px-1.5 py-0.2 rounded bg-zinc-100 text-zinc-700 border border-zinc-200 shrink-0">
                               {block.badge}
                             </span>
                           )}
                         </div>
                         {block.subtitle && (
-                          <div className="text-[9px] text-slate-400 truncate mt-0.5">
+                          <div className="text-[9px] text-zinc-500 truncate mt-0.5">
                             {block.subtitle}
                           </div>
                         )}
                       </div>
-                      <ExternalLink className="w-3 h-3 text-slate-400 shrink-0" />
+                      <ExternalLink className="w-3 h-3 text-zinc-400 shrink-0" />
                     </div>
                   ))}
                 </div>
@@ -1241,30 +1241,30 @@ export function EasyProfileBuilder() {
               {activePreviewTab === "portfolio" && (
                 <div className="space-y-3 text-left">
                   {(profile.portfolioProjects || []).length === 0 ? (
-                    <div className="p-4 rounded-xl bg-white/5 border border-white/10 text-center text-xs text-slate-400">
+                    <div className="p-4 rounded-xl bg-zinc-50 border border-zinc-200 text-center text-xs text-zinc-500">
                       No portfolio projects yet.
                     </div>
                   ) : (
                     profile.portfolioProjects?.map((proj) => (
                       <div
                         key={proj.id}
-                        className={`overflow-hidden ${profile.theme.cardBg} ${profile.theme.buttonRadius} border border-white/10 group`}
+                        className={`overflow-hidden ${profile.theme.cardBg} ${profile.theme.buttonRadius} border border-zinc-200/90 shadow-sm group`}
                       >
-                        <div className="relative h-28 w-full bg-slate-900 overflow-hidden">
+                        <div className="relative h-28 w-full bg-zinc-100 overflow-hidden">
                           <img
                             src={proj.thumbnailUrl}
                             alt={proj.title}
                             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                           />
-                          <span className="absolute top-2 left-2 text-[9px] font-bold px-1.5 py-0.5 rounded bg-black/60 backdrop-blur-md text-zinc-200">
+                          <span className="absolute top-2 left-2 text-[9px] font-bold px-1.5 py-0.5 rounded bg-zinc-950/80 backdrop-blur-md text-white">
                             {proj.category}
                           </span>
                         </div>
                         <div className="p-3">
-                          <h4 className="text-xs font-bold text-white line-clamp-1">
+                          <h4 className="text-xs font-bold text-zinc-950 line-clamp-1">
                             {proj.title}
                           </h4>
-                          <p className="text-[10px] text-slate-300 line-clamp-2 mt-1 leading-snug">
+                          <p className="text-[10px] text-zinc-600 line-clamp-2 mt-1 leading-snug">
                             {proj.description}
                           </p>
 
@@ -1272,7 +1272,7 @@ export function EasyProfileBuilder() {
                             {proj.tags.slice(0, 3).map((tag, i) => (
                               <span
                                 key={i}
-                                className="text-[8px] px-1.5 py-0.2 rounded bg-white/10 text-slate-200"
+                                className="text-[8px] px-1.5 py-0.2 rounded bg-zinc-100 text-zinc-700 border border-zinc-200/60"
                               >
                                 #{tag}
                               </span>
@@ -1283,7 +1283,7 @@ export function EasyProfileBuilder() {
                             href={proj.projectUrl}
                             target="_blank"
                             rel="noreferrer"
-                            className="w-full py-1.5 rounded-lg bg-white hover:bg-zinc-200 text-zinc-950 text-[10px] font-bold flex items-center justify-center gap-1 transition-colors"
+                            className="w-full py-1.5 rounded-lg bg-zinc-950 hover:bg-zinc-800 text-white text-[10px] font-bold flex items-center justify-center gap-1 transition-colors shadow-sm"
                           >
                             <span>View Project</span>
                             <ExternalLink className="w-2.5 h-2.5" />
@@ -1299,17 +1299,17 @@ export function EasyProfileBuilder() {
               {activePreviewTab === "store" && (
                 <div className="space-y-2.5 text-left">
                   <div
-                    className={`p-3 ${profile.theme.cardBg} ${profile.theme.buttonRadius} border border-white/10 flex items-center justify-between`}
+                    className={`p-3 ${profile.theme.cardBg} ${profile.theme.buttonRadius} border border-zinc-200/90 shadow-sm flex items-center justify-between`}
                   >
                     <div>
-                      <div className="text-[11px] font-bold text-white">
+                      <div className="text-[11px] font-bold text-zinc-950">
                         Digital Store
                       </div>
-                      <div className="text-[9px] text-emerald-400 font-semibold">
+                      <div className="text-[9px] text-emerald-600 font-semibold">
                         Instant 1-Click Checkout
                       </div>
                     </div>
-                    <span className="text-[11px] font-bold text-white">$49</span>
+                    <span className="text-[11px] font-bold text-zinc-950">$49</span>
                   </div>
                 </div>
               )}
@@ -1318,12 +1318,12 @@ export function EasyProfileBuilder() {
               {activePreviewTab === "mediakit" && (
                 <div className="space-y-2 text-left">
                   <div
-                    className={`p-3 ${profile.theme.cardBg} ${profile.theme.buttonRadius} border border-white/10`}
+                    className={`p-3 ${profile.theme.cardBg} ${profile.theme.buttonRadius} border border-zinc-200/90 shadow-sm`}
                   >
-                    <div className="text-[9px] uppercase tracking-wider text-slate-400 font-bold">
+                    <div className="text-[9px] uppercase tracking-wider text-zinc-500 font-bold">
                       Verified Monthly Reach
                     </div>
-                    <div className="text-base font-extrabold text-white mt-0.5">
+                    <div className="text-base font-extrabold text-zinc-950 mt-0.5">
                       128,400+
                     </div>
                   </div>
@@ -1331,7 +1331,7 @@ export function EasyProfileBuilder() {
               )}
 
               {/* Footer inside phone */}
-              <div className="mt-auto pt-6 pb-2 text-[9px] text-slate-500 text-center">
+              <div className="mt-auto pt-6 pb-2 text-[9px] text-zinc-400 text-center">
                 Powered by Webworks • 100% Free
               </div>
             </div>

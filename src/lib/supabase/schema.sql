@@ -16,7 +16,7 @@ CREATE TABLE IF NOT EXISTS public.workspaces (
     category VARCHAR(64) DEFAULT 'General Creator',
     verified BOOLEAN DEFAULT FALSE,
     custom_domain VARCHAR(255) UNIQUE,
-    theme JSONB DEFAULT '{"id": "obsidian-minimal", "name": "Obsidian Minimal", "background": "bg-[#09090b]", "cardBg": "bg-zinc-900/90", "textColor": "text-white", "buttonRadius": "rounded-xl"}'::jsonb,
+    theme JSONB DEFAULT '{"id": "studio-light", "name": "Studio Light", "background": "bg-[#ffffff]", "cardBg": "bg-zinc-50/90", "textColor": "text-zinc-950", "buttonRadius": "rounded-xl"}'::jsonb,
     plan VARCHAR(32) DEFAULT 'free' CHECK (plan IN ('free', 'starter', 'pro', 'studio')), -- 100% Free Forever for all creators
     stripe_account_id VARCHAR(128),
     stripe_payouts_enabled BOOLEAN DEFAULT FALSE,

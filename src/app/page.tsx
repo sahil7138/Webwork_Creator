@@ -9,9 +9,9 @@ import { PricingCards } from "@/components/landing/PricingCards";
 
 export default function LandingPage() {
   return (
-    <div className="relative min-h-screen bg-[#06080e] overflow-hidden flex flex-col justify-between">
+    <div className="relative min-h-screen bg-[#fafafa] overflow-hidden flex flex-col justify-between">
       {/* Subtle architectural background grid */}
-      <div className="bg-grid-pattern absolute inset-0 opacity-25 pointer-events-none" />
+      <div className="bg-grid-pattern absolute inset-0 opacity-50 pointer-events-none" />
 
       {/* Top Navigation */}
       <Navbar />
@@ -21,16 +21,16 @@ export default function LandingPage() {
         <HeroSection />
 
         {/* 2. Interactive Phone Preview Simulator */}
-        <section id="interactive-preview" className="relative py-16 lg:py-24 border-y border-white/5 bg-[#080b14]/60">
+        <section id="interactive-preview" className="relative py-16 lg:py-24 border-y border-zinc-200/80 bg-zinc-50/70">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-3xl mx-auto mb-12">
-              <span className="text-xs font-bold text-zinc-400 uppercase tracking-widest">
+              <span className="text-xs font-bold text-zinc-500 uppercase tracking-widest">
                 Live Interactive Prototype
               </span>
-              <h2 className="text-3xl sm:text-4xl font-extrabold text-white mt-2">
+              <h2 className="text-3xl sm:text-4xl font-extrabold text-zinc-950 mt-2">
                 Experience the Public Creator Experience
               </h2>
-              <p className="text-sm text-slate-400 mt-3">
+              <p className="text-sm text-zinc-600 mt-3">
                 Try switching themes, tapping between the Store and Media Kit tabs, or simulating a tip. Every pixel is engineered for conversion.
               </p>
             </div>
