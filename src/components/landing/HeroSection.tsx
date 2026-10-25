@@ -26,8 +26,8 @@ export function HeroSection() {
 
         {/* Main Headline */}
         <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-zinc-950 max-w-5xl mx-auto leading-[1.12]">
-          Turn Your Audience Into a{" "}
-          <span className="text-zinc-500">Multi-Revenue Powerhouse</span>
+          One page for your work, products,{" "}
+          <span className="text-zinc-500">and income.</span>
         </h1>
 
         <p className="mt-6 text-base sm:text-lg lg:text-xl text-zinc-600 max-w-3xl mx-auto leading-relaxed">
