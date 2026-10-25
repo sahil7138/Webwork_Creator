@@ -59,23 +59,34 @@ export function PhonePreview() {
 
   return (
     <div className="relative flex flex-col items-center">
+      {/* HUD Telemetry Bar */}
+      <div className="mb-4 flex items-center justify-between w-full max-w-md px-2 text-[10px] font-mono text-zinc-500 uppercase tracking-widest">
+        <span className="flex items-center gap-1.5 text-zinc-400">
+          <span className="w-1.5 h-1.5 rounded-full bg-[#00FF66] shadow-[0_0_8px_#00FF66] animate-pulse" />
+          SIMULATOR // VIEWPORT: 390×844
+        </span>
+        <span className="text-zinc-600">ENGINE: V2.4 DIRECT</span>
+      </div>
+
       {/* Theme Switcher Pills */}
-      <div className="flex items-center gap-1.5 p-1.5 mb-6 rounded-full bg-white border border-zinc-200/90 shadow-sm z-20 overflow-x-auto max-w-full">
-        <span className="text-xs font-semibold text-zinc-500 px-2.5 shrink-0">Theme:</span>
+      <div className="flex items-center gap-1.5 p-1.5 mb-8 rounded-xl bg-zinc-950/90 border border-white/10 shadow-2xl backdrop-blur-xl z-20 overflow-x-auto max-w-full">
+        <span className="text-[11px] font-mono uppercase tracking-wider text-zinc-400 px-2.5 shrink-0">
+          Theme:
+        </span>
         {CREATOR_THEMES.map((theme) => {
           const isSelected = currentTheme.id === theme.id;
           return (
             <button
               key={theme.id}
               onClick={() => setCurrentTheme(theme)}
-              className={`px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all flex items-center gap-2 shrink-0 ${
+              className={`px-3.5 py-1.5 rounded-lg text-xs font-semibold transition-all flex items-center gap-2 shrink-0 ${
                 isSelected
-                  ? "bg-zinc-950 text-white shadow-sm ring-1 ring-zinc-950"
-                  : "text-zinc-600 hover:text-zinc-950 hover:bg-zinc-100"
+                  ? "bg-[#00FF66] text-black font-extrabold shadow-[0_0_15px_rgba(0,255,102,0.35)]"
+                  : "text-zinc-400 hover:text-white hover:bg-white/5"
               }`}
             >
               <span
-                className="w-2.5 h-2.5 rounded-full border border-black/15 shrink-0 shadow-2xs"
+                className="w-2.5 h-2.5 rounded-full border border-black/20 shrink-0 shadow-2xs"
                 style={{ backgroundColor: theme.bgHex }}
               />
               <span>{theme.name}</span>
@@ -84,12 +95,12 @@ export function PhonePreview() {
         })}
       </div>
 
-      {/* Realistic Mobile Device Frame */}
-      <div className="relative w-[340px] sm:w-[380px] h-[720px] rounded-[48px] p-3 bg-gradient-to-b from-zinc-200 via-zinc-100 to-zinc-300 shadow-2xl shadow-zinc-400/40 border-4 border-zinc-300 ring-1 ring-zinc-400/30">
+      {/* Realistic Obsidian Mobile Device Frame */}
+      <div className="relative w-[340px] sm:w-[380px] h-[720px] rounded-[50px] p-3.5 bg-gradient-to-b from-zinc-800 via-zinc-900 to-black shadow-[0_0_90px_rgba(0,0,0,0.9),0_0_40px_rgba(0,255,102,0.12)] border-2 border-white/15 ring-1 ring-white/10">
         {/* Dynamic Island / Notch */}
-        <div className="absolute top-6 left-1/2 -translate-x-1/2 w-28 h-5 bg-zinc-950 rounded-full z-40 flex items-center justify-between px-3">
-          <div className="w-2.5 h-2.5 rounded-full bg-zinc-800 ring-1 ring-zinc-700" />
-          <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+        <div className="absolute top-6 left-1/2 -translate-x-1/2 w-28 h-5 bg-black rounded-full z-40 flex items-center justify-between px-3 border border-white/10">
+          <div className="w-2 h-2 rounded-full bg-zinc-900 ring-1 ring-zinc-700" />
+          <div className="w-2 h-2 rounded-full bg-[#00FF66] shadow-[0_0_8px_#00FF66] animate-pulse" />
         </div>
 
         {/* Inner Phone Screen */}
